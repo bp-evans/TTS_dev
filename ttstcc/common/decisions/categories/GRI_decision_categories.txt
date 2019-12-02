@@ -1,0 +1,8 @@
+GRI_diplomacy = {
+	allowed = {
+		tag = GRI
+	}
+	priority = {
+		base = 100
+	}
+}

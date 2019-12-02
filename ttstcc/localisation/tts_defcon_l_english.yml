@@ -1,0 +1,6 @@
+﻿l_english:
+DEFCON_HEADER:0 "World Tension"
+THREAT_PROGRESS:0 "[?dc_progress]%"
+world_threat_level:0 "Threat Level:"
+defcon_desc:0 "DEFCON: §R[?global.defcon_level]§!"
+defcon_action_desc:0 "Detente Actions:"

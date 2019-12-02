@@ -1,0 +1,15 @@
+ROU_expansion_category = {
+	icon = generic_border_conflicts
+
+	allowed = {
+		original_tag = ROU
+	}
+}
+
+ROU_land_requisition = {
+	icon = generic_border_conflicts
+
+	allowed = {
+		original_tag = ROU
+	}
+}

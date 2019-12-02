@@ -1,0 +1,156 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+war_cooperation = {
+	enable = {
+		tag = STG
+		has_war_together_with = EQS
+		EQS = { has_war_with = CHN }
+	}
+	abort = {
+		EQS = { exists = no }
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "EQS"
+		value = 200
+	}
+	ai_strategy = {
+		type = protect
+		id = "EQS"
+		value = 200
+	}
+}
+changeling_threat = {
+	enable = {
+		tag = STG
+		has_war_with = CHN
+	}
+	abort = {
+		OR = {
+			CHN = { exists = no }
+			CHN = { is_subject_of = EQS }
+		}
+	}
+
+	ai_strategy = {
+		type = conquer
+		id = "CHN"
+		value = 200
+	}
+	ai_strategy = {
+		type = antagonize
+		id = "CHN"
+		value = 200
+	}
+}
+revolution_in_crystal_empire = {
+	enable = {
+		tag = STG
+		has_government = communism
+		CRY = {
+			has_government = communism
+			has_completed_focus = CRY_comrevolution
+		}
+	}
+	abort = {
+		OR = {
+			CHN = { exists = no }
+			CHN = { is_subject_of = EQS }
+			CRY = { NOT = { has_government = communism } }
+		}
+	}
+	ai_strategy = {
+		type = support
+		id = "CRY"
+		value = 200
+	}
+	ai_strategy = {
+		type = conquer
+		id = "CHN"
+		value = 200
+	}
+	ai_strategy = {
+		type = antagonize
+		id = "CHN"
+		value = 200
+	}
+}
+STG_more_armor = {
+	enable = {
+		original_tag = STG
+	}
+	abort = {
+		always = no
+	}
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = 4
+	}
+}
+STG_ally_EQS = {
+	enable = {
+		has_country_flag = war_help
+		EQS = { has_war_with = CHN }
+	}
+	abort = {
+		NOT = { EQS = { has_war_with = CHN } }
+	}
+	ai_strategy = {
+		type = alliance
+		id = "EQS"
+		value = 999
+	}
+}
+EQS_ally_STG = {
+	enable = {
+		STG = { has_country_flag = war_help }
+		EQS = { has_war_with = CHN }
+	}
+	abort = {
+		NOT = { EQS = { has_war_with = CHN } }
+	}
+	ai_strategy = {
+		type = alliance
+		id = "STG"
+		value = 999
+	}
+}
+
+support_OLE_com = {
+	enable = {
+		tag = STG
+		has_government = communism
+		OLE = {
+			has_government = communism
+		}
+	}
+	abort = {
+		OR = {
+			NOT = { has_government = communism }
+			OLE = { NOT = { has_government = communism } }
+		}
+	}
+
+	ai_strategy = {
+		type = support
+		id = "OLE"
+		value = 75
+	}
+	ai_strategy = {
+		type = befriend
+		id = "OLE"
+		value = 25
+	}
+}

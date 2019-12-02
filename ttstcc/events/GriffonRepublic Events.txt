@@ -1,0 +1,2326 @@
+﻿add_namespace = griffonRepublic
+
+#country_event = { #History
+	#	id = griffonRepublic.0
+
+	#	title = griffonRepublic.0.t
+	#	desc = griffonRepublic.0.d
+	#	picture = GFX_event_griffon_mountain
+	#	trigger = {
+		#		tag = FAT
+		#		date > 1007.1.1
+		#	}
+	#	mean_time_to_happen = { days = 10 }
+	#	fire_only_once = yes
+	#	option = {
+		#		name = griffonRepublic.0.a
+		#	}
+	#}
+
+country_event = {
+	id = griffonRepublic.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.2"}
+	title = griffonRepublic.2.t
+	desc = griffonRepublic.2.d
+	picture = GFX_event_griffon_back
+
+	#fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = griffonRepublic.2.a
+		trigger = {
+			is_in_faction = no
+		}
+		FROM = {
+			effect_tooltip = { add_to_faction = ROOT }
+			country_event = { days = 1 id = griffonRepublic.6 }
+		}
+		hidden_effect = { set_country_flag = FAT_minor_to_integrate }
+		ai_chance = {
+			factor = 15
+			modifier = {
+				factor = 2
+				has_opinion = { target = FROM value > 75 }
+			}
+			modifier = {
+				factor = 1.7
+				has_opinion = { target = FROM value > 50 }
+			}
+			modifier = {
+				factor = 1.5
+				has_opinion = { target = FROM value > 25 }
+			}
+			modifier = {
+				factor = 1.5
+				strength_ratio = { tag = event_target:griffonian_empire ratio < 0.7 }
+			}
+			modifier = {
+				factor = 1.5
+				strength_ratio = { tag = FROM ratio < 0.7 }
+			}
+			modifier = {
+				factor = 0
+				has_idea = neutrality_idea
+			}
+		}
+	}
+	option = {
+		name = griffonRepublic.2.b
+		custom_effect_tooltip = griffonRepublic.2.b.tt
+		effect_tooltip = {
+			every_other_country = {
+				limit = { has_idea = FAT_republican_pact }
+				add_opinion_modifier = { target = ROOT modifier = FAT_republican_pact_mod }
+				reverse_add_opinion_modifier = { target = ROOT modifier = FAT_republican_pact_mod }
+			}
+			event_target:griffonian_empire = { add_opinion_modifier = { target = ROOT modifier = FAT_republican_pact_against_us } }
+		}
+		FROM = {
+			country_event = { days = 1 id = griffonRepublic.66 }
+		}
+		hidden_effect = { set_country_flag = FAT_minor_to_integrate }
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 1.5
+				strength_ratio = { tag = event_target:griffonian_empire ratio < 0.7 }
+			}
+			modifier = {
+				factor = 0
+				has_idea = neutrality_idea
+			}
+		}
+	}
+	option = {
+		name = griffonRepublic.2.c
+		FROM = {
+			country_event = { days = 1 id = griffonRepublic.7 }
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0.8
+				has_government = FROM
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					has_government = fascism
+					has_government = communism
+				}
+			}
+			modifier = {
+				factor = 0.2
+				strength_ratio = { tag = event_target:griffonian_empire ratio > 1.0 }
+			}
+			modifier = {
+				factor = 0.5
+				event_target:griffonian_empire = { has_annex_war_goal = ROOT }
+			}
+			modifier = {
+				factor = 0.5
+				has_opinion = { target = event_target:griffonian_empire value < -74 }
+			}
+			modifier = {
+				factor = 2
+				has_opinion = { target = FROM value < -25 }
+			}
+			modifier = {
+				factor = 2
+				has_opinion = { target = FROM value < -50 }
+			}
+			modifier = {
+				factor = 2
+				has_opinion = { target = FROM value < -75 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = griffonRepublic.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.6"}
+	title = griffonRepublic.6.t
+	desc = griffonRepublic.6.d
+	picture = GFX_event_griffon_back
+
+	#fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = griffonRepublic.6.a
+		add_opinion_modifier = { target = FROM modifier = FAT_republican_pact_mod }
+		reverse_add_opinion_modifier = { target = FROM modifier = FAT_republican_pact_mod }
+		hidden_effect = {
+			add_ai_strategy = {
+				type = alliance
+				id = FROM
+				value = 999
+			}
+			FROM = {
+				add_ai_strategy = {
+					type = alliance
+					id = ROOT
+					value = 999
+				}
+			}
+		}
+		add_to_faction = FROM
+	}
+}
+
+country_event = {
+	id = griffonRepublic.66
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.66"}
+	title = griffonRepublic.66.t
+	desc = griffonRepublic.66.d
+	picture = GFX_event_griffon_back
+
+	#fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = griffonRepublic.6.a
+		FROM = {
+			custom_effect_tooltip = griffonRepublic.1.b.tp
+			hidden_effect = { add_ideas = FAT_republican_pact }
+		}
+		every_other_country = {
+			limit = { has_idea = FAT_republican_pact }
+			add_opinion_modifier = { target = FROM modifier = FAT_republican_pact_mod }
+			reverse_add_opinion_modifier = { target = FROM modifier = FAT_republican_pact_mod }
+		}
+		hidden_effect = { event_target:griffonian_empire = { add_opinion_modifier = { target = FROM modifier = FAT_republican_pact_against_us } } }
+	}
+}
+
+country_event = {
+	id = griffonRepublic.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.7"}
+	title = griffonRepublic.7.t
+	desc = griffonRepublic.7.d
+	picture = GFX_event_griffon_back
+
+	#fire_only_once = yes
+	is_triggered_only = yes
+
+
+	option = {
+		name = griffonRepublic.7.a
+	}
+}
+
+country_event = {
+	id = griffonRepublic.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.3"}
+	title = griffonRepublic.3.t
+	desc = griffonRepublic.3.d
+	picture = GFX_event_griffon_back
+
+	#fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = griffonRepublic.3.a
+		trigger = { 
+			is_in_faction = no 
+			FROM = { is_faction_leader = yes }
+		}
+		FROM = {
+			effect_tooltip = { add_to_faction = ROOT }
+			country_event = { days = 1 id = griffonRepublic.8 }
+		}
+
+	}
+	option = {
+		name = griffonRepublic.3.b
+		FROM = {
+			effect_tooltip = { puppet = ROOT }
+			country_event = { days = 1 id = griffonRepublic.88 }
+		}
+
+	}
+	option = {
+		name = griffonRepublic.3.c
+		FROM = {
+			country_event = { days = 1 id = griffonRepublic.9 }
+		}
+	}
+}
+
+country_event = {
+	id = griffonRepublic.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.8"}
+	title = griffonRepublic.8.t
+	desc = griffonRepublic.8.d
+	picture = GFX_event_griffon_back
+
+	#fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = griffonRepublic.8.a
+		add_opinion_modifier = { target = FROM modifier = FAT_republican_pact_mod }
+		reverse_add_opinion_modifier = { target = FROM modifier = FAT_republican_pact_mod }
+		hidden_effect = {
+			add_ai_strategy = {
+				type = alliance
+				id = FROM
+				value = 999
+			}
+			FROM = {
+				add_ai_strategy = {
+					type = alliance
+					id = ROOT
+					value = 999
+				}
+			}
+		}
+		add_to_faction = FROM
+	}
+}
+
+country_event = {
+	id = griffonRepublic.88
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.88"}
+	title = griffonRepublic.88.t
+	desc = griffonRepublic.88.d
+	picture = GFX_event_griffon_back
+
+	#fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = griffonRepublic.8.a
+		hidden_effect = { FROM = { get_current_government_type = yes } }
+		if = {
+			limit = { has_dlc = "Together for Victory"}
+			set_autonomy = { target = FROM autonomy_state = autonomy_integrated_puppet }
+		}
+		else = { puppet = FROM }
+		hidden_effect = {
+			FROM = {
+				restore_previous_government_type = yes
+				country_event = griffonRepublic.100
+			}
+		}
+	}
+}
+
+country_event = {
+	id = griffonRepublic.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.9"}
+	title = griffonRepublic.9.t
+	desc = griffonRepublic.9.d
+	picture = GFX_event_griffon_back
+
+	# fire_only_once = yes
+	is_triggered_only = yes
+
+
+	option = {
+		name = griffonRepublic.9.a
+	}
+}
+
+###Civil War Chain ####
+
+#Notify of growing unrest
+country_event = {
+	id = griffonRepublic.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.10"}
+	title = griffonRepublic.10.t
+	desc = griffonRepublic.10.d
+	picture = GFX_event_griffon_mountain
+	mean_time_to_happen = {
+		months = 16
+	}
+	trigger = {
+		tag = FAT
+		NOT = {
+			has_completed_focus = FAT_loyality_to_the_republic
+			has_completed_focus = FAT_loyality_to_the_president
+			has_completed_focus = FAT_crisis_averted
+			AND = {
+				is_ai = yes
+				is_historical_focus_on = yes
+			}
+		}
+	}
+	fire_only_once = yes
+	option = {
+		name = griffonRepublic.10.a
+		hidden_effect = {
+			country_event = { id = griffonRepublic.11 days = 145 }
+		}
+	}
+	option = {
+		name = griffonRepublic.10.b
+		add_political_power = -150
+		hidden_effect = {
+			country_event = { id = griffonRepublic.11 days = 195 }
+		}
+	}
+}
+
+#Soldiers refuse orders
+country_event = {
+	id = griffonRepublic.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.11"}
+	title = griffonRepublic.11.t
+	desc = griffonRepublic.11.d
+	picture = GFX_event_griffon_mountain
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_completed_focus = FAT_loyality_to_the_republic
+			has_completed_focus = FAT_loyality_to_the_president
+			has_completed_focus = FAT_crisis_averted
+		}
+	}
+	fire_only_once = yes
+	option = {
+		name = griffonRepublic.11.a
+		add_timed_idea = { idea = FAT_refuse_orders_Idea days = 50 }
+		hidden_effect = {
+			country_event = { id = griffonRepublic.12 days = 190 }
+		}
+	}
+	option = {
+		name = griffonRepublic.11.b
+		add_political_power = -150
+		add_timed_idea = { idea = FAT_refuse_orders_Idea days = 50 }
+		hidden_effect = {
+			country_event = { id = griffonRepublic.12 days = 240 }
+		}
+	}
+}
+
+#On the brink of collapse
+country_event = {
+	id = griffonRepublic.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.12"}
+	title = griffonRepublic.12.t
+	desc = griffonRepublic.12.d
+	picture = GFX_event_griffon_mountain
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		NOT = {
+			has_completed_focus = FAT_loyality_to_the_republic
+			has_completed_focus = FAT_loyality_to_the_president
+			has_completed_focus = FAT_crisis_averted
+		}
+	}
+	option = {
+		name = griffonRepublic.12.a
+		hidden_effect = {
+
+			country_event = { id = griffonRepublic.13 days = 65 }
+		}
+	}
+	option = {
+		name = griffonRepublic.12.b
+		add_political_power = -200
+		hidden_effect = {
+			country_event = { id = griffonRepublic.13 days = 120 }
+		}
+	}
+}
+
+#RIP notification
+country_event = {
+	id = griffonRepublic.13
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.13"}
+	title = griffonRepublic.13.t
+	desc = griffonRepublic.13.d
+	picture = GFX_event_griffon_mountain
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		is_ai = no
+		NOT = {
+			has_completed_focus = FAT_loyality_to_the_republic
+			has_completed_focus = FAT_loyality_to_the_president
+			has_completed_focus = FAT_crisis_averted
+		}
+	}
+	option = {
+		name = griffonRepublic.13.a
+		add_political_power = -200
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.15
+		}
+		add_popularity = {
+			ideology = neutrality
+			popularity = -0.1
+		}
+		hidden_effect = {
+			#			country_event = griffonRepublic.17
+			if = {
+				limit = {
+					has_civil_war = no
+					NOT = { country_exists = FAW }
+				}
+				set_country_flag = FAT_warlord_war
+				#Uprising 1
+				country_event = griffonRepublic.14
+				#Uprising 2
+				country_event = { id = griffonRepublic.16 hours = 25 }
+			}
+		}
+	}
+}
+
+#Uprising 1
+country_event = {
+	id = griffonRepublic.14
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.14"}
+	hidden = yes
+	is_triggered_only = yes
+	option = {
+		start_civil_war = {
+			ideology = fascism
+			size = 0.45
+			states = { 449 432 557 548 556 450 }
+		}
+		random_other_country = {
+			limit = {
+				original_tag = FAT
+				has_government = fascism
+			}
+			set_country_flag = do_not_merge_in_civil_war
+			every_unit_leader = {
+				limit = {
+					OR = {
+						has_id = 800
+						has_id = 802
+					}
+				}
+				set_nationality = ROOT
+			}
+			save_event_target_as = FAW_warlord_1
+			country_event = { id = griffonRepublic.15 hours = 1 }
+		}
+		random_unit_leader = {
+			limit = { has_id = 801 }
+			set_nationality = event_target:FAW_warlord_1
+		}
+	}
+}
+
+#Supporting Event for Uprising 1
+country_event = {
+	id = griffonRepublic.15
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.15"}
+	hidden = yes
+	is_triggered_only = yes
+	option = {
+		every_owned_state = {
+			set_state_flag = FAW_state
+		}
+		FAW = {
+			every_state = {
+				limit = { is_core_of = FAT }
+				add_core_of = FAW
+			}
+			transfer_state = 449
+			country_event = { id = griffonRepublic.150 hours = 2 }
+			ROOT = {
+				every_unit_leader = {
+					set_nationality = FAW
+				}
+			}
+			set_country_flag = have_regular_puppets
+			ROOT = {
+				set_country_flag = { flag = bypass_on_peaceconference_ended days = 1 value = 1 }
+				white_peace = FAT
+			}
+			annex_country = { target = ROOT transfer_troops = yes }
+			FAT = {
+				FAW = { transfer_technology = yes }
+				if = {
+					limit = { has_idea = GRW_risk_of_famine }
+					FAW = { add_ideas = GRW_risk_of_famine }
+				}
+				else_if = {
+					limit = { has_idea = GRW_famine_start }
+					FAW = { add_ideas = GRW_famine_start }
+				}
+				else_if = {
+					limit = { has_idea = GRW_famine }
+					FAW = { add_ideas = GRW_famine }
+				}
+				if = {
+					limit = { has_idea = FAT_Chaos_Idea }
+					FAW = { add_ideas = FAT_Chaos_Idea }
+				}
+				else_if = {
+					limit = { has_idea = FAT_Chaos_Idea1 }
+					FAW = { add_ideas = FAT_Chaos_Idea1 }
+				}
+				else_if = {
+					limit = { has_idea = FAT_Chaos_Idea2 }
+					FAW = { add_ideas = FAT_Chaos_Idea2 }
+				}
+				if = {
+					limit = { has_idea = FAT_unruly_army_Idea }
+					FAW = { add_ideas = FAT_unruly_army_Idea }
+				}
+				else_if = {
+					limit = { has_idea = FAT_unruly_army_Idea1 }
+					FAW = { add_ideas = FAT_unruly_army_Idea1 }
+				}
+				else_if = {
+					limit = { has_idea = FAT_unruly_army_Idea2 }
+					FAW = { add_ideas = FAT_unruly_army_Idea2 }
+				}
+			}
+			declare_war_on = { target = FAT type = annex_everything }
+		}
+	}
+}
+
+country_event = { #Add cores/claims
+	id = griffonRepublic.150
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.150"}
+	hidden = yes
+
+	is_triggered_only = yes
+
+	option = {
+		every_state = {
+			limit = { has_state_flag = FAW_state }
+			FAW = { transfer_state = PREV }
+			clr_state_flag = FAW_state
+		}
+	}
+
+
+}
+
+#Uprising 2 - This will spawn as a generic CW (D01 or equivalent)
+country_event = {
+	id = griffonRepublic.16
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.16"}
+	hidden = yes
+	is_triggered_only = yes
+	option = {
+		create_country_leader = {
+			name = "Claus Rosewing"
+
+			picture = "warlord_2.tga"
+			expire = "1965.1.1"
+			ideology = fascism_ideology
+			traits = {
+
+			}
+		}
+		start_civil_war = {
+			ideology = fascism
+			size = 0.82
+			states = { 548 480 474 583 582 }
+		}
+		random_other_country = {
+			limit = {
+				original_tag = FAT
+				has_government = fascism
+			}
+			random_unit_leader = {
+				limit = { has_id = 800 }
+				set_nationality = ROOT
+			}
+			save_event_target_as = FAW_warlord_2
+			set_country_flag = have_regular_puppets
+			declare_war_on = { target = FAW type = annex_everything }
+		}
+		random_unit_leader = {
+			limit = { has_id = 802 }
+			set_nationality = event_target:FAW_warlord_2
+		}
+	}
+}
+
+# country_event = { Redundant - moved to 13
+	# id = griffonRepublic.17
+
+	# hidden = yes
+	# is_triggered_only = yes
+	# trigger = {
+		# has_civil_war = no
+		# NOT = { country_exists = FAW }
+		# }
+	# option = {
+		# set_country_flag = FAT_warlord_war
+		# country_event = griffonRepublic.14
+		# country_event = { id = griffonRepublic.16 hours = 12 }
+		# }
+	# }
+
+#Rosewing Rebels
+country_event = {
+	id = griffonRepublic.18
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.18"}
+	title = griffonRepublic.18.t
+	desc = griffonRepublic.18.d
+	picture =GFX_event_griffon_back
+	is_triggered_only = yes
+	option = {
+		name = griffonRepublic.18.a
+		hidden_effect = {
+			random_list = {
+				20 = {
+					country_event = { id = griffonRepublic.19 days = 5 }
+				}
+				60 = {
+					country_event = { id = griffonRepublic.199 days = 5 }
+				}
+				10 = {
+					country_event = { id = griffonRepublic.198 days = 5 }
+				}
+			}
+		}
+	}
+}
+
+### End Civil War Chain ###
+
+#Rosewing shoots on sight
+country_event = {
+	id = griffonRepublic.19
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.19"}
+	title = griffonRepublic.19.t
+	desc = griffonRepublic.19.d
+	picture = GFX_event_griffon_back
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = griffonRepublic.19.a
+		#remove leader
+		set_country_flag = FAT_bypass_recovery
+		start_civil_war = {
+			ideology = fascism
+			size = 0.2
+			states = { 480 474 }
+			keep_unit_leaders_trigger = {
+				always = yes
+			}
+		}
+		hidden_effect = {
+			random_other_country = {
+				limit = { original_tag = FAW }
+				save_event_target_as = FAW_cw
+			}
+			random_unit_leader = {
+				limit = {
+					has_id = 801
+				}
+				set_nationality = event_target:FAW_cw
+			}
+		}
+	}
+}
+
+#Rosewing turns over a new leaf
+country_event = {
+	id = griffonRepublic.199
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.199"}
+	title = griffonRepublic.199.t
+	desc = griffonRepublic.199.d
+	picture =GFX_event_griffon_back
+	is_triggered_only = yes
+	option = {
+		name = griffonRepublic.199.a
+		add_political_power = 100
+	}
+}
+
+#Rosewing arrested after firefight
+country_event = {
+	id = griffonRepublic.198
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.198"}
+	title = griffonRepublic.198.t
+	desc = griffonRepublic.198.d
+	picture =GFX_event_griffon_back
+	is_triggered_only = yes
+
+	option = {
+		name = griffonRepublic.198.a
+		add_political_power = -20
+		if = {
+			limit = { has_unit_leader = 801 }
+			remove_unit_leader = 801
+		}
+	}
+}
+
+#Banditry removal L1
+country_event = {
+	id = griffonRepublic.20
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.20"}
+	title = griffonRepublic.20.t
+	desc = griffonRepublic.20.d
+	picture = GFX_event_griffon_back
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = griffonRepublic.20.a
+		swap_ideas = { remove_idea = FAT_Chaos_Idea add_idea = FAT_Chaos_Idea1 }
+		hidden_effect = {
+			if = {
+				limit = {
+					OR = {
+						has_completed_focus = FAT_secure_the_countryside
+						has_completed_focus = FAT_anti_banditry_tactics
+					}
+				}
+				country_event = {
+					id = griffonRepublic.21
+					days = 10
+					random = 720 #days to hours applied
+				}
+			}
+			else = {
+				country_event = {
+					id = griffonRepublic.21
+					days = 15
+					random = 1200 #days to hours applied
+				}
+			}
+		}
+	}
+}
+
+#Banditry Removal L2
+country_event = {
+	id = griffonRepublic.21
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.21"}
+	title = griffonRepublic.21.t
+	desc = griffonRepublic.21.d
+	picture = GFX_event_griffon_back
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = griffonRepublic.21.a
+		swap_ideas = {
+			remove_idea = FAT_Chaos_Idea1
+			add_idea = FAT_Chaos_Idea2
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					OR = {
+						has_completed_focus = FAT_secure_the_countryside
+						has_completed_focus = FAT_anti_banditry_tactics
+					}
+				}
+				country_event = {
+					id = griffonRepublic.22
+					days = 10
+					random = 720 #days to hours applied
+				}
+			}
+			else = {
+				country_event = {
+					id = griffonRepublic.22
+					days = 15
+					random = 1200 #days to hours applied
+				}
+			}
+		}
+	}
+}
+
+#Banditry Removal L3
+country_event = {
+	id = griffonRepublic.22
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.22"}
+	title = griffonRepublic.22.t
+	desc = griffonRepublic.22.d
+	picture = GFX_event_griffon_back
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = griffonRepublic.22.a
+		remove_ideas = FAT_Chaos_Idea2
+	}
+}
+
+## Famine Starts #
+country_event = {
+	id = griffonRepublic.42
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.42"}
+	title = griffonRepublic.42.t
+	desc = griffonRepublic.42.d
+	picture = GFX_event_griffon_mountain
+
+	trigger = {
+		date > 1008.8.1
+		original_tag = FAT
+		has_idea = GRW_risk_of_famine
+	}
+	fire_only_once = yes
+	mean_time_to_happen = {
+		months = 8
+	}
+	option = { ## yes
+		name = griffonRepublic.42.a
+		swap_ideas = {
+			remove_idea = GRW_risk_of_famine
+			add_idea = GRW_famine_start
+		}
+	}
+}
+
+#Famines Worsens
+country_event = {
+	id = griffonRepublic.43
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.43"}
+	title = griffonRepublic.43.t
+	desc = griffonRepublic.43.d
+	picture = GFX_event_griffon_mountain
+
+	trigger = {
+		original_tag = FAT
+		has_idea = GRW_famine_start
+		NOT = {
+			has_completed_focus = FAT_feed_the_hungry
+			has_completed_focus = FAT_distribute_food
+		}
+	}
+	fire_only_once = yes
+	mean_time_to_happen = {
+		months = 8
+	}
+	option = { ## yes
+		name = griffonRepublic.43.a
+		swap_ideas = { add_idea = GRW_famine remove_idea = GRW_famine_start }
+	}
+}
+
+#Famine Reduced
+country_event = {
+	id = griffonRepublic.44
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.44"}
+	title = griffonRepublic.44.t
+	desc = griffonRepublic.44.d
+	picture = GFX_event_griffon_mountain
+
+	is_triggered_only = yes
+
+	option = { ## yes
+		name = griffonRepublic.44.a
+		if = {
+			limit = { has_idea = GRW_famine }
+			swap_ideas = {
+				add_idea = GRW_famine_start
+				remove_idea = GRW_famine
+			}
+			hidden_effect = {
+				country_event = {
+					id = griffonRepublic.45
+					days = 5
+					random = 480 #days to hours applied
+				}
+			}
+		}
+		else = { remove_ideas = GRW_famine_start }
+	}
+}
+#Famine Removed
+country_event = {
+	id = griffonRepublic.45
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.45"}
+	title = griffonRepublic.45.t
+	desc = griffonRepublic.45.d
+	picture = GFX_event_griffon_mountain
+
+	is_triggered_only = yes
+
+	option = { ## yes
+		name = griffonRepublic.45.a
+		remove_ideas = GRW_famine_start
+	}
+}
+
+#VEDINA QUESTION
+country_event = {
+	id = griffonRepublic.50
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.50"}
+	title = griffonRepublic.50.t
+	desc = griffonRepublic.50.d
+	picture = GFX_event_griffon_mountain
+
+	is_triggered_only = yes
+	#fire_only_once = yes
+
+	option = {
+		name = griffonRepublic.50.a
+		trigger = { VED = { is_subject = no } }
+		VED = {
+			country_event = { days = 1 id = griffonRepublic.51 }
+		}
+		ai_chance = {
+			modifier = {
+				factor = 0
+				VED = {
+					OR = {
+						has_government = fascism
+						has_government = communism
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = griffonRepublic.50.b
+		create_wargoal = { type = annex_everything target = VED }
+	}
+}
+
+country_event = {
+	id = griffonRepublic.51
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.51"}
+	title = griffonRepublic.51.t
+	desc = griffonRepublic.51.d
+	picture = GFX_event_griffon_mountain
+
+	is_triggered_only = yes
+	#fire_only_once = yes
+
+	option = {
+		name = griffonRepublic.51.a
+		FROM = {
+			effect_tooltip = { add_to_faction = ROOT }
+			country_event = { days = 1 id = griffonRepublic.52 }
+		}
+		ai_chance = {
+			modifier = {
+				factor = 0
+				is_in_faction = yes
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = fascism
+					has_government = communism
+				}
+			}
+			modifier = {
+				factor = 0.5
+				has_government = neutrality
+			}
+		}
+	}
+
+	option = {
+		name = griffonRepublic.51.b
+		FROM = {
+			country_event = { days = 1 id = griffonRepublic.53 }
+		}
+	}
+}
+
+country_event = {
+	id = griffonRepublic.52
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.52"}
+	title = griffonRepublic.52.t
+	desc = griffonRepublic.52.d
+	picture = GFX_event_griffon_mountain
+
+	is_triggered_only = yes
+	#fire_only_once = yes
+
+	option = {
+		name = griffonRepublic.52.a
+		add_opinion_modifier = { target = FROM modifier = FAT_republican_pact_mod }
+		reverse_add_opinion_modifier = { target = FROM modifier = FAT_republican_pact_mod }
+		hidden_effect = {
+			add_ai_strategy = {
+				type = alliance
+				id = FROM
+				value = 999
+			}
+			FROM = {
+				add_ai_strategy = {
+					type = alliance
+					id = ROOT
+					value = 999
+				}
+			}
+		}
+		add_to_faction = FROM
+	}
+}
+
+country_event = {
+	id = griffonRepublic.53
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.53"}
+	title = griffonRepublic.53.t
+	desc = griffonRepublic.53.d
+	picture = GFX_event_griffon_mountain
+
+	is_triggered_only = yes
+	#fire_only_once = yes
+
+	option = {
+		name = griffonRepublic.53.a
+	}
+}
+
+##INTEGRATION EVENTS
+
+country_event = {
+	id = griffonRepublic.54
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.54"}
+	title = griffonRepublic.54.t
+	desc = griffonRepublic.54.d
+	picture = GFX_event_griffon_mountain
+
+	is_triggered_only = yes
+	#fire_only_once = yes
+
+	option = {
+		name = griffonRepublic.54.a
+		FROM = {
+			effect_tooltip = { puppet = ROOT }
+			country_event = { days = 1 id = griffonRepublic.55 }
+		}
+		ai_chance =  {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				FROM = { has_idea = FAT_griffonian_alliance_idea }
+			}
+			modifier = {
+				factor = 0.75
+				FROM = { has_idea = FAT_centralized_republic_idea }
+			}
+			modifier = {
+				strength_ratio = { tag = FROM ratio < 0.8 }
+				factor = 2
+			}
+			modifier = {
+				strength_ratio = { tag = FROM ratio < 0.4 }
+				factor = 5
+			}
+		}
+	}
+	option = {
+		name = griffonRepublic.54.b
+		FROM = {
+			country_event = { days = 1 id = griffonRepublic.56 }
+		}
+		ai_chance =  {
+			factor = 3
+		}
+	}
+}
+
+country_event = {
+
+	id = griffonRepublic.55
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.55"}
+	title = griffonRepublic.55.t
+	desc = griffonRepublic.55.d
+	picture = GFX_event_griffon_mountain
+
+	is_triggered_only = yes
+	#fire_only_once = yes
+
+	option = {
+		name = griffonRepublic.55.a
+		puppet = FROM
+		if = {
+			limit = {
+				has_idea = FAT_decentralized_republic_idea
+			}
+			if = {
+				limit = { has_dlc = "Together for Victory" }
+				set_autonomy = { target = FROM autonomy_state = autonomy_integrated_puppet }
+				FROM = {
+					add_ideas = FAT_decentralized_republic_puppet
+					add_to_tech_sharing_group = FAT_research_group
+				}
+				else = { FROM = { add_ideas = FAT_decentralized_republic_puppet_no_TfV } }
+			}
+		}
+		if = {
+			limit = {
+				has_idea = FAT_griffonian_alliance_idea
+			}
+			if = {
+				limit = { has_dlc = "Together for Victory" }
+				set_autonomy = { target = FROM autonomy_state = autonomy_dominion }
+				FROM = {  add_to_tech_sharing_group = FAT_research_group }
+			}
+		}
+	}
+}
+
+country_event = {
+
+	id = griffonRepublic.56
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.56"}
+	title = griffonRepublic.56.t
+	desc = griffonRepublic.56.d
+	picture = GFX_event_griffon_mountain
+
+	is_triggered_only = yes
+	#fire_only_once = yes
+
+	option = {
+		name = griffonRepublic.56.a
+		remove_from_faction = FROM
+		ai_chance =  {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_opinion = { target = FROM value > 50 }
+			}
+		}
+	}
+	option = {
+		name = griffonRepublic.56.b
+	}
+}
+
+###FLAVOUR EVENTS
+
+country_event = {
+
+	id = griffonRepublic.60
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.60"}
+	title = griffonRepublic.60.t
+	desc = griffonRepublic.60.d
+	picture = GFX_event_griffon_mountain
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = griffonRepublic.60.a
+	}
+}
+
+country_event = {
+
+	id = griffonRepublic.61
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.61"}
+	title = griffonRepublic.61.t
+	desc = griffonRepublic.61.d
+	picture = GFX_event_griffon_mountain
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = griffonRepublic.61.a
+	}
+}
+
+country_event = {
+
+	id = griffonRepublic.62
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.62"}
+	title = griffonRepublic.62.t
+	desc = griffonRepublic.62.d
+	picture = GFX_event_griffon_mountain
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = griffonRepublic.62.a
+	}
+}
+
+country_event = {
+
+	id = griffonRepublic.63
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.63"}
+	title = griffonRepublic.63.t
+	desc = griffonRepublic.63.d
+	picture = GFX_event_griffon_mountain
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = griffonRepublic.63.a
+	}
+}
+
+country_event = {
+
+	id = griffonRepublic.64
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.64"}
+	title = griffonRepublic.64.t
+	desc = griffonRepublic.64.d
+	picture = GFX_event_griffon_mountain
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = griffonRepublic.64.a
+	}
+}
+
+country_event = {
+
+	id = griffonRepublic.65
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.65"}
+	title = griffonRepublic.65.t
+	desc = griffonRepublic.65.d
+	picture = GFX_event_griffon_mountain
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = griffonRepublic.65.a
+	}
+}
+
+#focus tree
+#tricolor over griffenheim
+country_event = {
+
+	id = griffonRepublic.67
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.67"}
+	title = griffonRepublic.67.t
+	desc = griffonRepublic.67.d
+	picture = GFX_event_griffon_mountain
+	trigger = {
+		tag = FAT
+		has_completed_focus = FAT_tricolor_over_griffenheim
+		is_subject = no
+		is_faction_leader = yes
+	}
+	immediate = {
+		hidden_effect = {
+			news_event = griffonRepublicNews.2
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	fire_only_once = yes
+	#A centralized republic
+	option = {
+		name = griffonRepublic.67.a
+		add_ideas = FAT_centralized_republic_idea
+	}
+	#A decentralized republic
+	option = {
+		name = griffonRepublic.67.b
+		add_ideas = FAT_decentralized_republic_idea
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			add_to_tech_sharing_group = FAT_research_group
+		}
+		every_other_country = {
+			limit = { is_subject_of = ROOT }
+			if = {
+				limit = { has_dlc = "Together for Victory" }
+				ROOT = { set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet } }
+				add_ideas = FAT_decentralized_republic_puppet
+				add_to_tech_sharing_group = FAT_research_group
+			}
+			else = {
+				add_ideas = FAT_decentralized_republic_puppet_no_TfV
+			}
+		}
+	}
+	#Griffonian alliance
+	option = {
+		name = griffonRepublic.67.c
+		add_ideas = FAT_griffonian_alliance_idea
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			add_to_tech_sharing_group = FAT_research_group
+		}
+		every_other_country = {
+			limit = {
+				is_griffon_continent_griffon_country = yes
+				has_country_flag = have_regular_puppets
+			}
+			add_opinion_modifier = { target = ROOT modifier = medium_increase }
+		}
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			every_other_country = {
+				limit = { OR = { is_subject_of = ROOT is_in_faction_with = ROOT } }
+				ROOT = { set_autonomy = { target = PREV autonomy_state = autonomy_dominion } }
+				add_to_tech_sharing_group = FAT_research_group
+			}
+		}
+	}
+}
+#three principles
+country_event = {
+
+	id = griffonRepublic.68
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.68"}
+	title = griffonRepublic.68.t
+	desc = griffonRepublic.68.d
+	picture = GFX_event_griffon_mountain
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = griffonRepublic.68.a
+		add_political_power = 100
+	}
+}
+#elections
+country_event = {
+
+	id = griffonRepublic.69
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.69"}
+	title = griffonRepublic.69.t
+	desc = griffonRepublic.69.d
+	picture = GFX_event_griffon_mountain
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			retire_country_leader = yes
+			create_country_leader = {
+				name = "Heinrich Kingfeather"
+				desc = ""
+				picture = "Neu.tga"
+				expire = "1965.1.1"
+				ideology = centrism
+				traits = {
+					captain_of_industry
+					silent_workhorse
+					democratic_sympathies
+				}
+			}
+			create_country_leader = {
+				name = "Schnabel Sunglider"
+				desc = ""
+				picture = "Dem.tga"
+				expire = "1965.1.1"
+				ideology = liberalism
+				traits = {
+					ideological_crusader
+					war_industrialist
+				}
+			}
+		}
+	}
+
+	option = {
+		name = griffonRepublic.69.a
+		if = {
+			limit = { NOT = { has_government = neutrality } }
+			set_politics = { ruling_party = neutrality elections_allowed = no }
+		}
+		if = {
+			limit = { neutrality < 0.35 }
+			set_temp_variable = { add_pop = 0.5 }
+			subtract_from_temp_variable = { add_pop = party_popularity@neutrality }
+			add_popularity = { ideology = neutrality popularity = add_pop }
+		}
+		else = {
+			add_popularity = { ideology = neutrality popularity = 0.15 }
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				check_variable = { party_popularity@neutrality < party_popularity@democratic }
+			}
+		}
+	}
+	option = {
+		name = griffonRepublic.69.b
+		if = {
+			limit = { NOT = { has_government = democratic } }
+			set_politics = { ruling_party = democratic elections_allowed = no }
+		}
+		if = {
+			limit = { democratic < 0.35 }
+			set_temp_variable = { add_pop = 0.5 }
+			subtract_from_temp_variable = { add_pop = party_popularity@democratic }
+			add_popularity = { ideology = democratic popularity = add_pop }
+
+		}
+		else = {
+			add_popularity = { ideology = democratic popularity = 0.15 }
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				check_variable = { party_popularity@democratic < party_popularity@neutrality }
+			}
+		}
+	}
+}
+#a dream realized
+country_event = {
+	id = griffonRepublic.70
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.70"}
+	title = griffonRepublic.70.t
+	desc = griffonRepublic.70.d
+	picture = GFX_event_griffon_mountain
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = griffonRepublic.70.a
+		if = {
+			limit = { has_unit_leader = 800 }
+			remove_unit_leader = 800
+		}
+		add_ideas = FAT_Kemerskais_legacy
+		unlock_decision_tooltip = FAT_rename_cloudbury
+		hidden_effect = { news_event = { id = griffonRepublicNews.3 days = 2 } }
+	}
+}
+
+#military doctrine choice
+country_event = {
+
+	id = griffonRepublic.71
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.71"}
+	title = griffonRepublic.71.t
+	desc = griffonRepublic.71.d
+	picture = GFX_event_griffon_mountain
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #grand battle/Warlord 1
+		name = griffonRepublic.71.a
+		hidden_effect = {
+			set_country_flag = FAT_grand_doctrine
+		}
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_tech = mass_assault
+					has_tech = superior_firepower
+					is_researching_technology = mass_assault
+					is_researching_technology = superior_firepower
+				}
+			}
+		}
+	}
+	option = { #superior firepower/President
+		name = griffonRepublic.71.b
+		hidden_effect = {
+			set_country_flag = FAT_superior_doctrine
+		}
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_tech = mass_assault
+					has_tech = trench_warfare
+					is_researching_technology = mass_assault
+					is_researching_technology = trench_warfare
+				}
+			}
+		}
+	}
+	option = { #mass assault/ Warlord 2
+		name = griffonRepublic.71.c
+		hidden_effect = {
+			set_country_flag = FAT_mass_doctrine
+		}
+		ai_chance = {
+			modifier = {
+				factor = 0
+				OR = {
+					has_tech = superior_firepower
+					has_tech = trench_warfare
+					is_researching_technology = trench_warfare
+					is_researching_technology = superior_firepower
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = griffonRepublic.79
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.79"}
+	hidden = yes
+	is_triggered_only = yes
+
+	option = {
+		every_other_country = {
+			limit = { has_idea = FAT_republican_pact }
+			country_event = { id = griffonRepublic.80 days = 1 }
+		}
+	}
+}
+
+#republican pact
+# [From.GetName] Calls Pact Members to War
+country_event = {
+	id = griffonRepublic.80
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.80"}
+	title = griffonRepublic.80.t
+	desc = griffonRepublic.80.d
+	picture = GFX_report_event_soviet_tanks
+
+	is_triggered_only = yes
+
+	#immediate = {
+		#	remove_ideas = anti_soviet_pact
+		#}
+
+	option = {
+		name = griffonRepublic.80.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0.75
+				strength_ratio = { tag = event_target:griffonian_empire ratio < 0.7 }
+			}
+			modifier = {
+				factor = 0.75
+				strength_ratio = { tag = event_target:griffonian_empire ratio < 0.4 }
+			}
+			modifier = {
+				factor = 1.2
+				has_opinion = { target = FAT value > 50 }
+			}
+			modifier = {
+				factor = 1.2
+				has_opinion = { target = FAT value > 75 }
+			}
+		}
+		event_target:griffonian_empire = {
+			ROOT = {
+				add_to_war = {
+					targeted_alliance = FROM
+					enemy = PREV
+				}
+			}
+		}
+	}
+
+	option = {
+		name = griffonRepublic.80.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				has_opinion = { target = FAT value < -25 }
+			}
+			modifier = {
+				factor = 2.5
+				has_opinion = { target = FAT value < -50 }
+			}
+		}
+		remove_ideas = FAT_republican_pact
+		every_other_country = {
+			limit = { has_idea = FAT_republican_pact }
+			add_opinion_modifier = { target = FROM modifier = FAT_republican_pact_call_refused }
+		}
+		hidden_effect = { country_event = griffonRepublic.81 }
+		event_target:griffonian_empire = { remove_opinion_modifier = { target = FROM modifier = FAT_republican_pact_against_us } }
+	}
+}
+
+country_event = {
+	id = griffonRepublic.81
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.81"}
+	hidden = yes
+	trigger = {
+		has_opinion_modifier = FAT_republican_pact_mod
+		NOT = { has_idea = FAT_republican_pact }
+	}
+	mean_time_to_happen = { months = 1 }
+	immediate = {
+		every_other_country = {
+			limit = { has_opinion_modifier = FAT_republican_pact_mod }
+			hidden_effect = {
+				FROM = { remove_opinion_modifier = { target = PREV modifier = FAT_republican_pact_mod } }
+				remove_opinion_modifier = { target = FROM modifier = FAT_republican_pact_mod }
+			}
+		}
+	}
+	option = {}
+}
+
+#Vérany comes to become a general
+country_event = {
+	id = griffonRepublic.83
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.83"}
+	title = griffonRepublic.83.t
+	desc = griffonRepublic.83.d
+	picture = GFX_event_griffon_back
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		any_owned_state = {
+			is_controlled_by = ROOT
+			is_coastal = yes
+		}
+	}
+
+	option = {
+		name = griffonRepublic.83.a
+		create_corps_commander = {
+			name = "Théodore Vérany"
+			portrait_path = "gfx/leaders/JER/DemocraticLeader.tga"
+			traits = { war_hero media_personality trickster }
+			skill = 1
+			id = 75654
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 2
+		}
+		add_manpower = 2500
+	}
+
+	option = {
+		name = griffonRepublic.83.b
+		add_manpower = 2500
+		add_political_power = 5
+	}
+}
+
+#verany leaves
+country_event = {
+	id = griffonRepublic.84
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.84"}
+	hidden = yes
+
+	fire_only_once = yes
+	mean_time_to_happen = { months = 1 }
+	trigger = {
+		has_unit_leader = 75654
+		JER = {
+			exists = yes
+			OR = {
+				has_government = democratic
+				has_government = communism
+			}
+			NOT = { has_country_flag = JER_AWPR_wins }
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = { has_unit_leader = 75654 }
+			remove_unit_leader = 75654
+		}
+	}
+}
+
+#country gets demand for griffenheim
+country_event = {
+	id = griffonRepublic.85
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.85"}
+	title = griffonRepublic.85.t
+	desc = griffonRepublic.85.d
+	picture = GFX_event_griffon_mountain
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #agree
+		name = griffonRepublic.85.a
+		effect_tooltip = {
+			FROM = { transfer_state = 382 }
+		}
+		hidden_effect = {
+			FROM = {
+				country_event = { id = griffonRepublic.86 days = 2 }
+			}
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				FROM = { is_faction_leader = yes }
+				is_in_faction_with = FROM
+				factor = 4
+			}
+			modifier = {
+				has_opinion = { target = FROM value > 50 }
+				factor = 1.5
+			}
+			modifier = {
+				strength_ratio = { tag = FROM ratio < 0.8 }
+				factor = 1.5
+			}
+			modifier = {
+				strength_ratio = { tag = FROM ratio < 0.5 }
+				factor = 3
+			}
+			modifier = {
+				has_government = democratic
+				factor = 1.25
+			}
+			modifier = {
+				OR = {
+					has_government = fascism
+					has_government = communism
+				}
+				factor = 0.75
+			}
+		}
+	}
+
+	option = { #disagree
+		name = griffonRepublic.85.b
+		trigger = {
+			NOT = { is_subject_of = FROM }
+		}
+		if = {
+			limit = {
+				is_in_faction_with = FROM
+				FROM = { is_faction_leader = yes }
+			}
+			FROM = { remove_from_faction = ROOT }
+		}
+		effect_tooltip = {
+			FROM = {
+				create_faction = "FAT_faction_pga"
+				every_other_country = {
+					limit = {
+						is_faction_leader = no
+						OR = {
+							is_subject = no
+							is_subject_of = FROM
+						}
+						is_in_faction_with = ROOT
+						has_country_flag = FAT_minor_to_integrate
+					}
+					leave_faction = yes
+					FROM = { add_to_faction = PREV }
+				}
+				create_wargoal = {
+					type = take_state_focus
+					target = ROOT
+					generator = { 382 }
+				}
+				add_opinion_modifier = { target = ROOT modifier = hostility }
+			}
+		}
+		hidden_effect = {
+			FROM = {
+				country_event = { id = griffonRepublic.87 days = 2 }
+			}
+		}
+		ai_chance = {
+			factor = 2
+			modifier = {
+				factor = 3
+				382 = { is_core_of = ROOT }
+			}
+			modifier = {
+				strength_ratio = { tag = FROM ratio > 0.8 }
+				factor = 1.5
+			}
+			modifier = {
+				strength_ratio = { tag = FROM ratio > 1 }
+				factor = 2
+			}
+			modifier = {
+				strength_ratio = { tag = FROM ratio > 1.2 }
+				factor = 2
+			}
+			modifier = {
+				has_opinion = { target = FROM value < 0 }
+				factor = 1.5
+			}
+			modifier = {
+				is_griffon_continent_griffon_country = yes
+				NOT = { has_country_flag = have_regular_puppets }
+				factor = 2
+			}
+		}
+	}
+}
+
+#griffenheim transferred
+country_event = {
+	id = griffonRepublic.86
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.86"}
+	title = griffonRepublic.86.t
+	desc = griffonRepublic.86.d
+	picture = GFX_event_griffon_mountain
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #agree
+		name = griffonRepublic.86.a
+		transfer_state = 382
+	}
+}
+
+#griffenheim not transferred
+country_event = {
+	id = griffonRepublic.87
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.87"}
+	title = griffonRepublic.87.t
+	desc = griffonRepublic.87.d
+	picture = GFX_event_griffon_mountain
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = griffonRepublic.87.a
+		effect_tooltip = {
+			leave_faction = yes
+		}
+		create_faction = "FAT_faction_pga"
+		every_other_country = {
+			limit = {
+				is_faction_leader = no
+				OR = {
+					is_subject = no
+					is_subject_of = ROOT
+				}
+				is_in_faction_with = FROM
+				has_country_flag = FAT_minor_to_integrate
+			}
+			leave_faction = yes
+			ROOT = { add_to_faction = PREV }
+		}
+		create_wargoal = {
+			type = take_state_focus
+			target = FROM
+			generator = { 382 }
+		}
+		add_opinion_modifier = { target = FROM modifier = hostility }
+	}
+}
+
+#Equestrian support
+country_event = {
+	id = griffonRepublic.90
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.90"}
+	title = griffonRepublic.90.t
+	desc = griffonRepublic.90.d
+	picture = GFX_event_griffon_back
+	is_triggered_only = yes
+	#diplo support and guns
+	option = {
+		name = griffonRepublic.90.a
+		trigger = {
+			has_equipment = { infantry_equipment > 500 }
+		}
+		hidden_effect = {
+			add_ai_strategy = {
+				type = support
+				id = "FAT"
+				value = 150
+			}
+			add_ai_strategy = {
+				type = befriend
+				id = "FAT"
+				value = 50
+			}
+		}
+		send_equipment = { target = FAT type = infantry_equipment amount = 500 }
+		effect_tooltip = {
+			FROM = {
+				add_opinion_modifier = { target = ROOT modifier = FAT_EQS_war_support }
+				add_opinion_modifier = { target = ROOT modifier = FAT_EQS_diplo_recognition }
+				reverse_add_opinion_modifier = { target = ROOT modifier = FAT_EQS_diplo_recognition }
+			}
+		}
+		reverse_add_opinion_modifier = { target = event_target:griffonian_empire modifier = FAT_EQS_war_support_enemies }
+		reverse_add_opinion_modifier = { target = event_target:griffonian_empire modifier = FAT_EQS_diplo_recognition_GRI }
+		hidden_effect = {
+			FROM = { country_event = { id = griffonRepublic.91 days = 4 } }
+			set_global_flag = EQS_recognized_FAT
+			news_event = { id = griffonRepublicNews.1 days = 1 }
+		}
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 2
+				has_war_with = event_target:griffonian_empire
+			}
+			modifier = {
+				factor = 0.1
+				eqs_has_civil_war = yes
+			}
+			modifier = {
+				factor = 0.5
+				has_opinion = { target = event_target:griffonian_empire value > 50 }
+			}
+			modifier = {
+				factor = 0
+				is_in_faction_with = event_target:griffonian_empire
+			}
+		}
+	}
+	#send guns
+	option = {
+		name = griffonRepublic.90.b
+		trigger = {
+			has_equipment = { infantry_equipment > 500 }
+		}
+		hidden_effect = {
+			add_ai_strategy = {
+				type = support
+				id = "FAT"
+				value = 150
+			}
+		}
+		send_equipment = { target = FAT type = infantry_equipment amount = 500 }
+		effect_tooltip = {
+			FROM = {
+				add_opinion_modifier = { target = ROOT modifier = FAT_EQS_war_support }
+			}
+		}
+		reverse_add_opinion_modifier = { target = event_target:griffonian_empire modifier = FAT_EQS_war_support_enemies }
+		hidden_effect = { FROM = { country_event = { id = griffonRepublic.92 days = 4 } } }
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 0.1
+				eqs_has_civil_war = yes
+			}
+			modifier = {
+				factor = 0.5
+				has_opinion = { target = event_target:griffonian_empire value > 50 }
+			}
+			modifier = {
+				factor = 0
+				is_in_faction_with = event_target:griffonian_empire
+			}
+		}
+	}
+	#diplo support
+	option = {
+		name = griffonRepublic.90.c
+		hidden_effect = {
+			add_ai_strategy = {
+				type = befriend
+				id = "FAT"
+				value = 50
+			}
+		}
+		effect_tooltip = {
+			FROM = {
+				add_opinion_modifier = { target = ROOT modifier = FAT_EQS_diplo_recognition }
+				reverse_add_opinion_modifier = { target = ROOT modifier = FAT_EQS_diplo_recognition }
+			}
+		}
+		reverse_add_opinion_modifier = { target = event_target:griffonian_empire modifier = FAT_EQS_diplo_recognition_GRI }
+		hidden_effect = {
+			FROM = { country_event = { id = griffonRepublic.93 days = 4 } }
+			set_global_flag = EQS_recognized_FAT
+			news_event = { id = griffonRepublicNews.1 days = 1 }
+		}
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 0.5
+				has_opinion = { target = event_target:griffonian_empire value > 50 }
+			}
+			modifier = {
+				factor = 0
+				is_in_faction_with = event_target:griffonian_empire
+			}
+		}
+	}
+	#nothing
+	option = {
+		name = griffonRepublic.90.e
+		effect_tooltip = {
+			FROM = {
+				add_opinion_modifier = { target = ROOT modifier = FAT_EQS_refused_war_support }
+			}
+		}
+		hidden_effect = { FROM = { country_event = { id = griffonRepublic.94 days = 4 } } }
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 0
+				has_war_with = event_target:griffonian_empire
+			}
+			modifier = {
+				factor = 3
+				eqs_has_civil_war = yes
+			}
+			modifier = {
+				factor = 0.5
+				has_opinion = { target = FROM value > 50 }
+			}
+			modifier = {
+				factor = 0
+				is_in_faction_with = FAT
+			}
+		}
+	}
+}
+
+country_event = {
+	id = griffonRepublic.91
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.91"}
+	title = griffonRepublic.91.t
+	desc = griffonRepublic.91.d
+	picture = GFX_event_griffon_back
+	is_triggered_only = yes
+	#diplo support and guns
+	option = {
+		name = griffonRepublic.91.a
+		add_political_power = 150
+		effect_tooltip = { FROM = { send_equipment = { target = FAT type = infantry_equipment amount = 500 } } }
+		add_opinion_modifier = { target = FROM modifier = FAT_EQS_war_support }
+		add_opinion_modifier = { target = FROM modifier = FAT_EQS_diplo_recognition }
+	}
+}
+
+country_event = {
+	id = griffonRepublic.92
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.92"}
+	title = griffonRepublic.92.t
+	desc = griffonRepublic.92.d
+	picture = GFX_event_griffon_back
+	is_triggered_only = yes
+	#guns
+	option = {
+		name = griffonRepublic.92.a
+		effect_tooltip = { FROM = { send_equipment = { target = FAT type = infantry_equipment amount = 500 } } }
+		add_opinion_modifier = { target = FROM modifier = FAT_EQS_war_support }
+	}
+}
+
+country_event = {
+	id = griffonRepublic.93
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.93"}
+	title = griffonRepublic.93.t
+	desc = griffonRepublic.93.d
+	picture = GFX_event_griffon_back
+	is_triggered_only = yes
+	#diplo support
+	option = {
+		name = griffonRepublic.93.a
+		add_political_power = 150
+		add_opinion_modifier = { target = FROM modifier = FAT_EQS_diplo_recognition }
+	}
+}
+
+country_event = {
+	id = griffonRepublic.94
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.94"}
+	title = griffonRepublic.94.t
+	desc = griffonRepublic.94.d
+	picture = GFX_event_griffon_back
+	is_triggered_only = yes
+	#nada
+	option = {
+		name = griffonRepublic.94.a
+		add_political_power = -20
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.1
+		}
+		add_opinion_modifier = { target = FROM modifier = FAT_EQS_refused_war_support }
+	}
+}
+
+country_event = {
+	id = griffonRepublic.95
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.95"}
+	title = griffonRepublic.95.t
+	desc = griffonRepublic.95.d
+	picture = GFX_event_griffon_back
+	is_triggered_only = yes
+	option = {
+		name = griffonRepublic.95.a
+		set_faction_name = "Pan-Griffonian Alliance"
+		FROM = {
+			set_faction_leader = yes
+			country_event = griffonRepublic.96
+		}
+		ai_chance = {
+			factor = 15
+			modifier = {
+				factor = 0.5
+				is_major = yes
+			}
+			modifier = {
+				factor = 0.2
+				strength_ratio = {
+					tag = FROM ratio > 0.8
+				}
+			}
+			modifier = {
+				factor = 2
+				strength_ratio = {
+					tag = FROM ratio < 0.5
+				}
+			}
+			modifier = {
+				factor = 2
+				has_opinion = { target = FROM value > 50 }
+			}
+			modifier = {
+				factor = 2
+				has_opinion = { target = FROM value > 75 }
+			}
+			modifier = {
+				factor = 0.5
+				has_opinion = { target = FROM value < 0 }
+			}
+		}
+	}
+	option = {
+		name = griffonRepublic.95.b
+		FROM = {
+			effect_tooltip = { 
+				leave_faction = yes 
+				create_faction = "FAT_faction_pga"
+				every_other_country = {
+					limit = {
+						is_faction_leader = no
+						OR = {
+							is_subject = no
+							is_subject_of = FROM
+						}
+						is_in_faction_with = ROOT
+						has_country_flag = FAT_minor_to_integrate
+					}
+					leave_faction = yes
+					FROM = { add_to_faction = PREV }
+				}
+			}
+			country_event = griffonRepublic.97
+		}
+		ai_chance = {
+			factor = 15
+		}
+	}
+}
+
+country_event = {
+	id = griffonRepublic.96
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.96"}
+	title = griffonRepublic.96.t
+	desc = griffonRepublic.96.d
+	picture = GFX_event_griffon_back
+	is_triggered_only = yes
+	#nada
+	option = {
+		name = griffonRepublic.96.a
+		effect_tooltip = {
+			set_faction_leader = yes
+			set_faction_name = "Pan-Griffonian Alliance"
+		}
+	}
+}
+
+country_event = {
+	id = griffonRepublic.97
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.97"}
+	title = griffonRepublic.97.t
+	desc = griffonRepublic.97.d
+	picture = GFX_event_griffon_back
+	is_triggered_only = yes
+	#nada
+	option = {
+		name = griffonRepublic.97.a
+		leave_faction = yes
+		create_faction = "FAT_faction_pga"
+		every_other_country = {
+			limit = {
+				is_faction_leader = no
+				OR = {
+					is_subject = no
+					is_subject_of = ROOT
+				}
+				is_in_faction_with = FROM
+				has_country_flag = FAT_minor_to_integrate
+			}
+			leave_faction = yes
+			ROOT = { add_to_faction = PREV }
+		}
+	}
+}
+
+#SRS cosmetic tag
+country_event = {
+
+	id = griffonRepublic.100
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.100"}
+	hidden = yes
+
+	is_triggered_only = yes
+	option = {
+		set_cosmetic_tag = SRS_FAT_puppet
+	}
+}
+
+country_event = {
+
+	id = griffonRepublic.101
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.101"}
+	hidden = yes
+
+	trigger = {
+		NOT = { is_subject_of = FAT }
+		has_cosmetic_tag = SRS_FAT_puppet
+	}
+
+	mean_time_to_happen = { days = 1 }
+
+	option = {
+		drop_cosmetic_tag = yes
+		reapply_secondary_cosmetic_tags = yes
+	}
+}
+
+#Merge if civil wars share ideology
+country_event = {
+
+	id = griffonRepublic.102
+	immediate = {log = "[GetDateText]: [Root.GetName]: event griffonRepublic.102"}
+	hidden = yes
+
+	trigger = {
+		original_tag = FAW
+		NOT = { has_government = fascism }
+		FAT = {
+			exists = yes
+			NOT = { has_war_with = FAW }
+			has_government = ROOT
+		}
+	}
+
+	mean_time_to_happen = { days = 1 }
+
+	option = {
+		FAT = {
+			if = {
+				limit = { is_ai = yes }
+				change_tag_from = ROOT
+			}
+			annex_country = { target = ROOT transfer_troops = yes }
+		}
+	}
+}
