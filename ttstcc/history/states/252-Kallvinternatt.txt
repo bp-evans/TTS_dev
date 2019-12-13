@@ -1,0 +1,33 @@
+
+state={
+	id=252
+	name="STATE_252"
+
+	history={
+		owner = ECH
+		add_core_of = ECH
+		victory_points = {
+			11509 30 
+		}
+		buildings = {
+			infrastructure = 8
+			industrial_complex = 4
+			arms_factory = 3
+			dockyard = 3
+			air_base = 1
+			11509 = {
+				naval_base = 5
+
+			}
+
+		}
+
+	}
+
+	provinces={
+		1485 1615 1782 3073 3732 10909 11509 
+	}
+	manpower=3150087
+	buildings_max_level_factor=1.900
+	state_category=metropolis
+}
