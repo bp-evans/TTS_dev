@@ -195,7 +195,7 @@ ideologies = {
 			"FACTION_NAME_NONALIGNED_5"
 		}
 
-		color = { 124 124 124 }
+		color = { 72 101 131 }
 
 		rules = {
 			can_force_government = no
@@ -259,11 +259,14 @@ ideologies = {
 		can_be_boosted = no
 		ai_democratic = yes # uses the democratic AI behaviour
 	}
-	national_communism = {
+	alt_left = {
 
 		types = {
-
+			oligarchic_collectivism = {
+			}
 			nazbol = {
+			}
+			national_stallionism = {
 			}
 
 		}
@@ -303,48 +306,5 @@ ideologies = {
 		can_be_boosted = no
 		ai_fascist = yes
 	}
-	national_communism = {
-
-		types = {
-
-			nazbol = {
-			}
-
-		}
-
-		dynamic_faction_names = {
-			"FACTION_NAME_NAZBOL_1"
-			"FACTION_NAME_NAZBOL_2"
-			"FACTION_NAME_NAZBOL_3"
-			"FACTION_NAME_NAZBOL_4"
-			"FACTION_NAME_NAZBOL_5"
-			"FACTION_NAME_NAZBOL_6"
-		}
-
-		color = { 73 0 0 }
-
-		rules = {
-			can_declare_war_on_same_ideology = no
-			can_force_government = no
-			can_send_volunteers = yes
-			can_puppet = yes
-			can_lower_tension = yes
-			can_only_justify_war_on_threat_country = yes
-			can_guarantee_other_ideologies = yes
-
-		}
-		rules = {
-			can_force_government = no
-			can_send_volunteers = yes
-			can_puppet = yes
-
-		}
-
-		modifiers = {
-			justify_war_goal_when_in_major_war_time = -0.80
-			send_volunteer_divisions_required = -0.25
-		}
-		can_be_boosted = no
-		ai_fascist = yes
-	}
+	
 }

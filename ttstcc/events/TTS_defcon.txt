@@ -1,0 +1,22 @@
+namespace = defcon
+
+news_event = {
+	id = defcon.1
+	immediate = {
+		decrease_defcon = yes
+	}
+	title = defcon.1.t
+	desc = defcon.1.d
+	picture = GFX_event_hearthswarming
+	major = yes
+	trigger = {
+		check_variable = {global.threat = 1}	
+	}
+	mean_time_to_happen = {
+			days = 1
+	}
+	option = {
+		name = defcon.1.a
+	}
+
+}

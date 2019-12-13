@@ -219,3 +219,7 @@ GAR = "countries/Gargoyleia.txt"
 CNT = "countries/Centauria.txt"
 TAR = "countries/Tartarus.txt"
 TRP = "countries/Tropico.txt"
+
+
+########### TTS Countries ##########
+ECH = "countries/CDR.txt"

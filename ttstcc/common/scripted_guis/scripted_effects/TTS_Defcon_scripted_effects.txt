@@ -1,0 +1,4 @@
+decrease_defcon = {
+	add_threat = -90
+	subtract_from_variable = { global.defcon_level = 1}
+}
