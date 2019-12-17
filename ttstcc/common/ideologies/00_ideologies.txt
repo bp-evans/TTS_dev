@@ -227,7 +227,9 @@ ideologies = {
 
 		types = {
 
-			reformist = {
+			progressivist = {
+			}
+			market_socialsm = {
 			}
 
 		}
@@ -264,11 +266,12 @@ ideologies = {
 		types = {
 			oligarchic_collectivism = {
 			}
-			nazbol = {
+			equalism = {
 			}
 			national_stallionism = {
 			}
-
+			red_metaphysical = {
+			}
 		}
 
 		dynamic_faction_names = {

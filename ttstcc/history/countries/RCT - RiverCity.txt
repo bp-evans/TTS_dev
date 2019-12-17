@@ -1,6 +1,6 @@
 ﻿capital = 619
 
-oob = "RCT_1007"
+oob = "RCT_1032"
 
 set_research_slots = 3
 
@@ -51,23 +51,58 @@ set_stability = 0.57
 set_war_support = 0.08
 
 add_ideas = {
-	outdated_industry
-	better_science_base
-	RCT_city_of_three_rivers
-	RCT_unstable_government
-	RIV_member_state
-	lack_of_scientists3
-	poverty4
+	equestria_of_the_east
+	house_of_cards
+	growing_separatism
+	reconstruction_after_great_patriotic_war
+	purple_plague_pandemic
 }
+
+if = {
+	limit = {
+		has_dlc = "Together for Victory"
+	}
+	set_autonomy = {
+		target = FBK
+		autonomous_state = autonomy_river_associate
+	}
+	set_autonomy = {
+		target = FIR
+		autonomous_state = autonomy_river_associate
+	}
+	set_autonomy = {
+		target = WAT
+		autonomous_state = autonomy_river_associate
+	}
+	set_autonomy = {
+		target = NCH
+		autonomous_state = autonomy_river_associate
+	}
+	set_autonomy = {
+		target = HLQ
+		autonomous_state = autonomy_river_occupation_zone
+	}
+	else = {
+		puppet = FBK
+		puppet = FIR
+		puppet = WAT
+		puppet = NCH
+		puppet = HLQ
+	}
+}
+
 set_country_flag = have_regular_puppets
 set_country_flag = better_science_base_unlocked
 set_cosmetic_tag = RIV_federation_mem
 
+
 set_popularities = {
-	democratic = 59
-	fascism = 0
-	communism = 36
-	neutrality = 5
+	democratic = 38
+	fascism = 6
+	communism = 15
+	neutrality = 19
+	reformism = 22
+	alt_left = 0
 }
 set_politics = {
 
@@ -84,18 +119,18 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = liberalism
 	traits = {
-
+		harmony_dillema
 	}
 }
 
 create_country_leader = {
-	name = "Nova Whirl"
-	desc = "POLITICS_NOVAWHIRL_DESC"
-	picture = "Nova_Whirl_Official.tga"
+	name = "River Whirl"
+	desc = "POLITICS_RIVERWHIRL_DESC"
+	picture = "River_Whirl.tga"
 	expire = "1965.1.1"
-	ideology = democratic_socialism
+	ideology = market_socialsm
 	traits = {
-
+		daughter
 	}
 }
 

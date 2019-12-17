@@ -64,48 +64,23 @@ set_politics = {
 	elections_allowed = no
 }
 add_ideas = {
-	lack_of_scientists2
-	pre_industrial_society
-	HLQ_knights_1
-	HLQ_reformists
-	HLQ_pony_minorities
+	
 }
-
-country_event = {
-	id = hellquill.1
-	days = 10
-}
-
-country_event = {
-	id = hellquill.2
-	days = 30
-}
+set_cosmetic_tag = RIV_federation_mem
 
 set_stability = 0.40
 set_war_support = 0.50
-add_opinion_modifier = {
-	target = LNS modifier = besties
-}
+
 create_country_leader = {
-	name = "Grandmaster Siegfried Trappenfeld"
-	desc = "retires_in_a_month_desc"
-	picture = "Hamster.tga"
+	name = "Artemis Rosamund"
+	desc = "Artemis_Rosamund_DESC"
+	picture = "gfx/leaders/RCT/Artemis_Rosamund.tga"
 	expire = "1965.1.1"
 	ideology = despotism
 	traits = {
 	}
 }
 
-create_country_leader = {
-	name = "Wingfried von Katerinburg"
-	desc = "griffon_hitler_desc"
-	picture = "Wingfried_von_Katerinburg.tga"
-	expire = "1965.1.1"
-	ideology = falangism
-	traits = {
-
-	}
-}
 
 create_country_leader = {
 	name = "August von Ortelsberg"

@@ -63,6 +63,11 @@ bitmapfonts = {
 		color = 0xffffffff
 	}
 	bitmapfont = {
+		name = "AgencyFBdark"
+		path = "gfx/fonts/AgencyFBdark"
+		color = 0xffffffff
+	}
+	bitmapfont = {
 		name = "JetSet"
 		path = "gfx/fonts/test2"
 		color = 0xffffffff

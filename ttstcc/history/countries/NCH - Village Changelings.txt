@@ -47,7 +47,7 @@ add_ideas = {
 	lack_of_scientists
 	NCH_idyllic_society
 }
-
+set_cosmetic_tag = RIV_federation_mem
 add_tech_bonus = {
 	name = specialised_drones
 	bonus = 1

@@ -1,4 +1,4 @@
-﻿capital = 344
+capital = 344
 
 oob = "CRY_1007"
 

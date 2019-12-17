@@ -17,16 +17,16 @@ set_popularities = {
 }
 set_politics = {
 
-	ruling_party = communism
+	ruling_party = democratic
 	last_election = "1006.09.09"
 	election_frequency = 60
 	elections_allowed = yes
 }
-add_ideas = { communal_society
+add_ideas = { 
 	WAT_holy_srings
 	council_of_keepers
 	lack_of_scientists }
-
+set_cosmetic_tag = RIV_federation_mem
 set_stability = 0.50
 
 set_war_support = 0.05

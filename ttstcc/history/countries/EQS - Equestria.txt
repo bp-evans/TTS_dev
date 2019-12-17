@@ -1,6 +1,6 @@
 ﻿capital = 3
 
-oob = "EQS_1007"
+oob = "EQS_1032"
 if = {
 	limit = {
 		has_dlc = "Man the Guns"

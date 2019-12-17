@@ -1,0 +1,35 @@
+#	Example:
+#
+#	example_trigger = {
+	#		tag = GER
+	#		is_ai = no
+	#	}
+#
+#
+#	In a script file:
+#
+#	trigger = {
+	#		example_trigger = yes
+	#	}
+#
+
+autonomy_river_associate = {
+	OR = { has_dlc = "Together for Victory" has_dlc = "Death or Dishonor" }
+	OR = {
+		tag = FBK
+		tag = WAT
+		tag = FIR
+	}
+	overlord = {
+		tag = RCT
+	}
+}
+autonomy_river_occupation_zone = {
+	OR = { has_dlc = "Together for Victory" has_dlc = "Death or Dishonor" }
+	OR = {
+		tag = HLQ
+	}
+	overlord = {
+		tag = RCT
+	}
+}

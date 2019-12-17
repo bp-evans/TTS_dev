@@ -1,18 +1,18 @@
 ﻿l_english:
  ## COUNTRY NAMES ##
- RCT_neutrality:0 "River Republic"
+ RCT_neutrality:0 "River Federation"
  RCT_fascism:0 "Free River State"
  RCT_communism:0 "Socialist River Republic"
- RCT_democratic:0 "River Republic"
- RCT_neutrality_DEF:0 "The River Republic"
+ RCT_democratic:0 "River Federation"
+ RCT_neutrality_DEF:0 "The River Federation"
  RCT_fascism_DEF:0 "The Free River State"
  RCT_communism_DEF:0 "The Socialist River Republic"
- RCT_democratic_DEF:0 "The River Republic"
+ RCT_democratic_DEF:0 "The River Federation"
  #adjective is Riječanin in croatian
- RCT_fascism_ADJ:0 "Rijekan"
- RCT_democratic_ADJ:0 "Rijekan"
- RCT_neutrality_ADJ:0 "Rijekan"
- RCT_communism_ADJ:0 "Rijekan"
+ RCT_fascism_ADJ:0 "Riverlandian"
+ RCT_democratic_ADJ:0 "Riverlandian"
+ RCT_neutrality_ADJ:0 "Riverlandian"
+ RCT_communism_ADJ:0 "Riverlandian"
 
  ## PARTY NAMES ##
  RCT_democratic_party:0 "HSR"
