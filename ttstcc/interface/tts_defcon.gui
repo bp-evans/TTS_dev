@@ -78,7 +78,7 @@ instantTextboxType = {
 		iconType = {
 			name ="defcon_1"
 			spriteType = "GFX_defcon_1"
-			position = { x= 0 y = 0 }
+			position = { x= 25 y = 80 }
 			
 		}
 	
@@ -86,7 +86,7 @@ instantTextboxType = {
 		iconType = {
 			name ="defcon_2"
 			spriteType = "GFX_defcon_2"
-			position = { x= 0 y = 0 }
+			position = { x= 25 y = 80 }
 			
 		}
 	
@@ -95,7 +95,7 @@ instantTextboxType = {
 		iconType = {
 			name ="defcon_3"
 			spriteType = "GFX_defcon_3"
-			position = { x= 0 y = 0 }
+			position = { x= 25 y = 80 }
 			
 		}
 	
@@ -103,7 +103,7 @@ instantTextboxType = {
 		iconType = {
 			name ="defcon_4"
 			spriteType = "GFX_defcon_4"
-			position = { x= 0 y = 0 }
+			position = { x= 25 y = 80 }
 			
 		}
 	

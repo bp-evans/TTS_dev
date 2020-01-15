@@ -1,0 +1,20 @@
+scripted_gui = {
+tts_Points_STG = {
+		context_type = player_context
+
+		window_name = "STG_window"
+
+		visible = {
+			tag = STG
+		}
+
+		triggers = {
+			
+			tag = STG
+		}
+
+		effects = {
+			
+		}
+	}
+}

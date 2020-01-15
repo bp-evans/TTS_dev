@@ -963,13 +963,13 @@ guiTypes = {
 
 	containerWindowType = {
 		name ="gamesetup_country_details"
-		position = { x=20 y =-490}
-		show_position = { x=20 y =90}
+		position = { x=-500 y =100}
+		show_position = { x=0 y =100}
 		animation_type = decelerated
 		animation_time = 1000		
-		size = { width=492 height=301}
-		Orientation = upper_right
-		origo = upper_right
+		size = { width=600 height=370}
+		Orientation = upper_left
+
 		show_sound = menu_open_window
 		hide_sound = menu_close_window
 		
@@ -981,27 +981,21 @@ guiTypes = {
 		iconType = {
 			name = "country_leader"
 			quadTextureSprite ="GFX_leader_unknown"
-			position = { x = 30 y = 20 }
-			scale=0.4
+			position = { x = 14 y = 17 }
 		}
 
-		iconType = {
-			name = "country_leader_frame"
-			quadTextureSprite ="GFX_naval_unit_leader_frame"
-			position = { x = 27 y = 16 }
-		}
 		
 		iconType ={
 			name ="pol_faction_icon"
 			spriteType = "GFX_pol_factions_strip"
-			position = { x= 105 y = 30 }
+			position = { x= 190 y = 162 }
 			#Orientation = "UPPER_LEFT"
 			frame = 1
 		}
 		
 		gridboxtype = {
 			name = "spirit_grid"
-			position = { x = 250 y = 30 }
+			position = { x = 15 y = 295 }
 			size = { width = 300 height = 70 }
 			slotsize = { width = 60 height = 68 }
 			max_slots = { x = 8 y = 1 }
@@ -1010,142 +1004,60 @@ guiTypes = {
 		
 		gridboxtype = {
 			name = "spirit_grid_over_defined"
-			position = { x = 250 y = 20 }
+			position = { x = 5 y = 294 }
 			size = { width = 300 height = 70 }
-			slotsize = { width = 33 height = 32 }
-			max_slots = { x = 6 y = 2 }
+			slotsize = { width = 35 height = 32 }
+			max_slots = { x = 12 y = 1 }
 			format = "UPPER_LEFT"
 		}
 			
 		containerWindowType = {
 			name = "political_pie_chart"
-			position = { x= 185 y = 40 }
-			size = { width=100 height=100 }
+			position = { x= 233 y = 30 }
+			size = { width=300 height=300 }
 			clipping = no
 
 			iconType = {
 				name = "chart"
 				spriteType = "GFX_political_chart_small"
 				position = { x = 20 y = -3 }
-			}
-			
-			iconType ={
-				name ="pol_view_bg"
-				spriteType = "GFX_small_pol_piechart_overlay"
-				position = { x= -5 y = -5 }
-			}
-			
-			iconType ={
-				name ="piechart_frame"
-				spriteType = "GFX_small_pol_piechart_frame"
-				position = { x= -11 y = -11 }
-			}				
+			}			
 		}	
 		
 		containerWindowType = {
 			name = "info"				
-			position = { x = 30 y = 140 }
-			
-			instantTextBoxType = {
-				name = "leader_label"
-				position = { x = 0 y = 0 }
-				font = "hoi_20bs"
-				borderSize = {x = 0 y = 0}
-				text = "LEADER"
-				maxWidth = 340
-				format = left
-			}
+			position = { x = 0 y = 140 }
 			
 			instantTextBoxType = {
 				name = "leader"
-				position = { x = 60 y = 0 }
-				font = "hoi_20bs"
+				position = { x = 23 y = 95 }
+				font = "AgencyFB"
+				maxWidth = 140
+				maxHeight = 40
 				borderSize = {x = 0 y = 0}
-				maxWidth = 340
-				format = right
-			}
-			
-			instantTextBoxType = {
-				name = "ideology_label"
-				position = { x = 0 y = 24 }
-				font = "hoi_20bs"
-				borderSize = {x = 0 y = 0}
-				text = "IDEOLOGY"
-				maxWidth = 340
-				format = left
+				format = center
 			}
 			
 			instantTextBoxType = {
 				name = "ideology"
-				position = { x = 60 y = 24 }
-				font = "hoi_20bs"
+				position = { x = 270 y = 30 }
+				font = "Ag_2"
 				borderSize = {x = 0 y = 0}
-				maxWidth = 340
-				format = right
-			}
-			
-			instantTextBoxType = {
-				name = "government_label"
-				position = { x = 0 y = 48 }
-				font = "hoi_20bs"
-				borderSize = {x = 0 y = 0}
-				text = "GOVERNMENT"
 				maxWidth = 340
 				format = left
 			}
 			
-			instantTextBoxType = {
-				name = "government"
-				position = { x = 60 y = 48 }
-				textureFile = ""
-				font = "hoi_20bs"
-				borderSize = {x = 0 y = 0}
-				maxWidth = 340
-				format = right
-			}
-			
-			instantTextBoxType = {
-				name = "elections_label"
-				position = { x = 0 y = 72 }
-				textureFile = ""
-				font = "hoi_20bs"
-				borderSize = {x = 0 y = 0}
-				text = "POLITICS_NEXTELECTION"
-				maxWidth = 340
-				format = left
-			}
-			
-			instantTextBoxType = {
-				name = "elections"
-				position = { x = 60 y = 72 }
-				textureFile = ""
-				font = "hoi_20bs"
-				borderSize = {x = 0 y = 0}
-				maxWidth = 340
-				format = right
-			}
-			
-			instantTextBoxType = {
-				name = "party_label"
-				position = { x = 0 y = 96 }
-				textureFile = ""
-				font = "hoi_20bs"
-				borderSize = {x = 0 y = 0}
-				text = "RULING_PARTY"
-				maxWidth = 340
-				format = left
-			}
 			
 			instantTextBoxType = {
 				name = "party"
-				position = { x = 130 y = 96 }
+				position = { x = 270 y = 60 }
 				textureFile = ""
-				font = "hoi_20bs"
+				font = "Ag_1"
 				borderSize = {x = 0 y = 0}
 				maxWidth = 270
 				maxHeight = 20
 				fixedsize = yes
-				format = right
+				format = left
 			}
 		}
 	}
@@ -1821,24 +1733,19 @@ guiTypes = {
 		
 		containerWindowType = {
 			name ="top"
-			position = { x=0 y = -80}
-			show_position = { x=0 y =-30}
+			position = { x=-100 y = -30}
+			show_position = { x=-100 y =-30}
 			animation_type = decelerated
 			animation_time = 1000
 			size = { width=102% height =128}
 			clipping = no
 		
-			Background =
-			{
-				name ="top_bg"
-				spriteType = "GFX_tiled_frontend_upper_bar"
-				position = { x=-10 y=0 }
-			}
+			
 
 			containerWindowType = {
 				name ="scenario_window"
-				position = { x=50% y = -80}
-				show_position = { x=50% y =-30}
+				position = { x=-100 y = -30}
+				show_position = { x=54 y =-30}
 				animation_type = decelerated
 				animation_time = 1000
 				size = { width=340 height =128}
@@ -1847,13 +1754,13 @@ guiTypes = {
 				iconType ={
 					name ="menu_top_date_bg"
 					spriteType = "GFX_menu_top_bg_bg"
-					position = { x= -196 y = 54 }
+					position = { x= 0 y = 60 }
 				}	
 				
 				instantTextBoxType = {
 					name = "date"
-					position = { x = -170 y = 65 }
-					font = "hoi_24header"
+					position = { x = 12 y = 65 }
+					font = Ag_3
 					borderSize = {x = 4 y = 4}
 					text = "Pikku Saippuakauppias Itkee!!"	
 					maxWidth = 340
@@ -1863,8 +1770,8 @@ guiTypes = {
 				
 				instantTextBoxType = {
 					name = "name"
-					position = { x = -184 y = 85 }
-					font = "hoi_24header"
+					position = { x = 5 y = 90 }
+					font = Ag_3
 					borderSize = {x = 4 y = 4}
 					text = "Pikku Saippuakauppias Itkee!!"	
 					maxWidth = 360
@@ -1873,20 +1780,10 @@ guiTypes = {
 					fixedsize = yes
 				}
 				
-				ButtonType = {
-					name = "scenario_button"
-					position = { x = -136 y = 115 }
-					quadTextureSprite ="GFX_button_261x34"	
-					buttonText = "FE_CHANGE_SCENARIO"
-					buttonFont = "hoi_20b"
-					clicksound = click_ok
-					shortcut = "c"
-				}
-				
 				# 1st BUTTON (BIG)
 				buttonType = {
 					name = "mapmode_button_1"
-					position = { x=-50 y=160 }	
+					position = { x=0 y=160 }	
 					quadTextureSprite ="GFX_lobby_country_mapmode_strip"
 					clicksound = land_mapmode
 					shortcut = "F1"
@@ -1896,7 +1793,7 @@ guiTypes = {
 				}
 				buttonType = {
 					name = "mapmode_button_1_s"
-					position = { x=-50 y=160 }	
+					position = { x=1000 y=160 }	
 					quadTextureSprite ="GFX_lobby_country_mapmode_strip_selected"
 					shortcut = "F1"
 					pdx_tooltip = "MAPMODE_DEFAULT"
@@ -1907,7 +1804,7 @@ guiTypes = {
 				# 2st BUTTON (BIG)
 				buttonType = {
 					name = "mapmode_button_2"
-					position = { x=20 y=160 }	
+					position = { x=1000 y=160 }	
 					quadTextureSprite ="GFX_lobby_country_mapmode_strip"
 					clicksound = land_mapmode
 					shortcut = "F2"
@@ -1927,7 +1824,7 @@ guiTypes = {
 			
 			ButtonType = {
 				name = "interesting_countries_button"
-				position = { x = 40 y = 58 }
+				position = { x = 110 y = 95 }
 				quadTextureSprite ="GFX_button_261x34"
 				buttonText = "FE_INTERESTING_COUNTRIES"
 				buttonFont = "hoi_20b"
@@ -1957,38 +1854,38 @@ guiTypes = {
 			}
 			
 			ButtonType = {
-				position = { x= -487 y = 47 }
+				position = { x= 405 y = 36 }
 				name = "player_shield"	
 				quadTextureSprite ="GFX_player_flag"
-				Orientation = "UPPER_RIGHT"
+				Orientation = "UPPER_LEFT"
 			}
 			
 			iconType ={
 				name ="large_flag_frame"
 				spriteType = "GFX_large_flag_frame"
-				position = { x= -492 y = 45 }
-				Orientation = "UPPER_RIGHT"
+				position = { x= 400 y = 35 }
+				Orientation = "UPPER_LEFT"
 			}
 
 			iconType ={
 				name ="selected_nation_label_bg"
 				spriteType = "GFX_generic_bg"
-				position = { x= -380 y = 46 }
-				Orientation = "UPPER_RIGHT"
+				position = { x= 500 y = 37 }
+				Orientation = "UPPER_LEFT"
 			}			
 			
 			instantTextBoxType = {
 				name = "selected_nation_label"
-				position = { x = -365 y = 55 }
+				position = { x = 520 y = 52 }
 				textureFile = ""
 				font = "hoi_20bs"
 				borderSize = {x = 0 y = 0}
 				text = "FE_NO_COUNTRY_SELECTED"
-				maxWidth = 240
+				maxWidth = 280
 				maxHeight = 40
 				fixedsize = yes
 				format = centre
-				Orientation = "UPPER_RIGHT"
+				Orientation = "UPPER_LEFT"
 			}
 			
 			ButtonType = {
@@ -2009,11 +1906,7 @@ guiTypes = {
 			size = { width=102% height =128}
 			Orientation = lower_left	
 			
-			Background ={
-				name ="bottom_win"
-				spriteType = "GFX_tiled_frontend_lower_bar"
-				position = { x=-10 y =0}				
-			}
+			
 			
 			ButtonType = {
 				name = "back_button"

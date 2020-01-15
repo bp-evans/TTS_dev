@@ -32,14 +32,16 @@ if = {
 
 set_convoys = 70
 set_popularities = {
-	democratic = 2
-	fascism = 13
+	democratic = 38
+	fascism = 6
 	communism = 15
-	neutrality = 70
+	neutrality = 19
+	reformism = 22
+	alt_left = 0
 }
 set_politics = {
 
-	ruling_party = neutrality
+	ruling_party = reformism
 	last_election = "1000.10.10"
 	election_frequency = 36
 	elections_allowed = no
@@ -64,35 +66,15 @@ add_equipment_to_stockpile = {
 set_stability = 0.60
 
 create_country_leader = {
-	name = "Prince Elias Whitecrest"
+	name = "King Elias Whitecrest"
 	desc = POLITICS_PRINCE_ELIAS
 	picture = "Elias.tga"
 	expire = "1965.1.1"
-	ideology = despotism
+	ideology = progressivist
 	traits = {
 	}
 }
 
-create_country_leader = {
-	name = "Prince Gerar Whitecrest"
-	desc = POLITICS_PRINCE_GERAR
-	picture = "Gerar.tga"
-	expire = "1965.1.1"
-	ideology = nazism
-	traits = {
-	}
-}
-
-create_country_leader = {
-	name = "Prince Elias Whitecrest"
-	desc = ""
-	picture = "Elias.tga"
-	expire = "1965.1.1"
-	ideology = conservatism
-	traits = {
-
-	}
-}
 
 create_country_leader = {
 	name = "Toridan"

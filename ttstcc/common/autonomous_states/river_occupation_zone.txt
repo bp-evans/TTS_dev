@@ -1,6 +1,5 @@
 autonomy_state = {
-	id = autonomy_river_associate
-	default = yes
+	id = autonomy_river_occupation_zone
 	
 	is_puppet = yes
 	
@@ -32,7 +31,7 @@ autonomy_state = {
 	}
 
 	allowed = {
-		autonomy_river_associate = yes
+		autonomy_river_occupation_zone = yes
 	}
 
 	can_take_level = {

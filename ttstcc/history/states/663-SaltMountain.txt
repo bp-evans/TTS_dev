@@ -6,10 +6,8 @@ state={
 	}
 	state_category=small_island
 	history={
-		owner = BRF
-		add_core_of = BRF
+		owner = GRW
 		add_core_of = GRW
-		set_state_flag = brodfeld_city
 
 	}
 	manpower=45678

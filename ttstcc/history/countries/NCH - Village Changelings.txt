@@ -25,19 +25,7 @@ if = {
 
 
 set_convoys = 20
-set_popularities = {
-	democratic = 94
-	fascism = 0
-	communism = 6
-	neutrality = 0
-}
-set_politics = {
 
-	ruling_party = democratic
-	last_election = "700.10.10"
-	election_frequency = 36
-	elections_allowed = no
-}
 
 
 add_ideas = {
@@ -64,6 +52,16 @@ add_opinion_modifier = { target = FBK modifier = besties }
 add_opinion_modifier = { target = FBK modifier = trading }
 set_stability = 0.83
 
+set_popularities = {
+	democratic = 94
+	fascism = 0
+	communism = 6
+	neutrality = 0
+}
+set_politics = {
+
+	ruling_party = democratic
+}
 create_country_leader = {
 	name = "Queen Gytha"
 	desc = "QUEEN_G_POLITICS_DESC"

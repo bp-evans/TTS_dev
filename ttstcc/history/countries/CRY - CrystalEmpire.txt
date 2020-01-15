@@ -51,10 +51,10 @@ generic_SS_template = yes
 
 set_convoys = 69
 set_popularities = {
-	democratic = 0
-	fascism = 0
-	communism = 0
-	neutrality = 0
+	democratic = 10
+	fascism = 5
+	communism = 10
+	neutrality = 70
 	reformism = 4
 	alt_left = 1
 }

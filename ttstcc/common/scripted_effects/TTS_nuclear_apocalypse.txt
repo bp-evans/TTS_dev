@@ -1,0 +1,48 @@
+start_nuclear_apocalypse = {
+	random_state = {
+				WAS = { 
+					transfer_state = PREV 
+					launch_nuke = { state = PREV }
+				}
+	}
+	WAS = {country_event = { days = 1 id=apocalypse_events.1 }}
+}
+boom = {
+	every_country = {
+			random_owned_state = {
+				WAS = { 
+					transfer_state = PREV 
+					launch_nuke = { state = PREV }
+				}
+				
+				PREV = {
+					remove_state_core = PREV
+				}
+			}
+		}
+}
+special_boom = {
+	random_owned_state = {
+				WAS = { 
+					transfer_state = PREV 
+					launch_nuke = { state = PREV }
+				}
+				
+				PREV = {
+					remove_state_core = PREV
+				}
+			}
+}
+repeat_if_any_country_exists = {
+	if = {
+			limit = {
+				every_country = {
+					limit = {
+						NOT = {tag = WAS}
+					}
+					exists = yes
+				}
+			}
+			WAS = {country_event = { days = 1 id=apocalypse_events.1 }}
+		}
+}

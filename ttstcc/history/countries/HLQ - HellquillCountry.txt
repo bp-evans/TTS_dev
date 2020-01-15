@@ -50,19 +50,7 @@ generic_CL_template = yes
 
 set_convoys = 70
 add_manpower = 20000
-set_popularities = {
-	democratic = 10
-	fascism = 35
-	communism = 0
-	neutrality = 55
-}
-set_politics = {
 
-	ruling_party = neutrality
-	last_election = "1000.10.10"
-	election_frequency = 36
-	elections_allowed = no
-}
 add_ideas = {
 	
 }
@@ -71,6 +59,15 @@ set_cosmetic_tag = RIV_federation_mem
 set_stability = 0.40
 set_war_support = 0.50
 
+set_popularities = {
+	democratic = 10
+	fascism = 35
+	communism = 0
+	neutrality = 55
+}
+set_politics = {
+	ruling_party = neutrality
+}
 create_country_leader = {
 	name = "Artemis Rosamund"
 	desc = "Artemis_Rosamund_DESC"
@@ -81,15 +78,6 @@ create_country_leader = {
 	}
 }
 
-
-create_country_leader = {
-	name = "August von Ortelsberg"
-	desc = "wholesome_nerd_desc"
-	picture = "August_von_Ortelsberg.tga"
-	expire = "1965.1.1"
-	ideology = liberalism
-	traits = { bookworm }
-}
 
 create_country_leader = {
 	name = "The Hellquill People's Council"

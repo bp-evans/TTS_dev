@@ -863,3 +863,8 @@ TRP = {
 	color = rgb { 250 231 181 }
 	color_ui = rgb { 250 231 181 }
 }
+
+ECH = {
+	color = rgb { 208 64 86 }
+	color_ui = rgb { 208 64 86 }
+}

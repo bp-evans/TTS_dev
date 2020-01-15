@@ -180,7 +180,7 @@ ideologies = {
 			oligarchism  = {
 			}
 
-			moderatism = {
+			accelerationism = {
 			}
 
 			centrism = {

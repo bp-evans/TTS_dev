@@ -1,0 +1,27 @@
+spriteTypes = {
+	SpriteType = {
+		name = "GFX_influence_Internationale"
+		texturefile = "gfx/interface/ttstcc_gui/Influence/Internationale_Influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_influence_CTO"
+		texturefile = "gfx/interface/ttstcc_gui/Influence/CTO_Influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_influence_Reichspakt"
+		texturefile = "gfx/interface/ttstcc_gui/Influence/Reichspakt_Influence.dds"
+	}
+	SpriteType = {
+		name = "GFX_influence_points_EQS"
+		texturefile = "gfx/interface/ttstcc_gui/Influence/Points_EQS.dds"
+	}
+	SpriteType = {
+		name = "GFX_influence_points_STG"
+		texturefile = "gfx/interface/ttstcc_gui/Influence/Points_STG.dds"
+	}
+	SpriteType = {
+		name = "GFX_influence_points_GRI"
+		texturefile = "gfx/interface/ttstcc_gui/Influence/Points_GRI.dds"
+	}
+	
+}

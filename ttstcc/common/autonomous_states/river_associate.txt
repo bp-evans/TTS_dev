@@ -1,6 +1,5 @@
 autonomy_state = {
 	id = autonomy_river_associate
-	default = yes
 	
 	is_puppet = yes
 	

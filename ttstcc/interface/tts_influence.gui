@@ -1,0 +1,140 @@
+guiTypes = {
+	containerWindowType = {
+		name = "II_window"
+		position = { x=-4 y=-1 }
+		size = { width = 550 height = 430}	
+		moveable = yes
+
+
+		Background = {
+			name = "iI_bg"
+			quadTextureSprite = "GFX_influence_Internationale"
+		}
+
+		instantTextboxType = {
+			name = "header_desc"
+			position = { x = -267 y = 11 }
+			font = "JetSet"
+			text = "[?THIS.Internationale]"
+			Orientation = center_up
+			format = center
+			maxWidth = 530
+			maxHeight = 30
+		}
+	}
+	containerWindowType = {
+		name = "CTOI_window"
+		position = { x=-4 y=-1 }
+		size = { width = 550 height = 430}	
+		moveable = yes
+
+
+		Background = {
+			name = "iI_bg"
+			quadTextureSprite = "GFX_influence_CTO"
+		}
+
+		instantTextboxType = {
+			name = "header_desc"
+			position = { x = -267 y = 11 }
+			font = "Ag_3"
+			text = "THIS.CTO"
+			Orientation = center_up
+			format = center
+			maxWidth = 530
+			maxHeight = 30
+		}
+	}
+	containerWindowType = {
+		name = "RI_window"
+		position = { x=-4 y=-1 }
+		size = { width = 550 height = 430}	
+		moveable = yes
+
+
+		Background = {
+			name = "iI_bg"
+			quadTextureSprite = "GFX_influence_Reichspakt"
+		}
+
+		instantTextboxType = {
+			name = "header_desc"
+			position = { x = -267 y = 11 }
+			font = "Ag_3"
+			text = "THIS.Reichspakt"
+			Orientation = center_up
+			format = center
+			maxWidth = 530
+			maxHeight = 30
+		}
+	}
+	containerWindowType = {
+		name = "STG_window"
+		position = { x= -126 y= -343 }
+		size = { width = 126 height = 103}	
+		Orientation = lower_right
+
+
+		Background = {
+			name = "iI_bg"
+			quadTextureSprite = "GFX_influence_points_STG"
+		}
+
+		instantTextboxType = {
+			name = "header_desc"
+			position = { x = -5 y = -16 }
+			font = "Ag_3"
+			text = "[?THIS.Internationale]"
+			Orientation = center_up
+			format = center
+			maxWidth = 10
+			maxHeight = 10
+		}
+	}
+	containerWindowType = {
+		name = "II_window"
+		position = { x=-4 y=-1 }
+		size = { width = 550 height = 430}	
+		moveable = yes
+
+
+		Background = {
+			name = "iI_bg"
+			quadTextureSprite = "GFX_influence_Internationale"
+		}
+
+		instantTextboxType = {
+			name = "header_desc"
+			position = { x = -267 y = 11 }
+			font = "Ag_3"
+			text = "THIS.Internationale"
+			Orientation = center_up
+			format = center
+			maxWidth = 530
+			maxHeight = 30
+		}
+	}
+	containerWindowType = {
+		name = "II_window"
+		position = { x=-4 y=-1 }
+		size = { width = 550 height = 430}	
+		moveable = yes
+
+
+		Background = {
+			name = "iI_bg"
+			quadTextureSprite = "GFX_influence_Internationale"
+		}
+
+		instantTextboxType = {
+			name = "header_desc"
+			position = { x = -267 y = 11 }
+			font = "Ag_3"
+			text = "THIS.Internationale"
+			Orientation = center_up
+			format = center
+			maxWidth = 530
+			maxHeight = 30
+		}
+	}
+}

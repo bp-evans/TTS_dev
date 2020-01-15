@@ -33,6 +33,7 @@ LSP = "countries/LosPegasus.txt"
 
 ############################## Griffon Continent ####
 GRI = "countries/GriffonEmpire.txt"
+RCT = "countries/RiverCity.txt"
 DED = "countries/DeadCountry.txt"
 HLR = "countries/HolyOrder.txt"
 FAT = "countries/Fatass.txt"
@@ -93,7 +94,6 @@ NCH = "countries/VillageChangelings.txt"
 NTR = "countries/NorthernTribes.txt"
 DMT = "countries/DaimondMountain.txt"
 LCT = "countries/LakeCity.txt"
-RCT = "countries/RiverCity.txt"
 NIM = "countries/Nimbusia.txt"
 WIT = "countries/Wittenland.txt"
 BAK = "countries/Baka.txt"
@@ -223,3 +223,4 @@ TRP = "countries/Tropico.txt"
 
 ########### TTS Countries ##########
 ECH = "countries/CDR.txt"
+WAS = "countries/Wasteland.txt"

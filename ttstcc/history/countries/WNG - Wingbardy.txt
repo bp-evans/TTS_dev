@@ -70,14 +70,16 @@ set_stability = 0.5
 set_war_support = 0.7
 
 set_popularities = {
-	democratic = 13
-	fascism = 29
-	communism = 21
-	neutrality = 37
+	democratic = 10
+	fascism = 70
+	communism = 10
+	neutrality = 5
+	reformism = 4
+	alt_left = 1
 }
 set_politics = {
 
-	ruling_party = neutrality
+	ruling_party = fascism
 	last_election = "1000.10.10"
 	election_frequency = 36
 	elections_allowed = no
@@ -88,7 +90,7 @@ add_ideas = {
 	WNG_political_deadlock
 	WNG_braindrain
 }
-
+set_cosmetic_tag = GRI_SUBJECT
 create_country_leader = {
 	name = "King Garibald Talonuel III"
 	desc = "POLITICS_GARIBALD_TALONUEL_DESC"

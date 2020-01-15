@@ -68,19 +68,21 @@ add_manpower = 20000
 
 set_convoys = 70
 set_popularities = {
-	democratic = 20
-	fascism = 14
-	communism = 19
-	neutrality = 47
+	democratic = 10
+	fascism = 70
+	communism = 10
+	neutrality = 5
+	reformism = 4
+	alt_left = 1
 }
 set_politics = {
-	ruling_party = neutrality
+	ruling_party = fascism
 	last_election = "1000.10.10"
 	election_frequency = 36
 	elections_allowed = no
 }
 add_ideas = { outdated_industry lack_of_scientists JER_memories }
-
+set_cosmetic_tag = GRI_SUBJECT
 set_stability = 0.50
 set_war_support = 0.40
 
@@ -124,64 +126,7 @@ create_country_leader = {
 		democratic_sympathies compassionate_gentleman
 	}
 }
-create_faction = Aquileia
-add_to_faction = JER
-add_to_faction = JFT
-add_to_faction = VIN
-add_to_faction = JRR
-add_to_faction = JEB
-if = {
-	limit = {
-		has_dlc = "Together for Victory"
-	}
-	set_autonomy = {
-		target = JFT
-		autonomous_state = autonomy_autonomous_vassal
-	}
-	set_autonomy = {
-		target = JRR
-		autonomous_state = autonomy_autonomous_vassal
-	}
-	set_autonomy = {
-		target = JEB
-		autonomous_state = autonomy_autonomous_vassal
-	}
-	set_autonomy = {
-		target = VIN
-		autonomous_state = autonomy_nominal_vassal
-	}
-	else = {
-		puppet = JFT
-		puppet = JRR
-		puppet = JEB
-		puppet = VIN
-	}
-}
 
-
-create_field_marshal = {
-	name = "King Moriset Discret"
-	picture = "Moriset.tga"
-	traits = { old_guard }
-	skill = 1
-	attack_skill = 1
-	defense_skill = 1
-	planning_skill = 1
-	logistics_skill = 1
-	id = 75651
-}
-
-create_field_marshal = {
-	name = "Albert Berthelot"
-	portrait_path = "gfx/leaders/Asia/portrait_griffon_generic_land_4.dds"
-	traits = { old_guard }
-	skill = 6
-	attack_skill = 4
-	defense_skill = 4
-	planning_skill = 4
-	logistics_skill = 4
-	id = 75650
-}
 
 create_field_marshal = {
 	name = "Léonard Rodier"

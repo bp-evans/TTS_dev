@@ -116,14 +116,14 @@ guiTypes = {
 		iconType ={
 			name ="pol_power_icon"
 			spriteType = "GFX_pol_power_icon"
-			position = { x= 104 y = 3 }
+			position = { x= 100 y = 3 }
 			Orientation = "UPPER_LEFT"
 		}
 
 		instantTextBoxType = {
 			name ="pol_power"
-			position = { x= 120 y = 9§§ }
-			font = "hoi_18mbs"
+			position = { x= 120 y = 8§§ }
+			font = "JetSet"
 			text = "999"
 			format = center
 			maxWidth = 52
@@ -141,17 +141,17 @@ guiTypes = {
 		iconType ={
 			name ="manpower_icon"
 			spriteType = "GFX_manpower_icon"
-			position = { x= 321 y = 3 }
+			position = { x= 319 y = 3 }
 			Orientation = "UPPER_LEFT"
 		}
 
 		instantTextBoxType = {
 			name ="manpower"
-			position = { x= 352 y = 9 }
-			font = "hoi_18mbs"
+			position = { x= 348 y = 8 }
+			font = "JetSet"
 			text = "9999"
 			format = center
-			maxWidth = 57
+			maxWidth = 60
 			maxHeight = 24
 			fixedsize = yes
 		}
@@ -172,8 +172,8 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name ="stability"
-			position = { x= 182 y = 9 }
-			font = "hoi_18mbs"
+			position = { x= 182 y = 8 }
+			font = "JetSet"
 			text = "100%"
 			format = right
 			maxWidth = 57
@@ -197,8 +197,8 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name ="war_support"
-			position = { x= 253 y = 9 }
-			font = "hoi_18mbs"
+			position = { x= 253 y = 8 }
+			font = "JetSet"
 			text = "100%"
 			format = right
 			maxWidth = 57
@@ -222,8 +222,8 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name ="experience_value"
-			position = { x=777 y=9 }
-			font = "hoi_18mbs"
+			position = { x=777 y=8 }
+			font = "JetSet"
 			text = "999"
 			format = center
 			maxWidth = 45
@@ -247,8 +247,8 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name ="navy_experience_value"
-			position = { x= 848 y = 9 }
-			font = "hoi_18mbs"
+			position = { x= 848 y = 8 }
+			font = "JetSet"
 			text = "999"
 			format = center
 			maxWidth = 46
@@ -272,8 +272,8 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name ="air_experience_value"
-			position = { x= 921 y = 9 }
-			font = "hoi_18mbs"
+			position = { x= 921 y = 8 }
+			font = "JetSet"
 			text = "999"
 			format = center
 			maxWidth = 46
@@ -297,8 +297,8 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name ="command_power_value"
-			position = { x= 712 y = 9 }
-			font = "hoi_18mbs"
+			position = { x= 712 y = 8 }
+			font = "JetSet"
 			text = "999"
 			format = center
 			maxWidth = 40
@@ -322,8 +322,8 @@ guiTypes = {
         
 		instantTextBoxType = {
 			name ="industrial_capacity"
-			position = { x= 433 y = 9 } 
-			font = "hoi_18mbs"
+			position = { x= 433 y = 8 } 
+			font = "JetSet"
 			text = "12/12/12"
 			format = center
 			maxWidth = 66
@@ -347,8 +347,8 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name ="convoys_count"
-			position = { x= 610 y = 9 }
-			font = "hoi_18mbs"
+			position = { x= 610 y = 8 }
+			font = "JetSet"
 			text = "0"
 			format = center
 			maxWidth = 44
@@ -372,8 +372,8 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name ="fuel_value"
-			position = { x= 513 y = 4 }
-			font = "hoi_18mbs"
+			position = { x= 513 y = 3 }
+			font = "JetSet"
 			text = "999"
 			format = center
 			maxWidth = 59
@@ -453,7 +453,7 @@ guiTypes = {
 		instantTextBoxType = {
 			name ="nuke_count"
 			position = { x=1013 y=9 }
-			font = "hoi_18mbs"
+			font = "JetSet"
 			format = center
 			maxWidth = 64
 			maxHeight = 24
@@ -638,7 +638,7 @@ guiTypes = {
 			instantTextBoxType = {
 				name ="decisionview_amount_timeout_items"
 				position = { x= -70 y = 2 }
-				font = "hoi_18mbs"
+				font = "AgencyFB"
 				text = "999"
 				format = center
 				maxWidth = 20
@@ -649,7 +649,7 @@ guiTypes = {
 			instantTextBoxType = {
 				name ="decisionview_amount_to_take_items"
 				position = { x= -70 y = 16 }
-				font = "hoi_18mbs"
+				font = "AgencyFB"
 				text = "999"
 				format = center
 				maxWidth = 20

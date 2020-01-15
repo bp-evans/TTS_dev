@@ -24,6 +24,7 @@ autonomy_river_associate = {
 		tag = RCT
 	}
 }
+
 autonomy_river_occupation_zone = {
 	OR = { has_dlc = "Together for Victory" has_dlc = "Death or Dishonor" }
 	OR = {
@@ -31,5 +32,11 @@ autonomy_river_occupation_zone = {
 	}
 	overlord = {
 		tag = RCT
+	}
+}
+autonomy_griffon_sattelite = {
+	OR = { has_dlc = "Together for Victory" has_dlc = "Death or Dishonor" }
+	overlord = {
+		tag = GRI
 	}
 }
