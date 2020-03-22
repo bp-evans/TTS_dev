@@ -38,5 +38,6 @@ autonomy_griffon_sattelite = {
 	OR = { has_dlc = "Together for Victory" has_dlc = "Death or Dishonor" }
 	overlord = {
 		tag = GRI
+		tag = WNG
 	}
 }

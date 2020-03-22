@@ -17,6 +17,7 @@ country_event = {
 					tag = GRI
 					tag = RCT
 					tag = SDL
+					tag = OLE
 				}
 			}
 			special_boom = yes

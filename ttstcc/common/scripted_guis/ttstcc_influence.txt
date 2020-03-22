@@ -1,20 +1,120 @@
 scripted_gui = {
-tts_Points_STG = {
+
+	STG_Points = {
 		context_type = player_context
-
-		window_name = "STG_window"
-
+		window_name = STG_window
 		visible = {
 			tag = STG
 		}
-
-		triggers = {
-			
+		effects = {		
+		}
+		triggers = {	
 			tag = STG
 		}
+	}
 
+}
+	EQS_Points = {
+		context_type = player_context
+		window_name = EQS_window
+		visible = {
+			tag = EQS
+		}
+		
+		effects = {		
+		}
+		triggers = {	
+			tag = EQS
+		}
+	}
+
+}
+	GRI_Points = {
+		context_type = player_context
+		window_name = GRI_window
+		visible = {
+			tag = GRI
+		}
+		triggers = {	
+			tag = GRI
+		}
+		effects = {		
+		}
+	}
+}
+	II = {
+		context_type = player_context
+		window_name = II_window
+		visible = {
+					NOT = {
+						OR = {
+							tag = EQS
+							tag = STG
+							tag = GRI
+						}
+					}
+		}
+
+		triggers = {	
+			NOT = {
+				OR = {
+					tag = EQS
+					tag = STG
+					tag = GRI
+				}
+			}
+		}
+		effects = {		
+		}
+	}
+
+	RI = {
+		context_type = player_context
+		window_name = RI_window
+		visible = {
+			NOT = {
+				OR = {
+					tag = EQS
+					tag = STG
+					tag = GRI
+				}
+			}
+		}
+		triggers = {	
+			NOT = {
+				OR = {
+					tag = EQS
+					tag = STG
+					tag = GRI
+				}
+			}
+		}
+		effects = {		
+		}
+	}
+
+	CTOI = {
+		context_type = player_context
+		window_name = CTOI_window
+		visible = {
+			NOT = {
+				OR = {
+					tag = EQS
+					tag = STG
+					tag = GRI
+				}
+			}
+		}
+		triggers = {	
+			NOT = {
+				OR = {
+					tag = EQS
+					tag = STG
+					tag = GRI
+				}
+			}
+		}
 		effects = {
-			
 		}
 	}
 }

@@ -29,6 +29,10 @@ technologies = {
 			always = no
 		}
 
+		recon = {
+			maximum_speed = 0.3
+		}
+
 		ai_will_do = {
 			factor = 20000000
 		}
@@ -425,7 +429,7 @@ technologies = {
 			changeling_race = 1
 		}
 
-		non_core_manpower = 0.15
+		weekly_manpower = 250
 
 		path = {
 			leads_to_tech = tech_changeling_b2
@@ -707,15 +711,11 @@ technologies = {
 
 	tech_infiltrators_di = {
 
-		xor = {
-			tech_infiltrators_si
-		}
-
-		recon = {
+		category_recon = {
 			recon = 2
 		}
 		military_police = {
-			suppression_factor = 0.3
+			suppression_factor = 0.15
 		}
 
 		path = {
@@ -806,7 +806,7 @@ technologies = {
 	tech_infiltrators_di3 = {
 
 		decryption_factor = 0.25
-		enemy_partisan_effect = -0.15
+		resistance_damage_to_garrison = -0.15
 
 		path = {
 			leads_to_tech = tech_infiltrators_di4
@@ -891,10 +891,6 @@ technologies = {
 	}
 
 	tech_infiltrators_si = {
-
-		xor = {
-			tech_infiltrators_di
-		}
 
 		decryption_factor = 0.05
 
@@ -995,7 +991,7 @@ technologies = {
 			hard_attack = 0.6
 		}
 
-		partisan_effect = 0.15
+		resistance_growth_on_our_occupied_states = 0.15
 
 		path = {
 			leads_to_tech = tech_infiltrators_si4

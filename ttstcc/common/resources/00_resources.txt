@@ -41,4 +41,44 @@ resources = {
 		cic = 0.125
 		convoys = 0.1
 	}
+	electricity = {
+		icon_frame = 8
+		cic = 0.125
+		convoys = 0.1
+	}
+	uranium = {
+		icon_frame = 9
+		cic = 0.125
+		convoys = 0.1
+	}
+	silicon = {
+		icon_frame = 10
+		cic = 0.125
+		convoys = 0.1
+	}
+	plastic = {
+		icon_frame = 11
+		cic = 0.125
+		convoys = 0.1
+	}
+	fuel = {
+		icon_frame = 12
+		cic = 0.125
+		convoys = 0.1
+	}
+	rhenium = {
+		icon_frame = 13
+		cic = 0.125
+		convoys = 0.1
+	}
+	electrificated_rhencrystals = {
+		icon_frame = 14
+		cic = 0.125
+		convoys = 0.1
+	}
+	electronics = {
+		icon_frame = 15
+		cic = 0.125
+		convoys = 0.1
+	}
 }

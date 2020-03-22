@@ -1,0 +1,29 @@
+﻿add_namespace = ussr
+#
+country_event = {
+	id = ussr.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event ussr.1"}
+		is_triggered_only = yes
+		option = {
+			STG = {
+				annex_country = {
+    				target = GRF
+    				transfer_troops = yes
+				}
+				annex_country = {
+    				target = PNG
+    				transfer_troops = yes
+				}
+				annex_country = {
+    				target = PLB
+    				transfer_troops = yes
+				}
+				annex_country = {
+    				target = ECH
+    				transfer_troops = yes
+				}
+				set_cosmetic_tag = USSR
+			}
+		}
+	}
+

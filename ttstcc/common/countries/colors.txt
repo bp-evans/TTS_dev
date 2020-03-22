@@ -63,7 +63,7 @@ CES = {
 	color = rgb { 166 208 53 }
 	color_ui = rgb { 166 208 53 }
 }
-JUN = {
+EAZ = {
 	color = rgb { 75 114 52 }
 	color_ui = rgb { 75 114 52 }
 }
@@ -79,7 +79,7 @@ GFF = {
 	color = rgb { 247 208 158 }
 	color_ui = rgb { 247 208 158 }
 }
-LSP = {
+ELP = {
 	color = rgb { 162 125 0 }
 	color_ui = rgb { 162 125 0 }
 }
@@ -95,7 +95,7 @@ D03 = {
 	color = rgb { 188 98 134 }
 	color_ui = rgb { 188 98 134 }
 }
-ROC = {
+ERC = {
 	color = rgb { 91 100 130 }
 	color_ui = rgb { 79 87 112 }
 }
@@ -132,8 +132,8 @@ DED = {
 	color_ui = rgb { 66 68 106 }
 }
 HLR = {
-	color = rgb { 210 201 129 }
-	color_ui = rgb { 210 201 129 }
+	color = rgb { 128 39 201 }
+	color_ui = rgb { 128 39 201 }
 }
 FAT = {
 	color = rgb { 255 214 117 }
@@ -344,8 +344,8 @@ CYA = {
 	color_ui = rgb { 87 104 169 }
 }
 HAU = {
-	color = rgb { 144 75 41 }
-	color_ui = rgb { 144 75 41 }
+	color = rgb { 255 214 117 }
+	color_ui = rgb { 255 214 117 }
 }
 GRY = {
 	color = rgb { 144 169 112 }
@@ -867,4 +867,14 @@ TRP = {
 ECH = {
 	color = rgb { 208 64 86 }
 	color_ui = rgb { 208 64 86 }
+}
+
+EBU = {
+	color = rgb { 140 112 85 }
+	color_ui = rgb { 140 112 85 }
+}
+
+ESE = {
+	color = rgb { 135 135 135 }
+	color_ui = rgb { 135 135 135 }
 }

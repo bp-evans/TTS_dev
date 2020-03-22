@@ -1,0 +1,44 @@
+scripted_gui = {
+	es_button = {
+		context_type = player_context
+		window_name = "es_open_button"
+
+		visible = {
+			is_ai = no
+			tag = EQS
+		}
+
+		effects = {
+			ESOPEN_click = {
+				if = {
+					limit = { NOT = { has_variable = es_window_on } }
+					set_variable = { es_window_on = 1 }
+				}
+				else = {
+					clear_variable = es_window_on
+				}
+			}
+		}
+	}
+
+	tts_es_window = {
+		context_type = player_context
+
+		window_name = "es_window"
+
+		visible = {
+			is_ai = no
+			has_variable = es_window_on
+		}
+
+		triggers = {
+			
+			
+		}
+
+		effects = {
+			
+		}
+	}
+	
+}

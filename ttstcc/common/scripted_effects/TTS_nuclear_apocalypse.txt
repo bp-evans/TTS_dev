@@ -40,7 +40,7 @@ repeat_if_any_country_exists = {
 					limit = {
 						NOT = {tag = WAS}
 					}
-					exists = yes
+					THIS = {exists = yes}
 				}
 			}
 			WAS = {country_event = { days = 1 id=apocalypse_events.1 }}

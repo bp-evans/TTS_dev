@@ -79,7 +79,7 @@ light_armor_CHN = {
 
 			support = {
 				engineer = 1
-				recon = 1
+				mot_recon = 1
 				artillery = 1
 				infiltrator_company = 1
 				signal_company = 1
@@ -103,7 +103,7 @@ light_armor_CHN = {
 			light_sp_anti_air_brigade
 			mot_artillery_brigade
 			engineer
-			recon
+			mot_recon
 			artillery
 			infiltrator_company
 			signal_company
@@ -192,7 +192,7 @@ medium_armor_CHN = {
 
 			support = {
 				engineer = 1
-				recon = 1
+				mot_recon = 1
 				maintenance_company = 1
 				logistics_company = 1
 				signal_company = 1
@@ -220,7 +220,7 @@ medium_armor_CHN = {
 			motorized_rocket_brigade
 
 			engineer
-			recon
+			mot_recon
 			signal_company
 			maintenance_company
 			logistics_company
@@ -318,7 +318,7 @@ modern_armor_CHN = {
 
 			support = {
 				engineer = 1
-				recon = 1
+				mot_recon = 1
 				maintenance_company = 1
 				logistics_company = 1
 				signal_company = 1
@@ -342,7 +342,7 @@ modern_armor_CHN = {
 			motorized_rocket_brigade
 
 			engineer
-			recon
+			mot_recon
 			signal_company
 			maintenance_company
 			logistics_company
@@ -364,6 +364,7 @@ modern_armor_CHN = {
 				NOT = {
 					has_tech = main_battle_tank
 					has_tech = mechanised_infantry
+					has_tech = armored_car1
 				}
 			}
 		}
@@ -420,7 +421,7 @@ modern_armor_CHN = {
 
 			support = {
 				engineer = 1
-				recon = 1
+				armored_car_recon = 1
 				maintenance_company = 1
 				logistics_company = 1
 				signal_company = 1
@@ -444,7 +445,7 @@ modern_armor_CHN = {
 			motorized_rocket_brigade
 
 			engineer
-			recon
+			armored_car_recon
 			signal_company
 			maintenance_company
 			logistics_company
@@ -527,6 +528,14 @@ garrison_CHN = {
 			0.00 #-- reliability
 			0.00 #-- reliability_factor
 			0.00 #-- weight
+			0.00 #-- fuel_consumption
+			0.00 #-- fuel_consumption_factor
+			0.00 #-- strat_attack
+			0.00 #-- carrier_size
+			0.00 #-- acc_hot_gain
+			0.00 #-- acc_cold_gain
+			0.00 #-- equipment_capture_factor
+			0.00 #-- fuel_capacity
 		}
 
 		target_template = {
@@ -617,6 +626,14 @@ infantry_CHN = {
 			0.00 #-- reliability
 			0.00 #-- reliability_factor
 			0.00 #-- weight
+			0.00 #-- fuel_consumption
+			0.00 #-- fuel_consumption_factor
+			0.00 #-- strat_attack
+			0.00 #-- carrier_size
+			0.00 #-- acc_hot_gain
+			0.00 #-- acc_cold_gain
+			0.00 #-- equipment_capture_factor
+			0.00 #-- fuel_capacity
 		}
 
 		target_template = {
@@ -709,6 +726,14 @@ magical_infantry_CHN = {
 			0.00 #-- reliability
 			0.00 #-- reliability_factor
 			0.00 #-- weight
+			0.00 #-- fuel_consumption
+			0.00 #-- fuel_consumption_factor
+			0.00 #-- strat_attack
+			0.00 #-- carrier_size
+			0.00 #-- acc_hot_gain
+			0.00 #-- acc_cold_gain
+			0.00 #-- equipment_capture_factor
+			0.00 #-- fuel_capacity
 		}
 
 		target_template = {
@@ -800,6 +825,14 @@ jager_CHN = {
 			0.00 #-- reliability
 			0.00 #-- reliability_factor
 			0.00 #-- weight
+			0.00 #-- fuel_consumption
+			0.00 #-- fuel_consumption_factor
+			0.00 #-- strat_attack
+			0.00 #-- carrier_size
+			0.00 #-- acc_hot_gain
+			0.00 #-- acc_cold_gain
+			0.00 #-- equipment_capture_factor
+			0.00 #-- fuel_capacity
 		}
 
 		target_template = {
@@ -899,6 +932,14 @@ mountaineers_CHN = {
 			0 #-- reliability
 			0 #-- reliability_factor
 			0 #-- weight
+			0.00 #-- fuel_consumption
+			0.00 #-- fuel_consumption_factor
+			0.00 #-- strat_attack
+			0.00 #-- carrier_size
+			0.00 #-- acc_hot_gain
+			0.00 #-- acc_cold_gain
+			0.00 #-- equipment_capture_factor
+			0.00 #-- fuel_capacity
 		}
 
 		target_template = {
@@ -997,6 +1038,14 @@ marines_CHN = {
 			0.00 #-- reliability
 			0.00 #-- reliability_factor
 			-0.2 #-- weight
+			0.00 #-- fuel_consumption
+			0.00 #-- fuel_consumption_factor
+			0.00 #-- strat_attack
+			0.00 #-- carrier_size
+			0.00 #-- acc_hot_gain
+			0.00 #-- acc_cold_gain
+			0.00 #-- equipment_capture_factor
+			0.00 #-- fuel_capacity
 		}
 
 		target_template = {
@@ -1039,7 +1088,7 @@ paratroopers_CHN = {
 	}
 
 	roles = {
-		paratrooper
+		paratroopers
 	}
 
 	upgrade_prio = {
@@ -1097,6 +1146,14 @@ paratroopers_CHN = {
 			0.00 #-- reliability
 			0.00 #-- reliability_factor
 			-1.0 #-- weight
+			0.00 #-- fuel_consumption
+			0.00 #-- fuel_consumption_factor
+			0.00 #-- strat_attack
+			0.00 #-- carrier_size
+			0.00 #-- acc_hot_gain
+			0.00 #-- acc_cold_gain
+			0.00 #-- equipment_capture_factor
+			0.00 #-- fuel_capacity
 		}
 
 		target_template = {

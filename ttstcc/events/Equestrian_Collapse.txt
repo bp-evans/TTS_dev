@@ -1,0 +1,33 @@
+add_namespace = equestrian_collapse
+
+country_event = {
+	id = equestrian_collapse.1
+	title = equestrian_collapse.1.t
+	is_triggered_only = yes
+	mean_time_to_happen = {
+			days = 1
+	}
+	option = {
+			release_buffaloes = yes
+			release_southerners = yes
+			release_dodge = yes	
+			release_hoofington = yes
+			release_stableside = yes
+			release_aztlan = yes
+			release_thestralia = yes
+			release_baltimare = yes
+			release_las_pegasus = yes
+			release_tall_tale = yes
+			release_vanhoover = yes
+			release_whinniyapolis = yes
+			release_marechester = yes
+			release_acornage = yes
+			release_bales = yes
+			release_stratusburg = yes
+			release_prance = yes
+			release_albion = yes
+			release_fillydelphia = yes
+			release_manehatten = yes
+			release_rock_republic = yes
+	}
+}

@@ -1,0 +1,3169 @@
+on_actions = {
+
+	#Not run on a specific country.
+	on_startup = {
+		effect = {
+			log = "[GetDateText] The Twilight Struggle: Crystal Curtain main on_startup begin"
+			set_variable = { global.defcon_level = 5 }
+			set_variable = { dc_progress = 0 }
+			set_variable = { EQS.weekly_ip = 3 }
+			set_variable = { GRI.weekly_ip = 2 }
+			set_variable = { STG.weekly_ip = 1 }
+			every_country = {
+				if = {
+					limit = {
+						is_in_faction_with = EQS
+					}
+					set_variable = {THIS.CTOI = 20}
+				}
+				if = {
+					limit = {
+						is_in_faction_with = STG
+					}
+					set_variable = {THIS.InternationaleI = 20}
+				}
+				if = {
+					limit = {
+						is_in_faction_with = GRI
+					}
+					set_variable = {THIS.ReichspaktI = 20}
+				}
+				if = {
+					limit = {
+						tag = RCT
+					}
+					set_variable = {THIS.CTOI = 5}
+				}
+			}
+
+			#SOL is used here as a random country selector
+			#Thanks to Delincious from KR team for the idea <3
+			SOL = {
+				if = {
+					limit = { is_ai = no }
+					random_other_country = {
+						limit = { is_ai = yes }
+						set_variable = { eaw_welcome_screen = 1 }
+						capital_scope = { SOL = { goto_state = PREV } }
+						change_tag_from = PREV
+					}
+				}
+			}
+			
+			EQS = {
+				save_global_event_target_as = equestria
+				set_variable = {EQS.eqs_points = 0}
+			}
+			STG = {
+				set_variable = {STG.stg_points = 0}
+			}
+			SOL = { save_global_event_target_as = solar_empire }
+			GRI = {
+				save_global_event_target_as = griffonian_empire
+				set_variable = {GRI.gri_points = 0}
+			}		
+			every_country = {
+			if = {
+					limit = { is_pony_race = yes }
+					add_ideas = pony_race
+				}
+				else_if = {
+					limit = { is_changeling_race = yes }
+					add_ideas = changeling_race
+				}
+				else_if = {
+					limit = { is_deer_race = yes }
+					add_ideas = deer_race
+				}
+				else_if = {
+					limit = { is_griffon_race = yes }
+					add_ideas = griffon_race
+				}
+				else_if = {
+					limit = { is_diamond_dog_race = yes }
+					add_ideas = diamond_dog_race
+				}
+				else = {
+					set_technology = { generic_race = 1 }
+					add_ideas = generic_race_idea
+				}
+
+				if = {
+					limit = {
+						is_on_equestrian_continent = no
+						OR = {
+							has_idea = dummy_idea_science
+							NOT = {
+								has_idea_with_trait = science_idea
+							}
+						}
+					}
+					if = {
+						limit = {
+							num_of_civilian_factories > 2
+							has_tech = melee_weapons1
+							NOT = { owns_big_griffon_city = yes }
+							NOT = { owns_major_griffon_city = yes }
+						}
+						#log = "[Root.GetName] better_science_base"
+						add_ideas = better_science_base
+					}
+					else_if = {
+						limit = { owns_big_griffon_city = yes }
+						#log = "[Root.GetName] big_science_base"
+						add_ideas = big_science_base
+					}
+					else_if = {
+						limit = { owns_major_griffon_city = yes }
+						#log = "[Root.GetName] proper_science_base"
+						add_ideas = proper_science_base
+					}
+					else_if = {
+						limit = {
+							NOT = { owns_major_griffon_city = yes }
+							NOT = { owns_big_griffon_city = yes }
+							OR = {
+								NOT = { has_tech = melee_weapons1 }
+								NOT = { num_of_civilian_factories > 2 }
+							}
+							is_griffon_continent_country = yes
+						}
+						#log = "[Root.GetName] poor_science_base"
+						add_ideas = poor_science_base
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							is_on_equestrian_continent = yes
+							has_idea = dummy_idea_science
+							NOT = {
+								has_idea_with_trait = science_idea
+							}
+						}
+					}
+					add_ideas = proper_science_base
+				}
+
+				if = {
+					limit = {
+						OR = {
+							has_idea = dummy_idea_society
+							NOT = {
+								has_idea_with_trait = society_idea
+							}
+						}
+					}
+					if = {
+						limit = { is_griffon_continent_country = yes }
+						add_ideas = outdated_industry
+						else = {
+							add_ideas = modern_society
+						}
+					}
+				}
+
+				if = {
+					limit = {
+						is_ai = no
+					}
+					set_variable = { eaw_welcome_screen = 1 }
+				}
+
+				if = {
+					limit = {
+						is_griffon_continent_country = yes
+						OR = {
+							has_tribal_society = yes
+							has_agrarian_society = yes
+							has_pre_industrial_society = yes
+							has_illiteracy = yes
+						}
+					}
+					country_event = { id = griffonian.166 days = 912 } #comet sighted
+				}
+				
+
+				
+
+				if = {
+					limit = {
+						is_river_fed_member = yes
+					}
+					country_event = { id = river_cup.10 days = 193 }
+					country_event = { id = river_cup.11 days = 1656 }
+					country_event = { id = river_cup.12 days = 3119 }
+					country_event = { id = river_cup.13 days = 4582 }
+					country_event = { id = river_cup.14 days = 6045 }
+					country_event = { id = river_cup.15 days = 7508 }
+				}
+
+				if = {
+					limit = {
+						NOT = {
+							tag = GRI
+							any_owned_state = {
+								OR = {
+									is_coastal = yes
+									is_island_state = yes
+								}
+							}
+						}
+					}
+					set_country_flag = started_out_as_landlocked
+				}
+				}
+				adjust_research_modifier = yes
+				update_global_arrays = yes
+				actually_fix_weapon_techs = yes
+			
+
+			BUF = {
+				add_ideas = poor_science_base
+				adjust_research_modifier = yes
+			}
+			PLB = {
+				add_ideas = better_science_base
+				adjust_research_modifier = yes
+			}
+			GFF = {
+				add_ideas = big_science_base
+				adjust_research_modifier = yes
+			}
+			CRY = {
+				add_ideas = outdated_industry
+				every_owned_state = {
+					limit = { is_core_of = CRY }
+					add_to_array = { global.original_CRY_cores = THIS }
+				}
+				adjust_research_modifier = yes
+			}
+			YAK = {
+				add_ideas = big_science_base
+				adjust_research_modifier = yes
+			}
+			JAK = {
+				add_ideas = big_science_base
+				adjust_research_modifier = yes
+			}
+			log = "[GetDateText] Equestria at War main on_startup end"
+		}
+	}
+	#FROM is war target
+	on_declare_war = {
+		effect = {
+			log = "[GetDateText]: ROOT: [Root.GetName] FROM: [From.GetName] on_declare_war"
+			hidden_effect = {
+	
+			}
+		}
+	}
+
+	#FROM is state the nuke got dropped on
+	on_nuke_drop = {
+		effect = {
+			FROM = {
+				decrease_population_on_nuke = yes
+			}
+		}
+	}
+
+	#used when puppeting in a peace conference
+	#ROOT = nation being puppeted, FROM = overlord
+	on_puppet = {
+		effect = {
+			log = "[GetDateText]: ROOT: [Root.GetName] FROM: [From.GetName] on_puppet"
+			FROM = { remove_opinion_modifier = { target = ROOT modifier = cry_betrayal } }
+			LUS_load_commie_focus = yes
+			BRF_load_mason_focus = yes
+			GRU_load_commie_tree = yes
+			if = {
+				limit = {
+					ROOT = {
+						is_river_fed_member = yes
+					}
+					FROM = {
+						is_river_fed_member = no
+					}
+				}
+				RIV_leave_fed_no_ally = yes
+			}
+			if = {#If RCT has done Friendship Without Borders, this will apply it to any future vassals they make
+				limit = {
+					FROM = {
+						original_tag = RCT
+						has_completed_focus = RCT_friendship_without_borders
+					}
+					ROOT = {
+						NOT = {
+							has_idea = RCT_friendship_without_borders_idea
+						}
+					}
+				}
+				add_ideas = RCT_friendship_without_borders_idea
+			}
+
+			if = {
+				limit = {
+					ROOT = {
+						original_tag = GRY
+						has_focus_tree = GRY_focus_neutral_rebellion
+						NOT = {
+							has_government = neutrality
+						}
+					}
+				}
+				GRY_load_focus_tree_on_puppet = yes
+			}
+
+			if = {
+				limit = {
+					tag = NIM
+				}
+				NIM_load_focus_tree_on_puppet = yes
+			}
+
+			FAT_add_puppet_ideas = yes
+
+			JUN_handle_puppet = yes
+
+			CRY_check_for_Sombra_when_released = yes
+
+			handle_twilight_escaping = yes
+
+			if = {
+				limit = { original_tag = CHN }
+				if = {
+					limit = {
+						FROM = {
+							OR = {
+								original_tag = EQS
+								original_tag = CRY
+							}
+							has_government = democratic
+						}
+					}
+					FROM = {
+						country_event = { id = changelings.39 days = 1 }
+						country_event = { id = news.2101 days = 1 }
+					}
+					CHN = {
+						drop_cosmetic_tag = yes
+						set_cosmetic_tag = CHN_thorax
+					}
+					EQS_force_OLE_release_when_puppeting_CHN = yes
+				}
+				CHN_handle_fascist_communist_overlord = yes
+			}
+
+			if = {
+				limit = {
+					original_tag = EQS
+					#NOT = { has_focus_tree = equestria_focus }
+				}
+				load_focus_tree = equestria_sol_focus #workaround
+				country_event = { id = solarempire.1018 hours = 1 }
+			}
+
+			if = {
+				limit = {
+					FROM = {
+						original_tag = EQS
+					}
+				}
+				CRY_process_when_puppeted_by_EQS = yes
+				CHN_remove_pony_opinion_maluses = yes
+			}
+
+			if = {
+				limit = {
+					FROM = {
+						OR = {
+                            original_tag = CRY
+                            original_tag = EQC
+                        }
+					}
+				}
+                remove_opinion_modifier = { target = FROM modifier = CHN_embargo }
+                FROM = { remove_opinion_modifier = { target = ROOT modifier = CHN_embargo } }
+                remove_opinion_modifier = { target = FROM modifier = mortal_enemies }
+                FROM = { remove_opinion_modifier = { target = ROOT modifier = mortal_enemies } }
+			}
+
+			if = {
+				limit = {
+					original_tag = EQC
+				}
+				if = {
+					limit = {
+						FROM = {
+							OR = {
+								original_tag = EQS
+								original_tag = NLR
+							}
+						}
+					}
+					country_event = equestriancolony.1
+				}
+				else_if = {
+					limit = {
+						has_country_flag = equalist_eqc
+						NOT = { has_government = communism }
+					}
+					country_event = equestriancolony.4
+				}
+				else_if = {
+					limit = {
+						has_country_flag = is_maresoc
+					}
+					country_event = equestriancolony.3
+				}
+				else_if = {
+					limit = { NOT = { has_focus_tree = new_mareland_focus } }
+					load_focus_tree = new_mareland_focus
+					country_event = equestriancolony.2
+				}
+			}
+
+			set_have_regular_puppets = yes
+
+			JER_complete_focuses_based_on_overlord = yes
+
+			GRI_remove_RIV_opinion_modifiers = yes
+
+			if = {
+				limit = {
+					original_tag = FEA
+					OR = {
+						has_cosmetic_tag = FEA_PvdA_old_flag
+						has_cosmetic_tag = FEA_PvdA_old_flag_GRI_Puppet
+					}
+					FROM = { has_government = communism }
+				}
+				drop_cosmetic_tag = yes
+			}
+
+			AI_puppet_to_annex = yes
+
+			if = {
+				limit = {
+					original_tag = BRF
+					FROM = { has_government = communism }
+				}
+				country_event = prywhen.34
+			}
+
+			if = {
+				limit = {
+					original_tag = GRW
+					FROM = { NOT = { has_government = communism } }
+				}
+				country_event = prywhen.34
+			}
+
+			if = {
+				limit = {
+					tag = NLR
+					FROM = { NOT = { has_government = fascism } }
+				}
+				country_event = lunas.940
+			}
+
+			if = {
+				limit = {
+					FROM = {
+						original_tag = EQS
+						has_government = democratic
+					}
+				}
+				if = {
+					limit = { original_tag = BUF }
+					country_event = bufstate.36
+					break = yes
+				}
+			}
+
+			FROM = { ROOT = { apply_cosmetic_tags_on_puppet_PREV_is_overlord = yes } }
+		}
+	}
+
+	#used when puppeting through the occupied territories menu during peace time (or when releasing from non-core but owned territory, f.e. Britain releasing Egypt)
+	#ROOT = nation being released, FROM = overlord
+	on_release_as_puppet = {
+		effect = {
+			log = "[GetDateText]: ROOT: [Root.GetName] FROM: [From.GetName] on_release_as_puppet"
+			GRU_load_commie_tree = yes
+			if = {
+				limit = {
+					AND = {
+						original_tag = FAT
+						is_subject_of = GRI
+					}
+				}
+				set_cosmetic_tag = FAT_GRI_puppet
+				load_focus_tree = generic_griffon_focus
+			}
+			else_if = {
+				limit = {
+					AND = {
+						original_tag = SRS
+						is_subject_of = GRI
+					}
+				}
+				set_cosmetic_tag = SRS_GRI_puppet
+				load_focus_tree = generic_griffon_focus
+			}
+			else_if = {
+				limit = {
+					AND = {
+						original_tag = MIT
+						is_subject_of = GRI
+					}
+				}
+				set_cosmetic_tag = MIT_GRI_puppet
+				load_focus_tree = generic_griffon_focus
+			}
+			else_if = {
+				limit = {
+					AND = {
+						original_tag = KAT
+						is_subject_of = GRI
+					}
+				}
+				set_cosmetic_tag = KAT_GRI_puppet
+				load_focus_tree = generic_griffon_focus
+			}
+			else_if = {
+				limit = {
+					AND = {
+						original_tag = STW
+						is_subject_of = GRI
+					}
+				}
+				set_cosmetic_tag = STW_GRI_puppet
+				load_focus_tree = generic_griffon_focus
+			}
+			else_if = {
+				limit = {
+					AND = {
+						original_tag = MNC
+						is_subject_of = GRI
+					}
+				}
+				set_cosmetic_tag = MNC_GRI_puppet
+				load_focus_tree = generic_griffon_focus
+			}
+			else_if = {
+				limit = {
+					AND = {
+						original_tag = HAU
+						is_subject_of = GRI
+					}
+				}
+				set_cosmetic_tag = HAU_GRI_puppet
+				load_focus_tree = generic_griffon_focus
+			}
+			else_if = {
+				limit = {
+					AND = {
+						original_tag = TRD
+						is_subject_of = GRI
+					}
+				}
+				set_cosmetic_tag = TRD_GRI_conquered_puppet ## Justification: Unlikely that GRI will reinstate the Free City of Skyfall after what they did; better to marginalise the city and reduce its power ##
+				set_capital = 380
+				load_focus_tree = generic_griffon_focus
+			}
+			if = {
+				limit = { tag = DED }
+				FROM = {
+					annex_country = { target = ROOT  }
+					country_event = { id = deadempire.29 days = 1 }
+				}
+			}
+			if = {
+				limit = { FROM = { tag = DED } }
+				annex_country = { target = FROM  }
+			}
+			if = {
+				limit = {
+					FROM = {
+						tag = GRU
+						has_country_flag = GRU_company_intervention
+					}
+					ROOT = { tag = ZES }
+				}
+				ROOT = { set_cosmetic_tag = ZES_GRU_company  }
+			}
+			if = {
+				limit = {
+					FROM = {
+						tag = GRU
+						has_country_flag = GRU_company_intervention
+					}
+					ROOT = { tag = OLV }
+				}
+				ROOT = { set_cosmetic_tag = OLV_GRU_company  }
+			}
+			if = {
+				limit = {
+					FROM = {
+						tag = GRU
+						has_country_flag = GRU_company_intervention
+					}
+					ROOT = { tag = BAR }
+				}
+				ROOT = { set_cosmetic_tag = BAR_GRU_company  }
+			}
+			if = {
+				limit = {
+					FROM = {
+						tag = GRU
+						has_country_flag = GRU_company_intervention
+					}
+					ROOT = { tag = BRF }
+				}
+				ROOT = { set_cosmetic_tag = BRF_GRU_company  }
+			}
+			if = {
+				limit = {
+					FROM = {
+						tag = GRU
+						has_country_flag = GRU_company_intervention
+					}
+					ROOT = { tag = GRW }
+				}
+				ROOT = { set_cosmetic_tag = GRW_GRU_company  }
+			}
+			if = {
+				limit = {
+					FROM = {
+						tag = GRU
+						has_country_flag = GRU_company_intervention
+					}
+					ROOT = { tag = GRY }
+				}
+				ROOT = { set_cosmetic_tag = GRY_GRU_company  }
+			}
+			if = {
+				limit = {
+					FROM = {
+						tag = GRU
+						has_country_flag = GRU_company_intervention
+					}
+					ROOT = { tag = WIT }
+				}
+				ROOT = { set_cosmetic_tag = WIT_GRU_company  }
+			}
+			if = {
+				limit = {
+					FROM = {
+						tag = GRU
+						has_country_flag = GRU_company_intervention
+					}
+					ROOT = { tag = FRE }
+				}
+				ROOT = { set_cosmetic_tag = FRE_GRU_company  }
+			}
+			country_event = deadempire.36
+			if = {#If RCT has done Friendship Without Borders, this will apply it to any future vassals they make
+				limit = {
+					FROM = {
+						original_tag = RCT
+						has_completed_focus = RCT_friendship_without_borders
+					}
+					ROOT = {
+						NOT = {
+							has_idea = RCT_friendship_without_borders_idea
+						}
+					}
+				}
+				add_ideas = RCT_friendship_without_borders_idea
+			}
+			if = {
+				limit = {
+					ROOT = {
+						OR = {
+							original_tag = WIT
+							original_tag = RCT
+							original_tag = LCT
+							original_tag = FRE
+							original_tag = DEP
+							original_tag = DMT
+							original_tag = BAK
+							original_tag = NIM
+						}
+						has_cosmetic_tag = RIV_federation_mem
+						is_river_fed_member = no
+					}
+				}
+				RIV_drop_cosmetic_tag = yes
+			}
+
+			LUS_load_commie_focus = yes
+
+			BRF_load_mason_focus = yes
+
+			if = {
+				limit = { original_tag = BRF }
+				BRF = {	country_event = brodfeld.27 }
+			}
+
+			if = {
+				limit = { original_tag = CHN }
+				CHN_handle_fascist_communist_overlord = yes
+				CHN_demilitarise = yes
+			}
+
+			CRY_check_for_Sombra_when_released = yes
+
+			if = {
+				limit = { FROM = { original_tag = NLR } original_tag = EQS }
+				FROM = { annex_country = { target = ROOT } }
+			}
+
+			if = {
+				limit = {
+					original_tag = EQS
+					#NOT = { has_focus_tree = equestria_focus }
+				}
+				load_focus_tree = equestria_sol_focus #workaround
+				country_event = { id = solarempire.1018 hours = 1 }
+			}
+
+			if = {
+				limit = {
+					FROM = {
+						original_tag = EQS
+					}
+				}
+				if = {
+					limit = { original_tag = NLR }
+					FROM = { annex_country = { target = ROOT } }
+				}
+				CRY_process_when_puppeted_by_EQS = yes
+				CHN_remove_pony_opinion_maluses = yes
+			}
+
+			if = {
+				limit = {
+					original_tag = EQC
+				}
+				if = {
+					limit = {
+						FROM = {
+							OR = {
+								original_tag = EQS
+								original_tag = NLR
+							}
+						}
+					}
+					country_event = equestriancolony.1
+				}
+				else_if = {
+					limit = {
+						has_country_flag = equalist_eqc
+						NOT = { has_government = communism }
+					}
+					country_event = equestriancolony.4
+				}
+				else_if = {
+					limit = {
+						has_country_flag = is_maresoc
+					}
+					country_event = equestriancolony.3
+				}
+				else_if = {
+					limit = { NOT = { has_focus_tree = new_mareland_focus } }
+					load_focus_tree = new_mareland_focus
+					country_event = equestriancolony.2
+				}
+			}
+
+			if = {
+				limit = {
+					original_tag = BRF
+					FROM = { has_government = communism }
+				}
+				country_event = prywhen.34
+			}
+
+			if = {
+				limit = {
+					original_tag = GRW
+					FROM = { NOT = { has_government = communism } }
+				}
+				country_event = prywhen.34
+			}
+
+			if = {
+				limit = {
+					tag = NLR
+					FROM = { NOT = { has_government = fascism } }
+				}
+				country_event = lunas.940
+			}
+
+			if = {
+				limit = {
+					ROOT = {
+						original_tag = GRY
+						has_focus_tree = GRY_focus_neutral_rebellion
+						NOT = {
+							has_government = neutrality
+						}
+					}
+				}
+				GRY_load_focus_tree_on_puppet = yes
+			}
+
+			if = {
+				limit = {
+					tag = NIM
+				}
+				NIM_load_focus_tree_on_puppet = yes
+			}
+
+			JER_complete_focuses_based_on_overlord = yes
+
+			transfer_society_and_science_ideas_when_released = yes
+
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = FEA_STW_union
+					}
+					OR = {
+						tag = STW
+						tag = FEA
+					}
+				}
+				FROM = {
+					set_autonomy = {
+						target = ROOT
+						autonomy_state = autonomy_personal_union
+					}
+					clr_country_flag = FEA_STW_union
+					drop_cosmetic_tag = yes
+				}
+				break = yes
+			}
+			if = {
+				limit = {
+					FROM = {
+						original_tag = EQS
+						has_government = democratic
+					}
+				}
+				if = {
+					limit = { original_tag = BUF }
+					country_event = bufstate.36
+					break = yes
+				}
+			}
+
+			FROM = { ROOT = { apply_cosmetic_tags_on_puppet_PREV_is_overlord = yes } }
+
+			actually_fix_weapon_techs = yes
+			FROM = { actually_fix_weapon_techs = yes }
+		}
+	}
+
+	#ROOT is subject FROM is overlord
+	on_subject_annexed = {
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						tag = STW
+						tag = FEA
+					}
+					OR = {
+						has_country_flag = FEA_STW_marriage
+						FROM = { has_country_flag = FEA_STW_marriage }
+					}
+					FROM = {
+						OR = {
+							tag = STW
+							tag = FEA
+						}
+						OR = {
+							has_country_leader = { ruling_only = yes name = "Duchess Gabriela Eagleclaw" }
+							has_idea = FEA_beloved_monarch
+							has_idea = FEA_beloved_monarch_2
+							has_idea = FEA_beloved_monarch_3
+						}
+					}
+					OR = {
+						has_country_leader = { ruling_only = yes name = "Duchess Gabriela Eagleclaw" }
+						has_idea = FEA_beloved_monarch
+						has_idea = FEA_beloved_monarch_2
+						has_idea = FEA_beloved_monarch_3
+					}
+				}
+				FROM = {
+					set_country_flag = FEA_STW_union
+					set_cosmetic_tag = FEA_STW_union
+				}
+			}
+		}
+	}
+
+	#ROOT is winner #FROM gets annexed - For civil wars on_civil_war_end is also fired
+	on_annex = {
+		effect = {
+			log = "[GetDateText]: ROOT: [Root.GetName] FROM: [From.GetName] on_annex"
+			FROM = { remove_from_global_arrays_on_annex = yes }
+			if = {
+				limit = {
+					has_war = no
+					NOT = {
+						has_country_flag = recovery_idea_bypass
+						has_country_flag = FAT_bypass_recovery
+						FROM = { has_country_flag = FAT_bypass_recovery }
+					}
+					OR = {
+						original_tag = FROM
+						AND = {
+							original_tag = EQS
+							FROM = { original_tag = NLR }
+						}
+						AND = {
+							FROM = { original_tag = EQS }
+							original_tag = NLR
+						}
+						AND = {
+							original_tag = FAW
+							FROM = { original_tag = FAT }
+						}
+						AND = {
+							FROM = { original_tag = FAW }
+							original_tag = FAT
+						}
+					}
+				}
+				add_timed_idea = {
+					idea = civil_war_recovery
+					days = 210
+				}
+				clr_country_flag = FAT_bypass_recovery
+				FROM = { clr_country_flag = FAT_bypass_recovery }
+			}
+
+			
+			
+			if = {
+				limit = {
+					FROM = { tag = event_target:griffonian_empire }
+				}
+				GRI = {
+					save_global_event_target_as = griffonian_empire
+					set_variable = { global.griffonian_empire_var = THIS }
+				}
+			}
+
+			if = {
+				limit = {
+					FROM = {
+						OR = {
+							tag = LNS
+							tag = LSM
+							tag = LSC
+						}
+					}
+					OR = {
+						tag = LNS
+						tag = LSM
+						tag = LSC
+					}
+				}
+				save_global_event_target_as = longsword
+			}
+
+			if = {
+				limit = {
+					tag = CHN
+					FROM = { original_tag = OLE }
+				}
+				FROM = { set_country_flag = OLE_was_annexed }
+			}
+
+			handle_twilight_escaping = yes
+
+			if = {
+				limit = {
+					FROM = {
+						tag = JER
+						has_idea = JER_revolutionary
+					}
+					FAT = {
+						exists = yes
+						is_subject = no
+					}
+				}
+				FAT = { country_event = { id = griffonRepublic.83 days = 15 } }
+			}
+
+			if = {
+				limit = {
+					OR = {
+						tag = JEB
+						tag = JES
+						tag = VIN
+						tag = JFT
+						tag = JRR
+					}
+					NOT = {
+						has_government = democratic
+						has_government = communism
+						AND = {
+							tag = JRR
+							has_country_flag = JER_JRR_revolutionary
+						}
+					}
+					FROM = {
+						tag = JER
+						has_completed_focus = JER_fight_for_freedom
+					}
+				}
+				country_event = aquileia_news.4
+			}
+
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							tag = JER
+							has_completed_focus = JER_fight_for_freedom
+							FROM = {
+								OR = {
+									tag = JEB
+									tag = JES
+									tag = VIN
+									tag = JFT
+									tag = JRR
+								}
+							}
+							OR = {
+								has_government = democratic
+								has_government = communism
+							}
+							JEB = { OR = { exists = no is_subject_of = ROOT } }
+							JRR = { OR = { exists = no is_subject_of = ROOT } }
+							VIN = { OR = { exists = no is_subject_of = ROOT } }
+							JFT = { OR = { exists = no is_subject_of = ROOT } }
+							JES = { OR = { exists = no is_subject_of = ROOT } }
+						}
+						AND = {
+							OR = {
+								tag = JEB
+								tag = JES
+								tag = VIN
+								tag = JFT
+								tag = JRR
+							}
+							FROM = {
+								tag = JER
+								NOT = { has_completed_focus = JER_fight_for_freedom }
+							}
+							OR = {
+								has_government = democratic
+								has_government = communism
+								AND = {
+									tag = JRR
+									has_country_flag = JER_JRR_revolutionary
+								}
+							}
+						}
+					}
+				}
+				country_event = aquileia_news.2
+			}
+
+			if = {
+				limit = {
+					tag = event_target:solar_empire
+					FROM = { original_tag = EQC }
+				}
+				set_province_name = { id = 10005 name = "Sunset"}
+			}
+
+			if = {
+				limit = {
+					FROM = { tag = NCH }
+				}
+				set_variable = {
+					NCH_trade_partners_iter = 0
+				}
+				NCH_get_trading_idea = yes
+			}
+		}
+	}
+
+	#ROOT is winner #FROM gets annexed - This fires just before FROM gets annexed, meaning the country and everything it owns still exists. It will also fire on_annex and on_civil_war_end
+	on_civil_war_end_before_annexation = {
+		effect = {
+			#End of Wingbardian Civil War - moving the fleet back to the Fascists because they won
+			if = {
+				limit = {
+					OR = {
+						original_tag = WNG
+						original_tag = OLE
+					}
+				}
+				FROM = {
+					transfer_navy = { target = ROOT }
+				}
+			}
+		}
+	}
+
+	#ROOT is winner FROM gets annexed
+	on_civil_war_end = {
+		effect = {
+			log = "[GetDateText]: ROOT: [Root.GetName] FROM: [From.GetName] on_civil_war_end"
+			if = {
+				limit = {
+					original_tag = FBK
+				}
+				if = {
+					limit = { NCH = { has_country_flag = NCH_Farbrook_Civil_War_Flag } }
+					if = {
+						limit = { NOT = { has_government = fascism } }
+						NCH = { country_event = { id = greneclyf.43 days = 2 } }
+						else = {
+							NCH = { country_event = { id = greneclyf.37 days = 1 } }
+						}
+					}
+					break = yes
+				}
+				if = {
+					limit = { NCH = { has_country_flag = NCH_Farbrook_Commie_Civil_War_Flag } }
+					if = {
+						limit = { NOT = { has_government = communism } }
+						NCH = { country_event = { id = greneclyf.55 days = 2 } }
+						else = {
+							NCH = { country_event = { id = greneclyf.49 days = 1 } }
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					original_tag = EQS
+					FROM = { original_tag = EQS has_government = communism }
+				}
+				country_event = { id = equestriadem.8 days = 60 }
+				country_event = { id = equestria.44 days = 1 }
+			}
+			if = {
+				limit = {
+					tag = event_target:equestria
+					FROM = { tag = event_target:solar_empire }
+				}
+				set_capital = 3
+				SOL = { save_global_event_target_as = solar_empire }
+				break = yes
+			}
+			if = {
+				limit = {
+					FROM = {tag = event_target:equestria }
+					tag = event_target:solar_empire
+				}
+				SOL = {
+					set_politics = { ruling_party = democratic }
+					save_global_event_target_as = equestria
+				}
+				set_country_flag = { flag = SOL_next_civ_war_delay value = 1 days = 180 }
+				break = yes
+			}
+			if = {
+				limit = {
+					original_tag = CRY
+					FROM = { original_tag = CRY }
+				}
+				if = {
+					limit = {
+						has_government = fascism
+						has_country_leader = { ruling_only = yes name = "King Sombra" }
+					}
+					country_event = { id = crysom.16 hours = 12 }
+					if = {
+						limit = { event_target:equestria = { exists = yes } }
+						random_list = {
+							30 = {
+								event_target:equestria = {
+									country_event = { id = crysom.49 hours = 2 }
+								}
+								country_event = { id = crysom.50 hours = 1 }
+							}
+							70 = { country_event = { id = crysom.41 hours = 1 } }
+						}
+						else = { country_event = { id = crysom.41 hours = 1 } }
+					}
+				}
+				if = {
+					limit = {
+						has_government = communism
+						FROM = { has_government = democratic }
+					}
+					news_event = { id = news.cry.1 days = 1 }
+				}
+				set_capital = 344
+				break = yes
+			}
+			if = {
+				limit = {
+					original_tag = OLE
+				}
+				set_capital = 76
+				drop_cosmetic_tag = yes
+				break = yes
+			}
+			#End of ideology Civil War
+			if = {
+				limit = {
+					original_tag = WNG
+				}
+				set_capital = 371
+				if = {
+					limit = { is_in_faction = no is_subject = no }
+					create_faction = Southern_Kingdoms
+				}
+				# Give back WNG focus tree to Beakolini if he wins the civil war.
+				if = {
+					limit = {
+						has_government = fascism
+						FROM = {
+							NOT = { has_government = fascism }
+						}
+					}
+					unlock_national_focus = WNG_march_on_karthin
+					unlock_national_focus = WNG_meet_with_beakolini
+					unlock_national_focus = WNG_a_fascist_prime_minister
+					news_event = { id = news_wingbardy.9 days = 1 }
+				}
+				#End WNG Civil War Event
+				if = {
+					limit = {
+						FROM = {
+							has_government = fascism
+						}
+						has_government = communism
+					}
+					country_event = { id = wingbardy.51 days = 1 }
+					news_event = { id = news_wingbardy.8 days = 1 }
+				}
+				break = yes
+			}
+			#End of EQC MARESOC Civil War
+			if = {
+				limit = {
+					FROM = {
+						original_tag = EQC
+						has_country_flag = is_maresoc
+					}
+					original_tag = EQC
+				}
+				country_event = { id = mareland.26 days = 1 }
+			}
+			if = {
+				limit = {
+					FROM = {
+						original_tag = EQC
+					}
+					original_tag = EQC
+					has_country_flag = is_maresoc
+				}
+				country_event = { id = mareland.27 days = 1 }
+			}
+			if = {
+				limit = {
+					original_tag = LUS
+					FROM = { original_tag = LUS has_government = neutrality }
+				}
+				country_event = { id = lushi_peasants.1 days = 50 random = 480 }#days to hours applied
+				break = yes
+			}
+			if = {
+				limit = {
+					original_tag = FIR
+					FROM = { original_tag = FIR }
+				}
+				country_event = { id = FIR.29 days = 1 }
+				break = yes
+			}
+		}
+	}
+	# ROOT is capitulated country, FROM is winner
+	on_capitulation = {
+		effect = {
+			log = "[GetDateText]: ROOT: [Root.GetName] FROM: [From.GetName] on_capitulation"
+			if = {
+				limit = {
+					tag = EQP
+				}
+				EQS = { annex_country = { target = EQP } }
+			}
+			if = {
+				limit = {
+					tag = NLR
+					FROM = { tag = EQS }
+				}
+				transfer_navy = { target = FROM }
+			}
+			if = {
+				limit = {
+					tag = EQS
+					FROM = { tag = NLR }
+				}
+				transfer_navy = { target = FROM }
+			}
+			if = {
+				limit = {
+					original_tag = EQS
+					has_government = democratic
+					is_in_faction_with = EQC
+					FROM = { 
+						OR = {
+							tag = CHN 
+							tag = NLR
+						}
+					}
+					EQC = {
+						exists = yes
+						has_capitulated = no
+						NOT = {
+							any_owned_state = {
+								is_controlled_by = FROM
+							}
+						}
+						#all_owned_state = {
+						#	is_fully_controlled_by = EQC
+						#}
+					}
+					#EQC = { has_completed_focus = EQC_strengthen_equestrian_ties }
+				}
+				EQC = {
+					if = {
+						limit = { FROM = { tag = CHN } }
+						ROOT = {
+							transfer_navy = { target = EQC }
+							every_navy_leader = {
+								set_unit_leader_flag = used_to_be_EQS
+								set_nationality = EQC
+							}
+						}
+					}
+					if = {
+						limit = { is_subject = yes }
+						end_puppet_this = yes
+					}
+					if = {
+						limit = { is_in_faction = yes }
+						leave_faction = yes
+					}
+					if = {
+						limit = { has_war_with = FROM }
+						set_country_flag = { flag = bypass_on_peaceconference_ended days = 1 value = 1 }
+						white_peace = FROM
+					}
+					if = {
+						limit = { FROM = { tag = CHN } }
+						set_country_flag = EQC_govt_in_exile
+					}
+					else_if = {
+						limit = { FROM = { is_ai = no } }
+						FROM = {
+							create_wargoal = { target = ROOT type = puppet_wargoal_focus }
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					tag = BAL
+				}
+				if = {
+					limit = {
+						SIC = {
+							exists = yes
+						}
+					}
+					SIC = {
+						country_event = {
+							id = baltimare.28
+							days = 7
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					tag = CHN
+					FROM = { tag = CCN }
+				}
+				transfer_navy = { target = FROM }
+			}
+			if = {
+				limit = {
+					tag = TRD
+					FROM = { tag = event_target:griffonian_empire }
+				}
+				transfer_navy = { target = FROM }
+			}
+			if = {
+				limit = {
+					OR = {
+						tag = BAN
+						tag = ZES
+					}
+				}
+				if = {
+					limit = {
+						SIC = { has_country_flag = don_is_in_blackrock }
+						tag = BAN
+					}
+					SIC = { country_event = sicameon.96 }
+				}
+				if = {
+					limit = {
+						SIC = { has_country_flag = don_is_in_stripes }
+						tag = ZES
+					}
+					SIC = { country_event = sicameon.97 }
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						tag = DED
+						NOT = { has_country_flag = DED_capitulated@ROOT}
+					}
+				}
+				FROM = { set_country_flag = DED_capitulated@ROOT }
+				if = {
+					limit = { is_major = yes }
+					FROM = { modify_country_flag = { flag = DED_killed_nations value = 5 } }
+					else = {
+						FROM = { modify_country_flag = { flag = DED_killed_nations value = 1 } }
+					}
+				}
+			}
+			handle_twilight_escaping = yes
+		}
+	}
+	#ROOT is free nation FROM is releaser
+	on_release_as_free = {
+		effect = {
+			log = "[GetDateText]: ROOT: [Root.GetName] FROM: [From.GetName] on_release_as_free"
+			GRU_load_commie_tree = yes
+			if = {
+				limit = { tag = DED }
+				FROM = {
+					annex_country = { target = ROOT  }
+					country_event = { id = deadempire.29 days = 1 }
+				}
+			}
+			country_event = deadempire.36
+			if = {
+				limit = {
+					original_tag = CRY
+				}
+				country_event = crysom.48
+			}
+
+			if = {
+				limit = {
+					original_tag = BRF
+					has_government = communism
+				}
+				country_event = prywhen.34
+			}
+
+			if = {
+				limit = { original_tag = BRF }
+				BRF = {	country_event = brodfeld.27 }
+			}
+
+			if = {
+				limit = {
+					original_tag = GRW
+					NOT = { has_government = communism }
+				}
+				country_event = prywhen.34
+			}
+
+			if = {
+				limit = {
+					original_tag = EQS
+					#NOT = { has_focus_tree = equestria_focus }
+				}
+				load_focus_tree = equestria_sol_focus #workaround
+				country_event = { id = solarempire.1018 hours = 1 }
+			}
+
+			if = {
+				limit = {
+					tag = NLR
+					NOT = { has_government = fascism }
+				}
+				country_event = lunas.940
+			}
+
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = FEA_STW_union
+					}
+					OR = {
+						tag = STW
+						tag = FEA
+					}
+				}
+				FROM = {
+					clr_country_flag = FEA_STW_union
+					drop_cosmetic_tag = yes
+				}
+			}
+
+			if = {
+				limit = {
+					OR = {
+						has_idea = dummy_idea_society
+						NOT = { has_idea_with_trait = society_idea }
+					}
+					FROM = {
+						NOT = {
+							has_idea = modern_society
+						}
+					}
+				}
+				FROM = { ROOT = { transfer_society_ideas = yes } }
+				else = { add_ideas = modern_society }
+			}
+
+			if = {
+				limit = {
+					OR = {
+						has_idea = dummy_idea_science
+						NOT = { has_idea_with_trait = science_idea }
+					}
+					FROM = {
+						NOT = {
+							has_idea = proper_science_base
+						}
+					}
+				}
+				FROM = { ROOT = { transfer_science_ideas = yes } }
+				else = { add_ideas = proper_science_base }
+			}
+
+			if = {
+				limit = {
+					ROOT = {
+						original_tag = GRY
+						has_focus_tree = GRY_focus_neutral_rebellion
+						NOT = {
+							has_government = neutrality
+						}
+					}
+				}
+				GRY_load_focus_tree_on_puppet = yes
+			}
+
+			JER_complete_focuses_based_on_overlord = yes
+			BRF_load_mason_focus = yes
+
+			actually_fix_weapon_techs = yes
+			FROM = { actually_fix_weapon_techs = yes }
+		}
+	}
+
+	on_subject_free = {
+		effect = {
+			log = "[GetDateText]: ROOT: [Root.GetName] FROM: [From.GetName] on_subject_free"
+			GRU_load_commie_tree = yes
+			if = {
+				limit = {
+					has_cosmetic_tag = GRI_SUBJECT
+				}
+				country_event = griffonian.2
+				break = yes
+			}
+			if = {
+				limit = {
+					has_country_flag = is_changeling_puppet
+					NOT = { tag = EQS }
+				}
+				country_event = changelings.910
+				break = yes
+			}
+			if = {
+				limit = {
+					has_country_flag = is_changeling_puppet
+					original_tag = EQS
+					num_of_controlled_states > 15
+					controls_fillydelphia = yes
+					controls_manehattan = yes
+					controls_los_pegasus = yes
+					controls_baltimare = yes
+					controls_canterlot = yes
+				}
+				country_event = changelings.911
+				break = yes
+			}
+			if = {
+				limit = {
+					original_tag = EQC
+					OR = {
+						has_cosmetic_tag = EQC_EQS
+						has_cosmetic_tag = EQC_SOL
+						has_cosmetic_tag = EQC_NLR
+					}
+				}
+				country_event = equestriancolony.2
+				break = yes
+			}
+			if = {
+				limit = {
+					NOT = { original_tag = EQS }
+					has_country_flag = is_luna_puppet
+				}
+				country_event = lunas.910
+				break = yes
+			}
+			if = {
+				limit = {
+					original_tag = CRY
+					NOT = {
+						is_subject_of = event_target:solar_empire
+						is_in_faction_with = event_target:solar_empire
+					}
+					has_country_flag = is_sol_puppet
+				}
+				country_event = solarempiresparkles.104
+				break = yes
+			}
+			if = {
+				limit = {
+					has_country_flag = is_solar_puppet
+				}
+				country_event = solarempire.1007
+				break = yes
+			}
+			if = {
+				limit = {
+					has_country_flag = is_FAT_puppet
+				}
+				country_event = griffonRepublic.101
+				break = yes
+			}
+		}
+	}
+
+	on_government_change = {
+		effect = {
+			log = "[GetDateText]: ROOT: [Root.GetName] on_government_change"
+			if = {
+				limit = { original_tag = CRY }
+				CRY_restore_establishment = yes
+				country_event = { id = crysom.48 hours = 1 }
+				if = {
+					limit = {
+						has_country_leader = { ruling_only = yes name = "Radiant Hope" }
+						has_global_flag = sombra_returned
+					}
+					kill_country_leader = yes
+				}
+			}
+
+			if = {
+				limit = {
+					original_tag = EQC
+					has_country_flag = has_supported_equalists
+					has_government = communism
+				}
+				country_event = { id = mareland.30 hours = 1 }
+			}
+
+			FIR_FBK_on_govt_change = yes
+
+			if = {
+				limit = {
+					original_tag = FIR
+					has_country_flag = FIR_is_necromancer
+					NOT = { has_country_leader = { ruling_only = yes name = "Shinespark" } }
+				}
+				add_opinion_modifier = {
+					target = DED
+					modifier = mortal_enemies
+				}
+				add_opinion_modifier = {
+					target = DED
+					modifier = CHN_embargo
+				}
+				reverse_add_opinion_modifier = {
+					target = DED
+					modifier = mortal_enemies
+				}
+				reverse_add_opinion_modifier = {
+					target = DED
+					modifier = CHN_embargo
+				}
+			}
+			if = {
+				limit = {
+					original_tag = BAN
+					has_government = neutrality
+				}
+				clr_country_flag = have_regular_puppets
+			}
+			if = {
+				limit = {
+					original_tag = GRU
+				}
+				if = {
+					limit = { has_government = communism }
+					load_focus_tree = gryphus_commie_tree
+					else = {
+						load_focus_tree = gryphus
+					}
+				}
+			}
+			if = {
+				limit = {
+					original_tag = STG
+					is_subject = no
+				}
+				if = {
+					limit = {
+						has_government = democratic
+					}
+					drop_cosmetic_tag = yes
+					set_cosmetic_tag = STG_DEM
+					break = yes
+				}
+				if = {
+					limit = {
+						has_government = fascism
+					}
+					drop_cosmetic_tag = yes
+					set_cosmetic_tag = STG_PAGAN
+					break = yes
+				}
+				if = {
+					limit = {
+						has_government = neutrality
+					}
+					drop_cosmetic_tag = yes
+					set_cosmetic_tag = STG_MONARCHY
+					break = yes
+				}
+				drop_cosmetic_tag = yes
+			}
+			handle_generic_griffon_ideas_on_govt_change = yes
+			if = {
+				limit = {
+					original_tag = FEA
+					OR = {
+						has_cosmetic_tag = FEA_PvdA_old_flag
+						has_cosmetic_tag = FEA_PvdA_old_flag_GRI_Puppet
+					}
+					OR = {
+						NOT = { has_government = communism }
+						AND = {
+							is_subject = yes
+							overlord = { has_government = communism }
+						}
+					}
+				}
+				drop_cosmetic_tag = yes
+			}
+			if = {
+				limit = {
+					original_tag = GRI
+					has_government = democratic
+				}
+				every_country = {
+					limit = {
+						has_opinion_modifier = RIV_hates_the_empire
+						has_government = democratic
+					}
+					remove_opinion_modifier = { target = ROOT modifier = RIV_hates_the_empire }
+				}
+			}
+			if = {
+				limit = {
+					original_tag = ROU
+					has_country_flag = have_regular_puppets
+				}
+				clr_country_flag = have_regular_puppets
+			}
+			if = {
+				limit = {
+					original_tag = EQS
+					tag = event_target:solar_empire
+					NOT = { has_government = fascism }
+				}
+				if = {
+					limit = { event_target:equestria = { exists = no } }
+					save_global_event_target_as = equestria
+				}
+				SOL = { save_global_event_target_as = solar_empire }
+				load_focus_tree = equestria_sol_focus #workaround
+				country_event = { id = solarempire.1018 hours = 1 }
+			}
+			if = {
+				limit = {
+					original_tag = DMT
+					has_unit_leader = 708
+					NOT = {	has_government = fascism }
+				}
+				remove_unit_leader = 708
+			}
+			if = {
+				limit = {
+					original_tag = LUS
+				}
+				country_event = { id = lushi.155 hours = 1 }
+			}
+		}
+	}
+
+	#ROOT is winner #FROM is loser
+	on_peaceconference_ended = {
+		effect = {
+			# PUT EVERYTHING IN THE IF BELOW
+			# THE bypass_on_peaceconference_ended FLAG **HAS** TO BE SET BEFORE CALLING THE white_peace COMMAND AND CLEARED AFTERWARDS
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = bypass_on_peaceconference_ended
+						FROM = { has_country_flag = bypass_on_peaceconference_ended }
+					}
+				}
+				log = "[GetDateText]: ROOT: [Root.GetName] FROM: [From.GetName] on_peaceconference_ended"
+
+				country_event = deadempire.36
+				FROM = { country_event = deadempire.36 }
+
+				handle_op_paperclip = yes
+				if = {
+					limit = {
+						original_tag = SCS 
+						FROM = {
+							owns_state = 3
+						}
+						
+					}
+					SCS = {
+						country_event = { id = scs.776 days = 4 }
+					}
+				}
+				if = {
+					limit = {
+						FROM = {
+							original_tag = GFF
+							is_subject_of = ROOT
+						}
+						GRF = { is_subject_of = ROOT }
+					}
+					GRF = {
+						annex_country = { target = FROM }
+					}
+				}
+
+				if = {
+					limit = {
+						tag = CHN
+						FROM = {
+							tag = CCN
+						}
+					}
+					annex_country = { target = FROM }
+				}
+
+				if = {
+					limit = {
+						tag = CCN
+						FROM = {
+							tag = CHN
+						}
+					}
+					annex_country = { target = FROM }
+				}
+
+				if = {
+					limit = {
+						is_eqs_civil_war_tag = yes
+						NOT = {
+							original_tag = EQS
+							original_tag = NLR
+						}
+						FROM = {
+							is_eqs_civil_war_tag = yes
+						}
+					}
+					annex_country = { target = FROM }
+				}
+
+				if = {
+					limit = {
+						is_ai = yes
+						original_tag = HLQ
+						FROM = {
+							OR = {
+								original_tag = LNS
+								original_tag = LSC
+								original_tag = LSM
+							}
+							is_subject_of = ROOT
+						}
+					}
+					annex_country = { target = FROM }
+				}
+
+				if = {
+					limit = {
+						is_ai = yes
+						OR = {
+							original_tag = LNS
+							original_tag = LSC
+							original_tag = LSM
+						}
+						FROM = {
+							OR = {
+								original_tag = LNS
+								original_tag = LSC
+								original_tag = LSM
+								original_tag = HLQ
+							}
+							is_subject_of = ROOT
+						}
+					}
+					annex_country = { target = FROM }
+				}
+
+				if = {
+					limit = {
+						NOT = { has_global_flag = river_federation_founded }
+						OR = {
+							AND = {
+								is_river_fed_member = yes
+								any_allied_country = {
+									is_river_fed_member = yes
+									is_faction_leader = yes
+								}
+							}
+							FROM = {
+								AND = {
+									is_river_fed_member = yes
+									any_allied_country = {
+										is_river_fed_member = yes
+										is_faction_leader = yes
+									}
+								}
+							}
+						}
+					}
+					RIV_find_new_leader = yes
+				}
+
+				if = {
+					limit = {
+						tag = CHN
+						has_country_leader = { ruling_only = yes name = "Queen Chrysalis" }
+						FROM = { original_tag = EQS }
+					}
+					if = {
+						limit = { FROM = { is_subject_of = ROOT } }
+						country_event = news.1111
+						else = {
+							country_event = news.1121
+						}
+					}
+				}
+
+				if = {
+					limit = { FROM = { tag = CHN } }
+					if = {
+						limit = {
+							OR = {
+								has_government = democratic
+								has_government = communism
+							}
+							FROM = {
+								OR = {
+									has_unit_leader = 600
+									has_unit_leader = 602
+									has_unit_leader = 606
+									has_unit_leader = 607
+								}
+							}
+						}
+						hidden_effect = {
+							# SOL is used as limbo
+							event_target:CHN_Trimmel = { set_nationality = SOL }
+							event_target:CHN_Vect = { set_nationality = SOL }
+							event_target:CHN_Opertis = { set_nationality = SOL }
+							event_target:CHN_Ersatz = { set_nationality = SOL }
+						}
+						if = {
+							limit = { original_tag = STG }
+							country_event = { id = news.2201 days = 1 }
+						}
+					}
+				}
+
+				if = {
+					limit = { original_tag = EQS }
+					if = {
+						limit = {
+							FROM = {
+								is_major = yes
+								NOT = {
+									tag = CHN
+									original_tag = OLE
+								}
+							}
+						}
+						set_country_flag = EQS_had_big_war
+						country_event = { id = equestriadem.8 days = 60 }
+					}
+					if = {
+						limit = {
+							is_ai = yes
+							has_government = democratic
+							any_owned_state = {
+								is_core_of = OLE
+							}
+						}
+						if = {
+							limit = { NOT = { country_exists = OLE } }
+							release_puppet = OLE
+						}
+						if = {
+							limit = { OLE = { OR = { is_in_faction_with = ROOT is_subject_of = ROOT } } }
+							every_owned_state = {
+								limit = { is_core_of = OLE }
+								OLE = { transfer_state = PREV }
+							}
+						}
+					}
+					if = {
+						limit = {
+							FROM = { tag = CHN }
+						}
+						country_event = { id = news.2101 days = 1 }
+						country_event = { id = equestriadem.8 days = 60 }
+					}
+
+					if = {
+						limit = {
+							has_global_flag = equestrian_civil_war
+							FROM = { tag = NLR }
+						}
+						country_event = { id = news.2031 days = 1 }
+						country_event = { id = equestriadem.8 days = 60 }
+						if = {
+							limit = { country_exists = FROM }
+							annex_country = { target = FROM }
+						}
+					}
+					if = {
+						limit = {
+							has_global_flag = the_crystal_war
+							FROM = { original_tag = CRY }
+
+						}
+						news_event = { id = news.42 days = 1}
+						clr_global_flag = the_crystal_war
+						remove_opinion_modifier = { target = FROM modifier = mortal_enemies }
+						FROM = { remove_opinion_modifier = { target = ROOT modifier = mortal_enemies } }
+					}
+				}
+
+				if = {
+					limit = {
+						original_tag = CRY
+						FROM = { tag = NLR }
+						has_government = democratic
+						has_global_flag = SOL_wartime_change
+						has_country_flag = Supported_SOL
+						event_target:solar_empire = { has_war = no }
+						is_subject_of = event_target:solar_empire
+						NOT = {
+							event_target:solar_empire = { has_completed_focus = Crystal_Fair }
+							has_country_flag = SOL_CRY_didnt_break_free
+							has_country_flag = CRY_solar_governorship
+							has_country_flag = CRY_dont_give_SOL_cosmetic
+						}
+					}
+					set_country_flag = CRY_thinking_about_staying_a_SOL_puppet
+					country_event = { id = solarempire.15 days = 1 }
+				}
+
+				if = {
+					limit = {
+						has_global_flag = the_crystal_war
+						FROM = { original_tag = EQS  }
+						original_tag = CRY
+					}
+					news_event = { id = news.43 days = 1}
+					clr_global_flag = the_crystal_war
+					remove_opinion_modifier = { target = FROM modifier = mortal_enemies }
+					FROM = { remove_opinion_modifier = { target = ROOT modifier = mortal_enemies } }
+				}
+				if = {
+					limit = {
+						FROM = { original_tag = EQS }
+						tag = NLR
+					}
+					FROM = {
+						kill_country_leader = yes
+					}
+					if = {
+						limit = { country_exists = FROM }
+						annex_country = { target = FROM }
+					}
+					country_event = { id = news.2041 days = 1 }
+					country_event = { id = lunas.35 days = 1 random = 4800 }#days to hours applied
+				}
+
+				if = {
+					limit = {
+						is_EQS_SOL = yes
+						FROM = {
+							original_tag = EQS
+							is_EQS_SOL = no
+						}
+						NOT = { has_global_flag = equestrian_civil_war_daybreaker_ended }
+					}
+					country_event = { id =  news.sol.31 days = 1 }
+				}
+
+				if = {
+					limit = {
+						FROM = {
+							is_EQS_SOL = yes
+						}
+						original_tag = EQS
+						has_government = democratic
+						NOT = { has_global_flag = equestrian_civil_war_daybreaker_ended }
+					}
+					country_event = { id = news.sol.21 days = 1 }
+				}
+
+				if = {
+					limit = { FROM = { tag = DED } }
+					annex_country = { target = FROM  }
+					country_event = { id = deadempire.29 days = 1 }
+				}
+
+				if = {
+					limit = {
+						tag = HLR
+						FROM = { tag = EWI }
+					}
+					country_event = { id = arcturian.50 days = 1 }
+				}
+
+				if = {
+					limit = {
+						tag = BRF
+						FROM = { tag = GRW }
+					}
+					country_event = { id = brodfeld.21 days = 1 }
+				}
+				if = {
+					limit = {
+						tag = GRW
+						FROM = { tag = BRF }
+					}
+					country_event = { id = prywhen.1 days = 1 }
+				}
+
+				if = {
+					limit = {
+						tag = WIT
+						FROM = { tag = WIT }
+						owns_state = 682
+						NOT = {
+							has_country_flag = WIT_Capital_Change_Already_Happened
+						}
+					}
+					country_event = { id = wittenland.33 days = 1 }
+				}
+				if = {
+					limit = {
+						tag = LSC
+						OR = {
+							AND = {
+								NOT = { country_exists = LNS }
+								FROM = { tag = LSM }
+							}
+							AND = {
+								NOT = { country_exists = LSM }
+								FROM = { tag = LNS }
+							}
+						}
+					}
+					country_event = { id = longsword.31 days = 1 }
+				}
+				if = {
+					limit = {
+						tag = LSM
+						OR = {
+							AND = {
+								NOT = { country_exists = LNS }
+								FROM = { tag = LSC }
+							}
+							AND = {
+								NOT = { country_exists = LSC }
+								FROM = { tag = LNS }
+							}
+						}
+					}
+					country_event = { id = longsword.57 days = 1 }
+				}
+				if = {
+					limit = {
+						tag = LNS
+						OR = {
+							AND = {
+								NOT = { country_exists = LSM }
+								FROM = { tag = LSC }
+							}
+							AND = {
+								NOT = { country_exists = LSC }
+								FROM = { tag = LSM }
+							}
+						}
+					}
+					country_event = { id = longsword.78 days = 1 }
+				}
+				if = {
+					limit = {
+						tag = JER
+						has_completed_focus = JER_state_of_aquileia
+						OR = {
+							AND = {
+                                OR = {
+								    NOT = {country_exists = JRR }
+									JRR = { is_subject_of = JER }
+                                }
+                                OR = {
+								    NOT = { country_exists = VIN }
+									VIN = { is_subject_of = JER }
+                                }
+                                OR = {
+								    NOT = { country_exists = JFT }
+									JFT = { is_subject_of = JER }
+                                }
+								FROM = { tag = JEB }
+							}
+							AND = {
+                                OR = {
+								    NOT = {country_exists = JEB }
+									JEB = { is_subject_of = JER }
+                                }
+                                OR = {
+								    NOT = { country_exists = VIN }
+									VIN = { is_subject_of = JER }
+                                }
+                                OR = {
+								    NOT = { country_exists = JFT }
+									JFT = { is_subject_of = JER }
+                                }
+								FROM = { tag = JRR }
+							}
+							AND = {
+                                OR = {
+								    NOT = {country_exists = JEB }
+									JEB = { is_subject_of = JER }
+                                }
+                                OR = {
+								    NOT = { country_exists = JRR }
+									JRR = { is_subject_of = JER }
+                                }
+                                OR = {
+								    NOT = { country_exists = JFT }
+									JFT = { is_subject_of = JER }
+                                }
+								FROM = { tag = VIN }
+							}
+							AND = {
+                                OR = {
+								    NOT = { country_exists = JEB }
+									JEB = { is_subject_of = JER }
+                                }
+                                OR = {
+								    NOT = { country_exists = JRR }
+									JRR = { is_subject_of = JER }
+                                }
+                                OR = {
+								    NOT = { country_exists = VIN }
+									VIN = { is_subject_of = JER }
+                                }
+								FROM = { tag = JFT }
+							}
+						}
+					}
+					country_event = { id = aquileia.48 days = 1 }
+				}
+
+				if = {
+					limit = {
+						has_opinion_modifier = NIM_atrocities
+						FROM = { tag = NIM }
+					}
+					FROM = {
+						every_other_country = {
+							remove_opinion_modifier = { target = FROM modifier = NIM_atrocities }
+						}
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							AND = {
+								ROOT = { tag = SRS }
+								FROM = { tag = NTR }
+							}
+							AND = {
+								has_global_flag = SRS_has_triggered_civilwar_in_NTR
+								ROOT = { tag = NTR }
+								FROM = { original_tag = NTR }
+							}
+						}
+					}
+					SRS = {
+						country_event = { id = socrep_grif.83 hours = 12 }
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = SRS_has_triggered_civilwar_in_themselves
+						ROOT = { tag = SRS }
+						FROM = { original_tag = SRS }
+					}
+					SRS = {
+						country_event = { id = socrep_grif.91 hours = 2 }
+					}
+				}
+
+				# Delete tribal templates
+				if = {
+					limit = {
+						OR = {
+							tag = CES
+							tag = JUN
+							tag = NMS
+						}
+						FROM = {
+							OR = {
+								tag = CES
+								tag = JUN
+								tag = NMS
+							}
+						}
+					}
+					# more triggers in event
+					country_event = { id = civwar.24 days = 1 random = 48 }
+				}
+			}
+		}
+	}
+
+	#ROOT is new controller #FROM is old controller #FROM.FROM is state ID
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					FROM.FROM = { state = 344 }
+					original_tag = CRY
+					has_government = democratic
+					NOT = { has_idea = crystal_heart }
+				}
+				add_ideas = crystal_heart
+			}
+			if = {
+				limit = {
+					FROM.FROM = { state = 381 }
+					NOT = { has_idea = owns_skyfall }
+					OR = { NOT = { num_of_civilian_factories > 50 } NOT = { num_of_military_factories > 25 } }
+				}
+				add_ideas = owns_skyfall
+				break = yes
+			}
+
+			#Liberation stuff
+			if = {
+				limit = {
+					FROM = { tag = CHN }
+					original_tag = EQS
+					has_war_with = FROM
+					FROM.FROM = { owner = { original_tag = EQS } }
+				}
+				if = {
+					limit = {
+						FROM.FROM = {
+							NOT = { has_state_flag =  state_taken_chn_timeout }
+						}
+					}
+					if = {#Acornage
+						limit = {
+							FROM.FROM = { state = 136 }
+						}
+						news_event = { id = cityfall.22 }
+					}
+					if = {#Tall Tales
+						limit = {
+							FROM.FROM = { state = 59 }
+						}
+						news_event = { id = cityfall.23 }
+					}
+					if = {#Vanhoover
+						limit = {
+							FROM.FROM = { state = 14 }
+						}
+						news_event = { id = cityfall.24 }
+					}
+				}
+				FROM.FROM = {
+					clr_state_flag =  state_taken_chn_timeout
+				}
+				break = yes
+			}
+
+			if = {
+				limit = {
+					has_war_with = FROM
+					FROM = {
+						NOT = { original_tag = ROOT }
+					}
+					FROM.FROM = {
+						is_owned_by = FROM
+						NOT = { has_state_flag = state_has_fallen }
+					}
+				}
+				if = {
+					limit = {
+						tag = YAK
+						FROM = { tag = JAK }
+						FROM.FROM = { state = 274 }
+					}
+					country_event = yakistan.29
+					break = yes
+				}
+				if = {
+					limit = { tag = CHN }
+					if = {
+						limit = { FROM = { original_tag = OLE } }
+						if = {#Vaverfront
+							limit = {
+								NOT = { has_global_flag = fall_of_vaverfront_CHN }
+								FROM.FROM = { state = 69 }
+							}
+							news_event = { id = cityfall.1 }
+							break = yes
+						}
+						if = {#Hjortland
+							limit = {
+								NOT = { has_global_flag = fall_of_hjortland_CHN }
+								FROM.FROM = { state = 76 }
+							}
+							news_event = { id = cityfall.2 }
+							break = yes
+						}
+						if = {#Cervus
+							limit = {
+								NOT = { has_global_flag = fall_of_cervus_CHN }
+								FROM.FROM = { state = 191 }
+							}
+							news_event = { id = cityfall.3 }
+							break = yes
+						}
+						if = {#Sakara
+							limit = {
+								NOT = { has_global_flag = fall_of_sakara_CHN }
+								FROM.FROM = { state = 194 }
+							}
+							news_event = { id = cityfall.4 }
+							break = yes
+						}
+						break = yes
+					}
+					if = {
+						limit = { FROM = { original_tag = EQS } }
+						if = {#Shire
+							limit = {
+								NOT = { has_global_flag = fall_of_shire_chn }
+								FROM.FROM = { state = 132 }
+							}
+							news_event = { id = cityfall.7 }
+							break = yes
+						}
+						if = {#Los Pegasus
+							limit = {
+								NOT = { has_global_flag = fall_of_lospegasus_chn }
+								FROM.FROM = { state = 66 }
+							}
+							news_event = { id = cityfall.8 }
+							break = yes
+						}
+						if = {#Vanhoover
+							limit = {
+								FROM.FROM = { state = 14 }
+							}
+							FROM.FROM = {
+								set_state_flag = { flag = state_taken_chn_timeout value = 1 days = 60 }
+							}
+							if = {
+								limit = { NOT = { has_global_flag = fall_of_vanhoover_chn } }
+								news_event = { id = cityfall.13 }
+							}
+							break = yes
+						}
+						if = {#Tall Tales
+							limit = {
+								FROM.FROM = { state = 59 }
+							}
+							FROM.FROM = {
+								set_state_flag = { flag = state_taken_chn_timeout value = 1 days = 60 }
+							}
+							if = {
+								limit = { NOT = { has_global_flag = fall_of_tall_tales_chn } }
+								news_event = { id = cityfall.19 }
+							}
+							break = yes
+						}
+						if = {#Acornage
+							limit = {
+								FROM.FROM = { state = 136 }
+							}
+							FROM.FROM = {
+								set_state_flag = { flag = state_taken_chn_timeout value = 1 days = 60 }
+							}
+							if = {
+								limit = { NOT = { has_global_flag = acornage_taken_chn } }
+								FROM = { news_event = { id = cityfall.21 } }
+							}
+							break = yes
+						}
+						if = {#Baltimare
+							limit = {
+								NOT = { has_global_flag = fall_of_baltimare_chn }
+								FROM.FROM = { state = 13 }
+							}
+							news_event = { id = cityfall.20 }
+							break = yes
+						}
+					}
+					if = {
+						limit = { FROM = { original_tag = CRY } }
+						if = {#Crystal City
+							limit = {
+								NOT = { has_global_flag = fall_of_crystal_chn }
+								FROM.FROM = { state = 344 }
+							}
+							news_event = { id = cityfall.15 }
+							break = yes
+						}
+					}
+				}
+				if = {#Manehattan
+					limit = {
+						FROM.FROM = { state = 75 }
+					}
+					if = {
+						limit = {
+							FROM = { OR = { original_tag = EQS original_tag = NLR } }
+							tag = CHN
+							NOT = { has_global_flag = fall_of_manehattan_chn }
+						}
+						news_event = { id = cityfall.9 }
+						break = yes
+					}
+					if = {
+						limit = {
+							FROM = { original_tag = NLR }
+							original_tag = EQS
+							NOT = { has_global_flag = fall_of_manehattan_eqs }
+						}
+						news_event = { id = cityfall.18 }
+						break = yes
+					}
+				}
+				if = {#Canterlot
+					limit = {
+						FROM.FROM = { state = 3 }
+						FROM = { original_tag = EQS }
+					}
+					if = {
+						limit = {
+							tag = NLR
+							NOT = { has_global_flag = fall_of_canterlot_nlr }
+						}
+						news_event = { id = cityfall.10 }
+						break = yes
+					}
+					if = {
+						limit = {
+							tag = STG
+							NOT = { has_global_flag = fall_of_canterlot_stg }
+						}
+						news_event = { id = cityfall.12 }
+						break = yes
+					}
+					if = {
+						limit = {
+							tag = CHN
+							NOT = { has_global_flag = fall_of_canterlot_chn }
+						}
+						news_event = { id = cityfall.14 }
+						break = yes
+					}
+					if = {
+						limit = {
+							original_tag = CRY
+							has_government = fascism
+							has_country_leader = { ruling_only = yes name = "King Sombra" }
+							NOT = { has_global_flag = fall_of_canterlot_cry }
+						}
+						news_event = { id = cityfall.17 }
+						break = yes
+					}
+				}
+				if = {#Stalliongrad
+					limit = {
+						FROM.FROM = { state = 153 }
+						FROM = { tag = STG }
+					}
+					if = {
+						limit = {
+							OR = { original_tag = EQS original_tag = NLR }
+							NOT = { has_global_flag = fall_of_stalliongrad_eqs }
+						}
+						news_event = { id = cityfall.11 }
+						break = yes
+					}
+					if = {
+						limit = {
+							tag = CHN
+							NOT = { has_global_flag = fall_of_stalliongrad_chn }
+						}
+						news_event = { id = cityfall.16 }
+						break = yes
+					}
+				}
+				if = {#River City
+					limit = {
+						FROM.FROM = { state = 619 }
+						NOT = { has_global_flag = fall_of_river_city }
+					}
+					news_event = { id = cityfall.5 }
+					break = yes
+				}
+				if = {#Sunset
+					limit = {
+						FROM.FROM = { state = 356 }
+						NOT = { has_global_flag = fall_of_sunset_city }
+					}
+					news_event = { id = cityfall.6 }
+					break = yes
+				}
+				if = {#Hellquill
+					limit = {
+						FROM = { tag = HLQ }
+						AND = {
+							ROOT = { original_tag = DMT }
+							OR = {
+								ROOT = { has_government = fascism }
+								ROOT = { has_government = communism }
+							}
+						}
+						FROM.FROM = { state = 537 }
+						NOT = { has_global_flag = fall_of_Hellquill_city }
+					}
+					ROOT = {
+						country_event = { id = diamond_mountain.102 }
+					}
+					break = yes
+				}
+				if = {#Vesalipolis
+					limit = {
+						FROM.FROM = { state = 251 }
+						NOT = { has_global_flag = fall_of_vesalipolis }
+					}
+					news_event = cityfall.25
+					break = yes
+				}
+				if = {#Yakistown
+					limit = {
+						FROM.FROM = { state = 11 }
+						NOT = { has_global_flag = fall_of_yakistown }
+					}
+					news_event = cityfall.26
+					break = yes
+				}
+				if = {#Vraks
+					limit = {
+						FROM.FROM = { state = 259 }
+						NOT = { has_global_flag = fall_of_vraks }
+					}
+					news_event = cityfall.27
+					break = yes
+				}
+				if = {#Weter
+					limit = {
+						FROM.FROM = { state = 243 }
+						NOT = { has_global_flag = fall_of_weter }
+					}
+					news_event = cityfall.28
+					break = yes
+				}
+				if = {#Griffenheim
+					limit = {
+						FROM.FROM = { state = 382 }
+						NOT = { has_global_flag = fall_of_griffenheim }
+					}
+					news_event = cityfall.29
+					break = yes
+				}
+				if = {#Griffonstone
+					limit = {
+						FROM.FROM = { state = 389 }
+						NOT = { has_global_flag = fall_of_griffonstone }
+					}
+					news_event = cityfall.30
+					break = yes
+				}
+				if = {#Aquila
+					limit = {
+						ROOT = {
+							is_jer_country = no
+						}
+						FROM.FROM = { state = 377 }
+						NOT = { has_global_flag = fall_of_aquila }
+					}
+					news_event = cityfall.31
+					break = yes
+				}
+				if = {#Karthin
+					limit = {
+						FROM.FROM = { state = 371 }
+						NOT = { has_global_flag = fall_of_karthin }
+					}
+					news_event = cityfall.32
+					break = yes
+				}
+				if = {#Lake City
+					limit = {
+						FROM.FROM = { state = 387 }
+						NOT = { has_global_flag = fall_of_lakecity }
+					}
+					news_event = cityfall.33
+					break = yes
+				}
+				if = {#Skyfall
+					limit = {
+						FROM.FROM = { state = 381 }
+						NOT = { has_global_flag = fall_of_skyfall }
+					}
+					news_event = cityfall.34
+					break = yes
+				}
+				if = {#New Skynavia
+					limit = {
+						FROM.FROM = { state = 522 }
+						NOT = { has_global_flag = fall_of_new_skynavia }
+					}
+					news_event = cityfall.35
+					break = yes
+				}
+				if = {#Cloudbury
+					limit = {
+						FROM.FROM = { state = 485 }
+						NOT = { has_global_flag = fall_of_cloudbury }
+					}
+					news_event = cityfall.36
+					break = yes
+				}
+			}
+		}
+	}
+
+	#FROM is country getting invited.
+	on_offer_join_faction = {
+		effect = {
+			if = {
+				limit = {
+					has_government = communism
+					FROM = {
+						has_idea = LCT_anti_commie_pact
+					}
+				}
+				FROM = {
+					remove_ideas = LCT_anti_commie_pact
+				}
+			}
+			if = {
+				limit = {
+					original_tag = MIT
+					has_completed_focus = MIT_SIC_assistance
+				}
+				FROM = {
+					add_to_tech_sharing_group = MIT_research_group
+				}
+			}
+			if = {
+				limit = {
+					original_tag = MIT
+					has_completed_focus = MIT_command_council
+				}
+				FROM = {
+					add_ideas = MIT_command_council_idea
+				}
+			}
+		}
+	}
+
+	#FROM is faction leader on join faction requests. THIS DOES NOT FIRE ON ADD_TO_FACTION EFFECT! USE ON_OFFER_JOIN_FACTION!
+	on_join_faction = {
+		effect = {
+			if = {
+				limit = {
+					has_idea = LCT_anti_commie_pact
+					FROM = {
+						has_government = communism
+					}
+				}
+				remove_ideas = LCT_anti_commie_pact
+			}
+			if = {
+				limit = {
+					FROM = { is_river_fed_member = yes }
+					NOT = { tag = HLQ }
+					HLQ = { has_idea = HLQ_honourary_member }
+				}
+				diplomatic_relation = {
+					country = HLQ
+					relation = non_aggression_pact
+					active = yes
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						original_tag = MIT
+						has_completed_focus = MIT_SIC_assistance
+					}
+				}
+				add_to_tech_sharing_group = MIT_research_group
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_idea = MIT_command_council_idea
+					}
+					FROM = {
+						original_tag = MIT
+						has_completed_focus = MIT_command_council
+						NOT = {
+							has_completed_focus = MIT_coalition_exchange_students
+						}
+					}
+				}
+				add_ideas = MIT_command_council_idea
+			}
+			if = {
+				limit = {
+					NOT = { has_idea = MIT_command_council_idea }
+					NOT = { has_idea = MIT_command_council_idea2 }
+					FROM = {
+						original_tag = MIT
+						has_completed_focus = MIT_coalition_exchange_students
+					}
+				}
+				add_ideas = MIT_command_council_idea2
+			}
+		}
+	}
+
+	# ROOT is country, this is ran for every country
+	on_daily = {
+		effect = {
+			update_global_arrays = yes
+			adjust_research_modifier = yes
+			daily_fix_weapon_techs = yes
+			set_variable = {dc_progress = global.threat} 
+			multiply_variable = {dc_progress = 100}
+			if = {
+				limit = {
+					has_tech = nukes
+				}
+				if = {
+					limit = {
+						has_idea = no_crystals_reactor_prevent
+						check_variable = { resource@crystals > -1 }
+					}
+					remove_ideas = no_crystals_reactor_prevent
+				}
+				else_if = {
+					limit = { check_variable = { resource@crystals < 0 } }
+					add_ideas = no_crystals_reactor_prevent
+				}
+				if = {
+					limit = {
+						NOT = { has_global_flag = first_nuke_done }
+						num_of_nukes > 0.99
+					}
+					news_event = { id = nuke_first.1 days = 1 }
+					set_global_flag = first_nuke_done
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						NOT = { has_event_target = griffonian_empire }
+						if = {
+							limit = { has_event_target = griffonian_empire }
+							event_target:griffonian_empire = { exists = no }
+						}
+					}
+					exists = yes
+					OR = {
+						AND = {
+							owns_state = 382
+							has_cosmetic_tag = GRIF_EMPIRE
+						}
+						if = {
+							limit = {
+								382 = {
+									owner = { NOT = { has_cosmetic_tag = GRIF_EMPIRE } }
+								}
+							}
+							tag = GRI
+						}
+					}
+				}
+				save_global_event_target_as = griffonian_empire
+				set_variable = { global.griffonian_empire_var = THIS }
+				break = yes
+			}
+			if = {
+				limit = {
+					NOT = { has_event_target = longsword }
+					exists = yes
+					OR = {
+						original_tag = LNS
+						original_tag = LSM
+						original_tag = LSC
+					}
+				}
+				save_global_event_target_as = longsword
+				break = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						NOT = { has_event_target = equestria }
+						AND = {
+							has_event_target = equestria
+							event_target:equestria = {
+								NOT = {
+									original_tag = EQS
+									original_tag = SOL
+								}
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_event_target = solar_empire
+						event_target:solar_empire = { exists = yes }
+					}
+					SOL = { save_global_event_target_as = equestria }
+					break = yes
+				}
+				EQS = { save_global_event_target_as = equestria }
+				break = yes
+			}
+		}
+	}
+
+	# country
+	on_new_term_election = {
+		effect = {
+			### Lake City ###
+			if = {
+				limit = { tag = LCT }
+				country_event = { id = lakecity.9 }
+				country_event = { id = lakecity.901 }
+				country_event = { id = lakecity.902 }
+			}
+		}
+	}
+
+	#ROOT is subject FROM is overlord
+	on_subject_autonomy_level_change = {
+		effect = {
+			#Add to Equestria tech group
+			if = {
+				limit = {
+					overlord = { is_in_tech_sharing_group = equestrian_research }
+				}
+				add_to_tech_sharing_group = equestrian_research
+			}
+
+			if = {
+				limit = {
+					overlord = {
+						has_country_flag = river_federation_founder
+					}
+					OR = {
+						has_autonomy_state = autonomy_integrated_puppet
+						has_autonomy_state = autonomy_reichskommissariat
+					}
+					is_river_fed_member = yes
+					NOT = {
+						has_idea = RIV_river_union_member1
+						has_idea = RIV_river_union_member2
+					}
+				}
+				remove_ideas = {
+					RIV_member_state
+					RIV_rcsc_member
+					RIV_rec_member1
+					RIV_rec_member2
+					RIV_rec_member3
+					RIV_rec_member4
+				}
+				add_ideas = RIV_river_union_member1
+			}
+		}
+	}
+
+	on_leave_faction = {
+		effect = {
+			log = "[GetDateText] [Root.GetName] on_leave_faction FROM = [From.GetName]"
+			if = {
+				limit = {
+					is_river_fed_member = yes
+				}
+				RIV_leave_fed_no_ally = yes
+			}
+			if = {
+				limit = {
+					has_idea = RCT_subtle_creep1
+				}
+				remove_ideas = RCT_subtle_creep1
+			}
+			else_if = {
+				limit = {
+					has_idea = RCT_subtle_creep1_NIM
+				}
+				remove_ideas = RCT_subtle_creep1_NIM
+			}
+			if = {
+				limit = {
+					has_idea = RCT_subtle_creep2
+				}
+				remove_ideas = RCT_subtle_creep2
+			}
+			else_if = {
+				limit = {
+					has_idea = RCT_subtle_creep2_NIM
+				}
+				remove_ideas = RCT_subtle_creep2_NIM
+			}
+			if = {
+				limit = {
+					has_idea = RCT_subtle_creep3
+				}
+				remove_ideas = RCT_subtle_creep3
+			}
+			else_if = {
+				limit = {
+					has_idea = RCT_subtle_creep3_NIM
+				}
+				remove_ideas = RCT_subtle_creep3_NIM
+			}
+			if = {
+				limit = {
+					has_idea = RCT_subtle_creep4
+				}
+				remove_ideas = RCT_subtle_creep4
+			}
+			else_if = {
+				limit = {
+					has_idea = RCT_subtle_creep4_NIM
+				}
+				remove_ideas = RCT_subtle_creep4_NIM
+			}
+			if = {
+				limit = {
+					has_idea = RCT_subtle_creep5
+				}
+				remove_ideas = RCT_subtle_creep5
+			}
+			else_if = {
+				limit = {
+					has_idea = RCT_subtle_creep5_NIM
+				}
+				remove_ideas = RCT_subtle_creep5_NIM
+			}
+			if = {
+				limit = {
+					has_idea = RCT_subtle_creep6
+				}
+				remove_ideas = RCT_subtle_creep6
+			}
+			else_if = {
+				limit = {
+					has_idea = RCT_subtle_creep6_NIM
+				}
+				remove_ideas = RCT_subtle_creep6_NIM
+			}
+			if = {
+				limit = {
+					has_idea = RCT_subtle_creep7
+				}
+				remove_ideas = RCT_subtle_creep7
+			}
+			else_if = {
+				limit = {
+					has_idea = RCT_subtle_creep8
+				}
+				remove_ideas = RCT_subtle_creep8
+			}
+		}
+	}
+
+	# From is owner country
+	on_army_leader_lost_combat = {
+		effect = {
+			if = {
+				limit = {
+					has_id = 323
+					set_temp_variable = { chance = 0.12 }
+					check_variable = { random < chance }
+					NOT = { has_trait = wounded }
+				}
+				retire = yes
+				unit_leader_event = { id = wingbardy.1 }
+			}
+		}
+	}
+
+	# FROM = country on whom the wargoal is being generated, ROOT = country generating wargoal
+	on_generate_wargoal = {
+		effect = {
+			log = "[GetDateText] [Root.GetName] on_generate_wargoal FROM = [From.GetName]"
+		}
+	}
+
+}
