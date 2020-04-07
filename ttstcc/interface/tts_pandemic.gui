@@ -1,0 +1,24 @@
+guiTypes = {
+	containerWindowType = {
+		name = "state_info_window"
+		position = { x = 0 y = 0 }
+		size = { width=780 height=496 }
+			
+			
+		background = {
+			name = "Background"
+			quadTextureSprite = "GFX_generic_box_96"
+			position = { x = 5 y = 5 }
+		}
+		instantTextboxType = {
+				name = "infection_status"
+				position = { x = 60 y = 5 }
+				textureFile = ""
+				font = "hoi_36header"
+				text = "INFECTED"
+				maxWidth = 320
+				maxHeight = 30
+				format = center
+			}
+	}
+}

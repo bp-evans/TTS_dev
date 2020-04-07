@@ -1,0 +1,28 @@
+scripted_gui = {
+
+		State_infection_info_gui = {
+		
+				context_type = selected_state_context
+				parent_window_token = selected_state_view
+				window_name = "state_infection_info"
+		
+		visible = {
+			ROOT = {
+				has_state_flag = infection_confirmed
+			}
+		}
+
+
+		effects = {
+				effect_tooltip = {
+
+				}
+		}
+
+
+
+
+
+
+
+}

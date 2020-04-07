@@ -1,0 +1,300 @@
+capital = 344
+
+oob = "CRY_1007"
+
+set_research_slots = 3
+
+set_technology = {
+	pony_race = 1
+	melee_weapons = 1
+	melee_weapons1 = 1
+	pre_gw_artillery = 1
+	early_fighter = 1
+	early_bomber = 1
+	gwtank = 1
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	interwar_antitank = 1
+	gw_artillery = 1
+	tech_support = 1
+	tech_recon = 1
+	tech_military_police = 1
+	tech_engineers = 1
+}
+actually_fix_weapon_techs = yes #THIS HAS TO BE CALLED IN EVERY HISTORY FILE RIGHT AFTER MAIN set_technology!
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	set_technology = {	
+		early_destroyer = 1
+		early_light_cruiser = 1
+		early_submarine = 1
+		transport = 1
+	}
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+		basic_torpedo = 1
+		basic_battery = 1
+		basic_secondary_battery = 1
+		early_ship_hull_submarine = 1
+		early_ship_hull_light = 1
+		early_ship_hull_cruiser = 1
+		mtg_transport = 1
+		basic_depth_charges = yes
+	}
+}
+
+generic_DD_template = yes
+generic_CL_template = yes
+generic_SS_template = yes
+
+set_convoys = 69
+set_popularities = {
+	democratic = 10
+	fascism = 5
+	communism = 10
+	neutrality = 70
+	reformism = 4
+	alt_left = 1
+}
+set_politics = {
+
+	ruling_party = neutrality
+	last_election = "1000.10.10"
+	election_frequency = 36
+	elections_allowed = no
+}
+
+if = {
+	limit = { has_dlc = "Together for Victory" }
+
+	add_to_tech_sharing_group = equestrian_research
+}
+add_equipment_to_stockpile = {
+	type = infantry_equipment_0
+	amount = 3000
+	producer = CRY
+}
+add_ideas = {
+	crystal_heart
+	mourning_for_cadenza
+	destroyed_industry
+	republican_opposition
+	crystal_clear
+}
+
+set_stability = 0.50
+set_war_support = 0.1
+create_country_leader = {
+	name = "White Star"
+	expire = "1965.1.1"
+	ideology = socialism
+	desc = "POLITICS_STAR_DESC"
+	picture = "Navalnaya.tga"
+	traits = { 
+		protester
+	}
+}
+
+create_country_leader = {
+	name = "Golden Charm"
+	ideology = progressivist
+	desc = "POLITICS__DESC"
+	picture = "Grigoryeva.tga"
+	traits = { 
+		economy_genius
+	}
+}
+
+create_country_leader = {
+	name = "Fat Sattelite"
+	expire = "1965.1.1"
+	ideology = nazism
+	desc = "POLITICS_SATTELITE_DESC"
+	picture = "Egor.tga"
+	traits = {
+		aristocrat
+		meme
+	}
+}
+
+
+create_country_leader = {
+	name = "Princess Mi Amore Flurry Heart"
+	expire = "1965.1.1"
+	picture = "FlurryHeart.tga"
+	ideology = oligarchism
+	desc = "POLITICS_FLURRY_DESC"
+	traits = {
+		deep_depression
+	}
+}
+
+create_country_leader = {
+	name = "Black Diamond"
+	expire = "1965.1.1"
+	picture = "Kurgimen.tga"
+	ideology = red_metaphysical
+	desc = "POLITICS_Diamond_DESC"
+	traits = {
+		hypnotizing_demagogue
+	}
+}
+
+create_country_leader = {
+	name = "Ginger Thunderbird"
+	expire = "1965.1.1"
+	ideology = leninism
+	picture = "Rudaya.tga"
+	traits = {
+		labour_union_activist
+		herald_of_the_storm
+	}
+}
+create_field_marshal = {
+	name = "Shining Armour"
+	picture = "ShiningArmour.tga"
+	traits = { equestrian_prince royal_guard_commander defensive_doctrine }
+	skill = 3
+	id = 1043
+	attack_skill = 2
+	defense_skill = 5
+	planning_skill = 3
+	logistics_skill = 3
+	desc = "CRY_Shining_Armour_desc"
+}
+create_field_marshal = {
+	name = "Reese"
+	picture = "Reese.tga"
+	traits = { career_officer brilliant_strategist }
+	skill = 2
+	attack_skill = 4
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 1
+	id = 199
+}
+create_field_marshal = {
+	name = "Colloid"
+	picture = "Colloid.tga"
+	traits = { old_guard }
+	skill = 3
+	id = 1044
+	attack_skill = 1
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 2
+}
+create_corps_commander = {
+	name = "Forest Nutmeg"
+	picture = "ForestNutmeg.tga"
+	traits = { commando trait_engineer }
+	skill = 2
+	attack_skill = 1
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 1
+	female = yes
+}
+create_corps_commander = {
+	name = "Icy Snow"
+	picture = "Icy_snow.tga"
+	traits = { winter_specialist trait_cautious }
+	skill = 2
+	attack_skill = 1
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 1
+	female = yes
+}
+create_corps_commander = {
+	name = "Cloudie"
+	picture = "Cloudie.tga"
+	traits = { medical_expert }
+	skill = 2
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 1
+	female = yes
+	id = 197
+}
+create_corps_commander = {
+	name = "Deimos Falafel"
+	picture = "Damiyan.tga"
+	traits = { winter_specialist media_personality trait_reckless }
+	skill = 2
+	attack_skill = 1
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+	id = 198
+}
+create_corps_commander = {
+	name = "Crystalline"
+	picture = "Crystalline.tga"
+	traits = { promising_general }
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 3
+}
+create_corps_commander = {
+	name = "Flash Sentry"
+	picture = "FlashSentry.tga"
+	traits = { infantry_leader }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 4
+	planning_skill = 1
+	logistics_skill = 1
+	id = 200
+}
+create_corps_commander = {
+	name = "Solid Shot"
+	desc = "solidshot_desc"
+	picture = "Solid_Shot.tga"
+	traits = { renowned_marksman infantry_leader }
+	skill = 1
+	attack_skill = 4
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 2
+	id = 1046
+}
+create_corps_commander = {
+	name = "Wondermane"
+	picture = "wondermane.tga"
+	desc = "cry_wondermane_desc"
+	female = yes
+	traits = { skilled_staffer ranger }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+	id = 1045
+}
+random_unit_leader = {
+	limit = { has_id = 1043 }
+	save_global_event_target_as = CRY_Shining_Armor
+}
+
+random_unit_leader = {
+	limit = { has_id = 197 }
+	save_global_event_target_as = CRY_Cloudie
+}
+random_unit_leader = {
+	limit = { has_id = 199 }
+	save_global_event_target_as = CRY_Reese
+}
+random_unit_leader = {
+	limit = { has_id = 1045 }
+	save_global_event_target_as = CRY_Wondermane
+}
+
+set_rule = {
+	can_generate_female_aces = yes
+}

@@ -1,0 +1,15 @@
+state={
+	id=306
+	name="STATE_306"
+	provinces={
+		1534 10370
+	}
+	manpower=108939
+	history={
+		owner = ECH
+		add_core_of = ECH
+	}
+
+	state_category = rural
+	buildings_max_level_factor=1.000
+}
