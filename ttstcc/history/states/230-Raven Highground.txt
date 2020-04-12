@@ -4,8 +4,8 @@ state={
 	name="STATE_230"
 
 	history={
-		owner = EQS
-		add_core_of = EQS
+		owner = ESG
+		add_core_of = ESG
 		buildings = {
 			infrastructure = 1
 

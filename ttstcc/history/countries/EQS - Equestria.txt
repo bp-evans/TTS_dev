@@ -114,7 +114,120 @@ add_ideas = {
 	EQS_bat_pony_divide_1
 }
 
+if = {
+	limit = {
+		has_dlc = "Together for Victory"
+	}
+	set_autonomy = {
+		target = EAC
+		autonomous_state = autonomy_equestrian_state
+	}
+	set_autonomy = {
+		target = EAL
+		autonomous_state = autonomy_equestrian_state
+	}
+	set_autonomy = {
+		target = EAZ
+		autonomous_state = autonomy_equestrian_state
+	}
+	set_autonomy = {
+		target = EBA
+		autonomous_state = autonomy_equestrian_state
+	}
+	set_autonomy = {
+		target = EBM
+		autonomous_state = autonomy_equestrian_state
+	}
+	set_autonomy = {
+		target = EBU
+		autonomous_state = autonomy_equestrian_state
+	}
+	set_autonomy = {
+		target = EDO
+		autonomous_state = autonomy_equestrian_state
+	}
+	set_autonomy = {
+		target = EFI
+		autonomous_state = autonomy_equestrian_state
+	}
+	set_autonomy = {
+		target = EHO
+		autonomous_state = autonomy_equestrian_state
+	}
+	set_autonomy = {
+		target = ELP
+		autonomous_state = autonomy_equestrian_state
+	}
+	set_autonomy = {
+		target = EMA
+		autonomous_state = autonomy_equestrian_state
+	}
+	set_autonomy = {
+		target = EMN
+		autonomous_state = autonomy_equestrian_state
+	}
+	set_autonomy = {
+		target = EPR
+		autonomous_state = autonomy_equestrian_state
+	}
+	set_autonomy = {
+		target = ERC
+		autonomous_state = autonomy_equestrian_state
+	}
+	set_autonomy = {
+		target = ESB
+		autonomous_state = autonomy_equestrian_state
+	}
+	set_autonomy = {
+		target = ESE
+		autonomous_state = autonomy_equestrian_state
+	}
+	set_autonomy = {
+		target = ESG
+		autonomous_state = autonomy_equestrian_state
+	}
+	set_autonomy = {
+		target = ETA
+		autonomous_state = autonomy_equestrian_state
+	}
+	set_autonomy = {
+		target = ETH
+		autonomous_state = autonomy_equestrian_state
+	}
+	set_autonomy = {
+		target = EVA
+		autonomous_state = autonomy_equestrian_state
+	}
+	set_autonomy = {
+		target = EWN
+		autonomous_state = autonomy_equestrian_state
+	}
 
+	else = {
+		puppet = EAC
+		puppet = EAL
+		puppet = EAZ
+		puppet = EBA
+		puppet = EBM
+		puppet = EBU
+		puppet = EDO
+		puppet = EFI
+		puppet = EHO
+		puppet = ELP
+		puppet = EMA
+		puppet = EMN
+		puppet = EPR
+		puppet = ERC
+		puppet = ESB
+		puppet = ESE
+		puppet = ESG
+		puppet = ETA
+		puppet = ETH
+		puppet = EVA
+		puppet = EWN
+	}
+
+}
 if = {
 	limit = { has_dlc = "Together for Victory" }
 

@@ -4,8 +4,8 @@ state={
 	state_category = large_city
 
 	history={
-		owner = EQS
-		add_core_of = EQS
+		owner = EFI
+		add_core_of = EFI
 		buildings = {
 			infrastructure = 7
 			industrial_complex = 3

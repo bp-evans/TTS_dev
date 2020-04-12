@@ -4,8 +4,8 @@ state={
 	state_category = rural
 
 	history={
-		owner = EQS
-		add_core_of = EQS
+		owner = EDO
+		add_core_of = EDO
 		buildings = {
 			infrastructure = 1
 		}

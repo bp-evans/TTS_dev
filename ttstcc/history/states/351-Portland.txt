@@ -5,8 +5,8 @@ state={
 		668 671 3299 11529 11544
 	}
 	history={
-		owner = EQS
-		add_core_of = EQS
+		owner = ESB
+		add_core_of = ESB
 		buildings = {
 			infrastructure = 2
 			668 = { naval_base = 1 }

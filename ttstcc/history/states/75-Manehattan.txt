@@ -5,8 +5,8 @@ state={
 	state_category = megalopolis
 
 	history={
-		owner = EQS
-		add_core_of = EQS
+		owner = EMN
+		add_core_of = EMN
 		buildings = {
 			infrastructure = 7
 			industrial_complex = 6

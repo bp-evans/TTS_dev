@@ -8,8 +8,8 @@ state={
 	}
 
 	history={
-		owner = STG
-		add_core_of = STG
+		owner = GRF
+		add_core_of = GRF
 		buildings = {
 			infrastructure = 4
 

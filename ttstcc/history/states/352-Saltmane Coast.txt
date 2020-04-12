@@ -5,8 +5,8 @@ state={
 		405 495 564 6535 9509 11388 11431
 	}
 	history={
-		owner = EQS
-		add_core_of = EQS
+		owner = EAZ
+		add_core_of = EAZ
 		buildings = {
 			infrastructure = 2
 			405 = { naval_base = 1 }

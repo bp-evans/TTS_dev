@@ -8,8 +8,8 @@ state={
 	}
 
 	history={
-		owner = EQS
-		add_core_of = EQS
+		owner = EBU
+		add_core_of = EBU
 		buildings = {
 			arms_factory = 1
 

@@ -4,8 +4,8 @@ state={
 	state_category = large_town
 
 	history={
-		owner = EQS
-		add_core_of = EQS
+		owner = EDO
+		add_core_of = EDO
 		victory_points = {
 			11427 10
 		}

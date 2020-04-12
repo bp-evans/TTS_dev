@@ -4,8 +4,8 @@ state={
 	name="STATE_107"
 
 	history={
-		owner = EQS
-		add_core_of = EQS
+		owner = EFI
+		add_core_of = EFI
 
 	}
 
