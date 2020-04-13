@@ -14,6 +14,20 @@ set_popularities = {
 }
 set_cosmetic_tag = EQS_state	
 	
+
+create_country_leader = {
+	name = "Random Kanzler"
+	expire = "1965.1.1"
+	picture = "RandomKanzler.tga"
+	desc = "POLITICS_LUNA_DESC"
+	ideology = centrism
+	traits = {
+		
+	}
+}
+
+
+
 set_politics = {
 	ruling_party = neutrality
 	last_election = "1936.1.1"
