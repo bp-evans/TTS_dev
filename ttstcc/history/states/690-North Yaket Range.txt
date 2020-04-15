@@ -1,21 +1,18 @@
-
 state={
-	id=77
-	name="STATE_77"
-	resources={
-		crystals=42.000
+	id=690
+	name="STATE_690"
+    resources={
+		crystals=6.000
 	}
-
 	history={
 		owner = CRY
 		add_core_of = CRY
 
 	}
-
 	provinces={
-		831 4527 4540 7615 10586 
+		1881 3285 4402 6696 11277 11309 11656 
 	}
-	manpower=8600
+	manpower=7600
 	buildings_max_level_factor=1.000
 	state_category=wasteland
 }
