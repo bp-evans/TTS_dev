@@ -3,11 +3,11 @@
 # Crystal Curtain #
 # Stalliongrad Events #
 ussr.2.t:0 "Vasily Pantsushenko Is Dead!"
-ussr.2.d:0 "[This.GetNewspaperHeader]News reached us today that General Secretary Vasily Pentsushenko has passed away at his home in Stalliongrad on Januray 1st 1034 at 3:05 AM. (The rest of this can be from the writers who actucally know what their doing".
-ussr.2.a:0 "This is a great loss for our country (STG fac)"
-ussr.2.b:0 "Send our condolences (EQS fac)"
-ussr.2.c:0 "Who dies lol (GRI fac)"
-ussr.2.e:0 "What a shame (generic)"
+ussr.2.d:0 "[This.GetNewspaperHeader]The entire nation of Staliongrad is in utter shock as news hit the general population that General Secretary of the Staliongradian Communist Party,Vasily Pantushenko has died peacefully in his sleep where he suffered a stroke attributed to his degrading health condition for several years.Unable to get health support he required in time he flatlined at 3 am this morning.Vasily has led the Staliongradian revolution through the Great War and Changeling Imperialism.The entire nation of Staliongrad has shutdown in mourning and memorial services are to be held later today mourning the death of one of their greatest leaders.As the flag in the Palace of the Soviets lowers to half mast, many within the party are begining to panic about what lies in the future for this emerging Global Superpower."
+ussr.2.a:0 "He shall be remembered as one of the Greatest Leaders to grace us"
+ussr.2.b:0 "Send our condolences"
+ussr.2.c:0 "Who died?"
+ussr.2.e:0 "What a shame"
 
 # Civil War #
 civwar.9.t:0 "[From.GetName] Demands our Subjugation"
