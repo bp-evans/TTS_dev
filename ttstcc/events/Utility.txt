@@ -36,6 +36,7 @@
 #	}
 #}
 
+
 country_event = { ### Nuke handling
 	id = utility.3
 	immediate = {log = "[GetDateText]: [Root.GetName]: event utility.3"}
@@ -245,3 +246,19 @@ country_event = { ### One event for cosmetic tags
 		overlord = { ROOT = { apply_cosmetic_tags_on_puppet_PREV_is_overlord = yes } }
 	}
 }
+
+country_event = { ## Handle free puppet color changes
+	id = utility.9
+	immediate = {log = "[GetDataText]: [Root.GetName]: event utility.9"}
+	hidden = yes
+	mean_time_to_happen = { days = 2 }
+	trigger = {
+		is_subject = no
+		AND = {
+			is_in_faction_with = EQS
+		}
+	}
+	option = {
+		drop_cosmetic_tag = yes
+	}
+}	

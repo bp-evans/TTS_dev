@@ -27,3 +27,62 @@ country_event = {
 		}
 	}
 
+
+	## News article should probably be done by the actual writers
+	## Still needs a picture
+	news_event = { # vasily dies event (repsonse changes based on faction)
+		id = ussr.2
+		title = ussr.2.t
+		desc = ussr.2.d
+		immediate = {log = "[GetDateText]: [Root.GetName]: event ussr.2"}
+		mean_time_to_happen = { days = 2 }
+		trigger = {
+			date > 1032.01.01 # Current date for testing
+			is_ai = no
+		}
+		option = {
+			trigger = {
+				tag = STG
+			}
+			name  = ussr.2.a
+			STG = {
+				kill_country_leader = yes
+			}
+		}
+
+		option = {
+			trigger = {
+				is_in_faction_with = EQS
+			}
+			name = ussr.2.b
+			STG = {
+				kill_country_leader = yes
+			}
+		}
+
+		option = {
+			trigger = {
+				is_in_faction_with = GRI
+			}
+			name = ussr.2.c
+			STG = {
+				kill_country_leader = yes
+			}
+		}
+
+		option = {
+			trigger = {
+				NOT = {
+					is_in_faction_with = EQS
+					is_in_faction_with = GRI
+					tag = STG
+				}
+			}
+			name = ussr.2.e
+			STG = {
+				kill_country_leader = yes
+			}
+		}
+	}
+
+	
