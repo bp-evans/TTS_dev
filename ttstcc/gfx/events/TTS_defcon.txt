@@ -1,0 +1,64 @@
+add_namespace = defcon
+
+news_event = {
+	id = defcon.1
+	immediate = {
+		decrease_defcon = yes
+	}
+	title = defcon.1.t
+	desc = defcon.1.d
+	picture = GFX_event_hearthswarming
+	major = yes
+	trigger = {
+		check_variable = { global.threat = 1 }	
+		check_variable = { global.defcon_level > 1}
+	}
+	mean_time_to_happen = {
+			days = 1
+	}
+	option = {
+		name = defcon.1.a
+	}
+
+}
+news_event = {
+	id = defcon.2
+	immediate = {
+		increase_defcon = yes
+	}
+	title = defcon.2.t
+	desc = defcon.2.d
+	picture = GFX_event_hearthswarming
+	major = yes
+	trigger = {
+		check_variable = { global.threat = 0 }
+		check_variable = { global.defcon_level < 5}
+	}
+	mean_time_to_happen = {
+			days = 1
+	}
+	option = {
+		name = defcon.2.a
+	}
+
+}
+news_event = {
+	id = defcon.3
+	title = defcon.3.t
+	desc = defcon.3.d
+	picture = GFX_event_hearthswarming
+	major = yes
+	fire_only_once = yes
+	trigger = {
+		check_variable = { global.threat = 1 }
+		check_variable = { global.defcon_level = 1}
+	}
+	mean_time_to_happen = {
+			days = 1
+	}
+	option = {
+		start_nuclear_apocalypse = yes
+		name = defcon.3.a
+	}
+
+}

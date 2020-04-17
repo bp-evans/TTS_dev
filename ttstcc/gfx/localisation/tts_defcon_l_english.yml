@@ -1,0 +1,10 @@
+﻿l_english:
+DEFCON_HEADER:0 "World Tension"
+THREAT_PROGRESS:0 "[?dc_progress]%"
+world_threat_level:0 "Next DEFCON progress:"
+defcon_desc:0 "DEFCON: §R[?global.defcon_level]§!"
+defcon_action_desc:0 "Defcon Effects:"
+
+defcon.1.t:0 "WE WAS FUCKED"
+defcon.1.d:0 "[This.GetNewspaperHeader]WE WAS FUCKED"
+defcon.1.a:0 "WE WAS FUCKED"

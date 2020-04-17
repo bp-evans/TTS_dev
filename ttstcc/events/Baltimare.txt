@@ -1,0 +1,112 @@
+add_namespace = baltimare
+
+news_event = { ## first baltimare secession news event
+	id = baltimare.1
+	title = baltimare.1.t
+	desc = baltimare.1.d
+	immediate = {log = "[GetDateText]: [Root.GetName]: event baltimare.1"}
+	fire_only_once = yes
+	mean_time_to_happen = { days = 2 }
+	trigger = {
+		date > 1032.01.01
+		tag = EBM
+	}
+	option = {
+		trigger = {
+			tag = EBM
+		}
+		name = baltimare.1.a
+	}
+}
+
+news_event = { ## second baltimare secession new event
+	id = baltimare.2
+	title = baltimare.2.t
+	desc = baltimare.2.d
+    fire_only_once = yes
+    mean_time_to_happen = { days = 2 }
+    trigger = {
+        date > 1032.01.20
+		tag = EBM
+    }
+    option = {
+        trigger = {
+            tag = EBM
+        }
+        name = baltimare.2.a
+    }
+}
+
+news_event = { ## second baltimare secession new event
+	id = baltimare.3
+	title = baltimare.3.t
+	desc = baltimare.3.d
+    fire_only_once = yes
+    mean_time_to_happen = { days = 2 }
+    trigger = {
+        date > 1032.02.01
+		tag = EBM
+    }
+    option = {
+        trigger = {
+            tag = EBM
+        }
+        name = baltimare.3.a
+    }
+}
+
+news_event = { ## second baltimare secession new event
+	id = baltimare.4
+	title = baltimare.4.t
+	desc = baltimare.4.d
+    fire_only_once = yes
+    mean_time_to_happen = { days = 2 }
+    trigger = {
+        date > 1032.02.20
+		tag = EBM
+    }
+    option = {
+        trigger = {
+            tag = EBM
+        }
+        name = baltimare.4.a
+		EBM = {
+			retire_country_leader = yes
+			set_party_name = {
+				ideology = communism
+				long_name = EBM_socialism_rev_long
+				name = EBM_socialism_rev
+			}
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = no
+			}
+			set_popularities = {
+				communism = 80
+				fascism = 20
+				democratic = 0
+				neutrality = 0
+			}
+			create_country_leader = {
+				name = "Baltimare Revolutionary Commission"
+				desc = "The political body set up by the former mayor to open diplomatic relations with Stalliongrad and regain control of Baltimare post revolution."
+				picture = "peoplesparliament.tga"
+				expire = "1965.1.1"
+				ideology = vasilyism
+				traits = {
+				}
+			}
+			hidden_effect = {
+				EQS = {
+					end_puppet = EBM
+					remove_from_faction = EBM
+				}
+				EBM = {
+					drop_cosmetic_tag = yes
+				}
+			}
+		}	
+    }
+}
+
+

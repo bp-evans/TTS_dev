@@ -1,0 +1,13 @@
+add_namespace = rf
+
+country_event = {
+	id = rf.1
+	is_triggered_only = yes
+	mean_time_to_happen = {
+			days = 1
+	}
+	option = {
+		set_country_flag = parliament_disbanded
+	}
+
+}

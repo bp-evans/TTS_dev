@@ -1,0 +1,31 @@
+add_namespace = apocalypse_events
+
+country_event = {
+	id = apocalypse_events.1
+	hidden = yes
+	is_triggered_only = yes
+	mean_time_to_happen = {
+			days = 1
+	}
+	option = {
+		boom = yes
+		every_country = {
+		if ={
+			limit = {
+				OR = {
+					tag = EQS
+					tag = GRI
+					tag = RCT
+					tag = SDL
+					tag = OLE
+				}
+			}
+			special_boom = yes
+			special_boom = yes
+			special_boom = yes
+		}
+		}
+		repeat_if_any_country_exists = yes
+	}
+
+}
