@@ -883,3 +883,8 @@ EWN = {
 	color = rgb { 209 25 25 }
 	color_ui = rgb { 209 25 25 }
 }
+
+EBM = {
+	color = rgb { 235 77 77 }
+	color_ui = rgb { 235 77 77 }
+}

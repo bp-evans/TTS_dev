@@ -82,6 +82,9 @@ ideologies = {
 
 			anarchist_communism = {
 			}
+
+			vasilyism = {
+			}
 			
 			
 		}

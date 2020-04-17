@@ -71,7 +71,6 @@ news_event = { ## second baltimare secession new event
         }
         name = baltimare.4.a
 		EBM = {
-			retire_country_leader = yes
 			set_party_name = {
 				ideology = communism
 				long_name = EBM_socialism_rev_long
@@ -87,6 +86,7 @@ news_event = { ## second baltimare secession new event
 				democratic = 0
 				neutrality = 0
 			}
+			retire_country_leader = yes
 			create_country_leader = {
 				name = "Baltimare Revolutionary Commission"
 				desc = "The political body set up by the former mayor to open diplomatic relations with Stalliongrad and regain control of Baltimare post revolution."
