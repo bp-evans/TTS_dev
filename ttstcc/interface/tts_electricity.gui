@@ -1,0 +1,24 @@
+guiTypes = {
+	containerWindowType = {
+		name = "tts_electricity"
+		position = { x = 970 y = 4 }
+		size = { width=96 height=36 }
+			
+			
+		background = {
+			name = "Background"
+			quadTextureSprite = "GFX_generic_box_96"
+			position = { x = 0 y = 0 }
+		}
+		instantTextboxType = {
+				name = "amount_of_electricity"
+				position = { x = 0 y = 3 }
+				textureFile = ""
+				font = "JetSetSmall"
+				text = "amountMW"
+				maxWidth = 96
+				maxHeight = 36
+				format = center
+			}
+	}
+}

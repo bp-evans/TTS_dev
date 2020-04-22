@@ -4,8 +4,10 @@ scripted_gui = {
 		window_name = "es_open_button"
 
 		visible = {
-			is_ai = no
 			tag = EQS
+			tag = TWI
+			tag = CEL
+			tag = LUN
 		}
 
 		effects = {
@@ -31,13 +33,139 @@ scripted_gui = {
 			has_variable = es_window_on
 		}
 
+		properties = {
+			opt_vanhoover_ineqs_button = {
+				image = "[opt_vanhoover_ineqs_button]"
+			}
+			opt_tall_tale_ineqs_button = {
+				image = "[opt_tall_tale_ineqs_button]"
+			}
+			opt_acornage_ineqs_button = {
+				image = "[opt_acornage_ineqs_button]"
+			}
+			opt_marechester_ineqs_button = {
+				image = "[opt_marechester_ineqs_button]"
+			}
+			opt_albion_ineqs_button = {
+				image = "[opt_albion_ineqs_button]"
+			}
+			opt_aztlan_ineqs_button = {
+				image = "[select_vanhoover_ineqs_button]"
+			}
+			opt_bales_ineqs_button = {
+				image = "[opt_bales_ineqs_button]"
+			}
+			opt_baltimare_ineqs_button = {
+				image = "[opt_baltimare_ineqs_button]"
+			}
+			opt_buffalo_ineqs_button = {
+				image = "[opt_buffalo_ineqs_button]"
+			}
+			opt_dodgecity_ineqs_button = {
+				image = "[opt_dodgecity_ineqs_button]"
+			}
+			opt_fillydelphia_ineqs_button = {
+				image = "[opt_fillydelphia_ineqs_button]"
+			}
+			opt_hoofington_ineqs_button = {
+				image = "[opt_hoofington_ineqs_button]"
+			}
+			opt_lospegasus_ineqs_button = {
+				image = "[opt_lospegasus_ineqs_button]"
+			}
+			opt_manehatten_ineqs_button = {
+				image = "[opt_manehatten_ineqs_button]"
+			}
+			opt_prance_ineqs_button = {
+				image = "[opt_prance_ineqs_button]"
+			}
+			opt_rock_ineqs_button = {
+				image = "[opt_rock_ineqs_button]"
+			}
+			opt_southequestrian_ineqs_button = {
+				image = "[opt_southequestrian_ineqs_button]"
+			}
+			opt_stratusburg_ineqs_button = {
+				image = "[opt_stratusburg_ineqs_button]"
+			}
+			opt_thestralia_ineqs_button = {
+				image = "[opt_thestralia_ineqs_button]"
+			}
+			opt_whinnyapolis_ineqs_button = {
+				image = "[opt_whinnyapolis_ineqs_button]"
+			}
+		}
+
 		triggers = {
 			
+			opt_vanhoover_ineqs_button_click_enabled = {
+				EVA = { has_cosmetic_tag = EQS_state }
+			}
+			opt_tall_tale_ineqs_button_click_enabled = {
+				ETA = { has_cosmetic_tag = EQS_state }
+			}
+			opt_acornage_ineqs_button_click_enabled = {
+				EAC = { has_cosmetic_tag = EQS_state }
+			}
+			opt_marechester_ineqs_button_click_enabled = {
+				EMA = { has_cosmetic_tag = EQS_state }
+			}
+			opt_albion_ineqs_button_click_enabled = {
+				EAL = { has_cosmetic_tag = EQS_state }
+			}
+			opt_aztlan_ineqs_button_click_enabled = {
+				EAZ = { has_cosmetic_tag = EQS_state }
+			}
+			opt_bales_ineqs_button_click_enabled = {
+				EBA = { has_cosmetic_tag = EQS_state }
+			}
+			opt_baltimare_ineqs_button_click_enabled = {
+				EBM = { has_cosmetic_tag = EQS_state }
+			}
+			opt_buffalo_ineqs_button_click_enabled = {
+				EBU = { has_cosmetic_tag = EQS_state }
+			}
+			opt_dodgecity_ineqs_button_click_enabled = {
+				EDO = { has_cosmetic_tag = EQS_state }
+			}
+			opt_fillydelphia_ineqs_button_click_enabled = {
+				EFI = { has_cosmetic_tag = EQS_state }
+			}
+			opt_hoofington_ineqs_button_click_enabled = {
+				EHO = { has_cosmetic_tag = EQS_state }
+			}
+			opt_lospegasus_ineqs_button_click_enabled = {
+				ELP = { has_cosmetic_tag = EQS_state }
+			}
+			opt_manehatten_ineqs_button_click_enabled = {
+				EMA = { has_cosmetic_tag = EQS_state }
+			}
+			opt_prance_ineqs_button_click_enabled = {
+				EPR = { has_cosmetic_tag = EQS_state }
+			}
+			opt_rock_ineqs_button_click_enabled = {
+				ERC = { has_cosmetic_tag = EQS_state }
+			}
+			opt_southequestrian_ineqs_button_click_enabled = {
+				ESE = { has_cosmetic_tag = EQS_state }
+			}
+			opt_stratusburg_ineqs_button_click_enabled = {
+				ESG = { has_cosmetic_tag = EQS_state }
+			}
+			opt_thestralia_ineqs_button_click_enabled = {
+				ETH = { has_cosmetic_tag = EQS_state }
+			}
+			opt_whinnyapolis_ineqs_button_click_enabled = {
+				EWN = { has_cosmetic_tag = EQS_state }
+			}
 			
+
 		}
 
 		effects = {
-			
+			opt_vanhoover_ineqs_button_click = {
+				
+			}
 		}
 	}
 	

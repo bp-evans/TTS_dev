@@ -1,0 +1,12 @@
+scripted_gui = {
+
+		tts_electricity = {
+		
+				context_type = player_context
+				parent_window_token = topbar
+				window_name = "tts_electricity"
+		
+		visible = {
+			NOT = { has_country_flag = non_industrialised_nation }
+		}
+}
