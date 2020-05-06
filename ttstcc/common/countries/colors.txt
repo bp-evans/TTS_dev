@@ -888,3 +888,23 @@ EBM = {
 	color = rgb { 235 77 77 }
 	color_ui = rgb { 235 77 77 }
 }
+
+TWI = {
+	color = rgb { 197 12 179 }
+	color_ui = rgb { 197 12 179 }
+}
+
+CEL = {
+	color = rgb { 255 252 183 }
+	color_ui = rgb { 255 252 183 }
+}
+
+LUN = {
+	color = rgb { 36 36 155 }
+	color_ui = rgb { 36 36 155 }
+}
+
+CLO = {
+	color = rgb { 105 247 254 }
+	color_ui = rgb { 105 247 254 }
+}

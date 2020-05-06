@@ -1,5 +1,0 @@
-influence_update = {
-	add_to_variable = { STG.stg_points = STG.weekly_ip }
-	add_to_variable = { EQS.eqs_points = EQS.weekly_ip }
-	add_to_variable = { GRI.gri_points = GRI.weekly_ip }
-}

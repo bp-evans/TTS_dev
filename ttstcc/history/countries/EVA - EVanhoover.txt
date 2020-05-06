@@ -13,7 +13,7 @@ set_popularities = {
 
 }
 set_cosmetic_tag = EQS_state	
-	
+set_variable = {es_loyalty = 100}
 set_politics = {
 	ruling_party = neutrality
 	last_election = "1936.1.1"

@@ -1,0 +1,184 @@
+# Allows you to create your own dynamic keys
+# to be called in localization.
+# defined_text -> this is it, we're defining the text
+# text -> a discrete entry that can be picked to display in loc.
+# trigger -> determines if a text entry will be picked or not.
+# (The triggers need to be valid for the scope the key is called in
+# (eg Root or From.From).)
+# localization_key -> points to the localization key
+# that'll be used if trigger passes
+
+defined_text = { # Country
+	name = GetLoyalty
+	text = {
+		trigger = { check_variable = { es_country = 1 } }
+		localization_key = vanhoover_loyalty
+	}
+	text = {
+		trigger = { check_variable = { es_country = 2 } }
+		localization_key = tall_tale_loyalty
+	}
+	text = {
+		trigger = { check_variable = { es_country = 3 } }
+		localization_key = acornage_loyalty
+	}
+	text = {
+		trigger = { check_variable = { es_country = 4 } }
+		localization_key = marechester_loyalty
+	}
+	text = {
+		trigger = { check_variable = { es_country = 5 } }
+		localization_key = albion_loyalty
+	}
+	text = {
+		trigger = { check_variable = { es_country = 6 } }
+		localization_key = aztlan_loyalty
+	}
+	text = {
+		trigger = { check_variable = { es_country = 7 } }
+		localization_key = baltimare_loyalty
+	}
+	text = {
+		trigger = { check_variable = { es_country = 8 } }
+		localization_key = buffalo_loyalty
+	}
+	text = {
+		trigger = { check_variable = { es_country = 9 } }
+		localization_key = dodgecity_loyalty
+	}
+	text = {
+		trigger = { check_variable = { es_country = 10 } }
+		localization_key = fillydelphia_loyalty
+	}
+	text = {
+		trigger = { check_variable = { es_country = 11 } }
+		localization_key = hoofington_loyalty
+	}
+	text = {
+		trigger = { check_variable = { es_country = 12 } }
+		localization_key = lospegasus_loyalty
+	}
+	text = {
+		trigger = { check_variable = { es_country = 13 } }
+		localization_key = manehatten_loyalty
+	}
+	text = {
+		trigger = { check_variable = { es_country = 14 } }
+		localization_key = prance_loyalty
+	}
+	text = {
+		trigger = { check_variable = { es_country = 15 } }
+		localization_key = rock_loyalty
+	}
+	text = {
+		trigger = { check_variable = { es_country = 16 } }
+		localization_key = southequestrian_loyalty
+	}
+	text = {
+		trigger = { check_variable = { es_country = 17 } }
+		localization_key = stratusburg_loyalty
+	}
+	text = {
+		trigger = { check_variable = { es_country = 18 } }
+		localization_key = thestralia_loyalty
+	}
+	text = {
+		trigger = { check_variable = { es_country = 19 } }
+		localization_key = whinnyapolis_loyalty
+	}
+	text = {
+		trigger = { check_variable = { es_country = 20 } }
+		localization_key = stableside_loyalty
+	}
+	text = {
+		trigger = { check_variable = { es_country = 21 } }
+		localization_key = bales_loyalty
+	}
+}
+defined_text = { # Country
+	name = GetAutName
+	text = {
+		trigger = { check_variable = { es_country = 1 } }
+		localization_key = vanhoover_name
+	}
+	text = {
+		trigger = { check_variable = { es_country = 2 } }
+		localization_key = tall_tale_name
+	}
+	text = {
+		trigger = { check_variable = { es_country = 3 } }
+		localization_key = acornage_name
+	}
+	text = {
+		trigger = { check_variable = { es_country = 4 } }
+		localization_key = marechester_name
+	}
+	text = {
+		trigger = { check_variable = { es_country = 5 } }
+		localization_key = albion_name
+	}
+	text = {
+		trigger = { check_variable = { es_country = 6 } }
+		localization_key = aztlan_name
+	}
+	text = {
+		trigger = { check_variable = { es_country = 7 } }
+		localization_key = baltimare_name
+	}
+	text = {
+		trigger = { check_variable = { es_country = 8 } }
+		localization_key = buffalo_name
+	}
+	text = {
+		trigger = { check_variable = { es_country = 9 } }
+		localization_key = dodgecity_name
+	}
+	text = {
+		trigger = { check_variable = { es_country = 10 } }
+		localization_key = fillydelphia_name
+	}
+	text = {
+		trigger = { check_variable = { es_country = 11 } }
+		localization_key = hoofington_name
+	}
+	text = {
+		trigger = { check_variable = { es_country = 12 } }
+		localization_key = lospegasus_name
+	}
+	text = {
+		trigger = { check_variable = { es_country = 13 } }
+		localization_key = manehatten_name
+	}
+	text = {
+		trigger = { check_variable = { es_country = 14 } }
+		localization_key = prance_name
+	}
+	text = {
+		trigger = { check_variable = { es_country = 15 } }
+		localization_key = rock_name
+	}
+	text = {
+		trigger = { check_variable = { es_country = 16 } }
+		localization_key = southequestrian_name
+	}
+	text = {
+		trigger = { check_variable = { es_country = 17 } }
+		localization_key = stratusburg_name
+	}
+	text = {
+		trigger = { check_variable = { es_country = 18 } }
+		localization_key = thestralia_name
+	}
+	text = {
+		trigger = { check_variable = { es_country = 19 } }
+		localization_key = whinnyapolis_name
+	}
+	text = {
+		trigger = { check_variable = { es_country = 20 } }
+		localization_key = stableside_name
+	}
+	text = {
+		trigger = { check_variable = { es_country = 21 } }
+		localization_key = bales_name
+	}
+}

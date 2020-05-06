@@ -1,0 +1,230 @@
+guiTypes = {
+	containerWindowType = {
+		name = "es_open_button"
+		position = { x = -120 y = -400 }
+		size = { width=100 height=100 }
+		orientation = LOWER_RIGHT
+
+		buttonType ={
+			name ="es_open_button_bg"
+			spriteType = "GFX_es_open_button"
+			position = { x=0 y=0 }
+			pdx_tooltip = "es_open_button_TT"
+			pdx_tooltip_delayed = "es_open_button_delayed_TT"
+		}	
+		
+	}
+
+	containerWindowType = {
+		name = "es_window"
+		position = { x = 120 y = 400 }
+		size = { width=400 height=600 }
+		moveable = yes
+			
+		background = {
+			name = "Background"
+			quadTextureSprite = "GFX_es_bg"
+			position = { x = 5 y = 5 }
+		}
+
+		buttonType ={
+			name ="opt_vanhoover_ineqs_button"
+			spriteType = "GFX_es_open_button"
+			position = { x=5 y=20 }
+			pdx_tooltip = "influence_action_button_TT"
+			pdx_tooltip_delayed = "influence_action_button_delayed_TT"
+		}
+		buttonType ={
+			name ="opt_tall_tale_ineqs_button"
+			spriteType = "GFX_es_open_button"
+			position = { x=5 y=60 }
+			pdx_tooltip = "influence_action_button_TT"
+			pdx_tooltip_delayed = "influence_action_button_delayed_TT"
+		}
+		buttonType ={
+			name ="opt_acornage_ineqs_button"
+			spriteType = "GFX_es_open_button"
+			position = { x=5 y=80 }
+			pdx_tooltip = "influence_action_button_TT"
+			pdx_tooltip_delayed = "influence_action_button_delayed_TT"
+		}
+
+		buttonType ={
+			name ="opt_marechester_ineqs_button"
+			spriteType = "GFX_es_open_button"
+			position = { x=5 y=90 }
+			pdx_tooltip = "influence_action_button_TT"
+			pdx_tooltip_delayed = "influence_action_button_delayed_TT"
+		}
+
+		buttonType ={
+			name ="opt_albion_ineqs_button"
+			spriteType = "GFX_es_open_button"
+			position = { x=5 y=100 }
+			pdx_tooltip = "influence_action_button_TT"
+			pdx_tooltip_delayed = "influence_action_button_delayed_TT"
+		}
+
+		buttonType ={
+			name ="opt_aztlan_ineqs_button"
+			spriteType = "GFX_es_open_button"
+			position = { x=5 y=110 }
+			pdx_tooltip = "influence_action_button_TT"
+			pdx_tooltip_delayed = "influence_action_button_delayed_TT"
+		}
+
+		buttonType ={
+			name ="opt_bales_ineqs_button"
+			spriteType = "GFX_es_open_button"
+			position = { x=5 y=120 }
+			pdx_tooltip = "influence_action_button_TT"
+			pdx_tooltip_delayed = "influence_action_button_delayed_TT"
+		}
+
+		buttonType ={
+			name ="opt_baltimare_ineqs_button"
+			spriteType = "GFX_es_open_button"
+			position = { x=5 y=130 }
+			pdx_tooltip = "influence_action_button_TT"
+			pdx_tooltip_delayed = "influence_action_button_delayed_TT"
+		}
+
+		buttonType ={
+			name ="opt_buffalo_ineqs_button"
+			spriteType = "GFX_es_open_button"
+			position = { x=5 y=140 }
+			pdx_tooltip = "influence_action_button_TT"
+			pdx_tooltip_delayed = "influence_action_button_delayed_TT"
+		}
+
+		buttonType ={
+			name ="opt_dodgecity_ineqs_button"
+			spriteType = "GFX_es_open_button"
+			position = { x=5 y=150 }
+			pdx_tooltip = "influence_action_button_TT"
+			pdx_tooltip_delayed = "influence_action_button_delayed_TT"
+		}
+
+		buttonType ={
+			name ="opt_fillydelphia_ineqs_button"
+			spriteType = "GFX_es_open_button"
+			position = { x=5 y=160 }
+			pdx_tooltip = "influence_action_button_TT"
+			pdx_tooltip_delayed = "influence_action_button_delayed_TT"
+		}
+
+		buttonType ={
+			name ="opt_hoofington_ineqs_button"
+			spriteType = "GFX_es_open_button"
+			position = { x=5 y=170 }
+			pdx_tooltip = "influence_action_button_TT"
+			pdx_tooltip_delayed = "influence_action_button_delayed_TT"
+		}
+
+		buttonType ={
+			name ="opt_lospegasus_ineqs_button"
+			spriteType = "GFX_es_open_button"
+			position = { x=5 y=180 }
+			pdx_tooltip = "influence_action_button_TT"
+			pdx_tooltip_delayed = "influence_action_button_delayed_TT"
+		}
+
+		buttonType ={
+			name ="opt_manehatten_ineqs_button"
+			spriteType = "GFX_es_open_button"
+			position = { x=5 y=190 }
+			pdx_tooltip = "influence_action_button_TT"
+			pdx_tooltip_delayed = "influence_action_button_delayed_TT"
+		}
+
+		buttonType ={
+			name ="opt_prance_ineqs_button"
+			spriteType = "GFX_es_open_button"
+			position = { x=5 y=200 }
+			pdx_tooltip = "influence_action_button_TT"
+			pdx_tooltip_delayed = "influence_action_button_delayed_TT"
+		}
+
+		buttonType ={
+			name ="opt_rock_ineqs_button"
+			spriteType = "GFX_es_open_button"
+			position = { x=5 y=210 }
+			pdx_tooltip = "influence_action_button_TT"
+			pdx_tooltip_delayed = "influence_action_button_delayed_TT"
+		}
+
+		buttonType ={
+			name ="opt_southequestrian_ineqs_button"
+			spriteType = "GFX_es_open_button"
+			position = { x=5 y=220 }
+			pdx_tooltip = "influence_action_button_TT"
+			pdx_tooltip_delayed = "influence_action_button_delayed_TT"
+		}
+
+		buttonType ={
+			name ="opt_stratusburg_ineqs_button"
+			spriteType = "GFX_es_open_button"
+			position = { x=5 y=230 }
+			pdx_tooltip = "influence_action_button_TT"
+			pdx_tooltip_delayed = "influence_action_button_delayed_TT"
+		}
+
+		buttonType ={
+			name ="opt_thestralia_ineqs_button"
+			spriteType = "GFX_es_open_button"
+			position = { x=5 y=240 }
+			pdx_tooltip = "influence_action_button_TT"
+			pdx_tooltip_delayed = "influence_action_button_delayed_TT"
+		}
+
+		buttonType ={
+			name ="opt_whinnyapolis_ineqs_button"
+			spriteType = "GFX_es_open_button"
+			position = { x=5 y=250 }
+			pdx_tooltip = "influence_action_button_TT"
+			pdx_tooltip_delayed = "influence_action_button_delayed_TT"
+		}
+
+		
+	}
+	containerWindowType = {
+		name = "es_action_window"
+		position = { x = 120 y = 400 }
+		size = { width=400 height=300 }
+		moveable = yes
+			
+		background = {
+			name = "Background"
+			quadTextureSprite = "GFX_es_bg"
+			position = { x = 5 y = 5 }
+		}
+
+		instantTextboxType = {
+			name = "Name"
+			position = { x = 0 y = 3 }
+			textureFile = ""
+			font = "JetSetSmall"
+			text = "[Root.GetAutName]"
+			maxWidth = 200
+			maxHeight = 36
+			format = left
+		}
+
+		instantTextboxType = {
+			name = "Loyalty"
+			position = { x = 0 y = 20 }
+			textureFile = ""
+			font = "JetSetSmall"
+			text = "[Root.GetLoyalty]"
+			maxWidth = 200
+			maxHeight = 36
+			format = left
+		}
+
+
+
+
+	}
+	
+
+}

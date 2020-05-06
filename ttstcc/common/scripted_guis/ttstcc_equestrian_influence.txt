@@ -4,21 +4,24 @@ scripted_gui = {
 		window_name = "es_open_button"
 
 		visible = {
-			tag = EQS
-			tag = TWI
-			tag = CEL
-			tag = LUN
+			OR = {
+				tag = EQS
+				tag = TWI
+				tag = CEL
+				tag = LUN
+			}
 		}
 
 		effects = {
-			ESOPEN_click = {
-				if = {
-					limit = { NOT = { has_variable = es_window_on } }
-					set_variable = { es_window_on = 1 }
+			es_open_button_bg_click = {
+				if = { 
+					limit = { NOT = { has_country_flag = es_window_on } } 
+					set_country_flag = es_window_on
 				}
 				else = {
-					clear_variable = es_window_on
+					clr_country_flag = es_window_on
 				}
+				
 			}
 		}
 	}
@@ -30,7 +33,7 @@ scripted_gui = {
 
 		visible = {
 			is_ai = no
-			has_variable = es_window_on
+			has_country_flag = es_window_on
 		}
 
 		properties = {
@@ -50,7 +53,7 @@ scripted_gui = {
 				image = "[opt_albion_ineqs_button]"
 			}
 			opt_aztlan_ineqs_button = {
-				image = "[select_vanhoover_ineqs_button]"
+				image = "[opt_aztlan_ineqs_button]"
 			}
 			opt_bales_ineqs_button = {
 				image = "[opt_bales_ineqs_button]"
@@ -93,6 +96,9 @@ scripted_gui = {
 			}
 			opt_whinnyapolis_ineqs_button = {
 				image = "[opt_whinnyapolis_ineqs_button]"
+			}
+			opt_stableside_ineqs_button = {
+				image = "[opt_stableside_ineqs_button]"
 			}
 		}
 
@@ -158,15 +164,175 @@ scripted_gui = {
 			opt_whinnyapolis_ineqs_button_click_enabled = {
 				EWN = { has_cosmetic_tag = EQS_state }
 			}
-			
-
+			opt_stableside_ineqs_button_click_enabled = {
+				ESB = { has_cosmetic_tag = EQS_state }
+			}
+			opt_bales_ineqs_button_click_enabled = {
+				EBA = { has_cosmetic_tag = EQS_state }
+			}
 		}
 
 		effects = {
 			opt_vanhoover_ineqs_button_click = {
 				
+				set_variable = {
+					es_country = 1
+				}
+			}
+			opt_tall_tale_ineqs_button_click = {
+				
+				set_variable = {
+					es_country = 2
+				}
+			}
+			opt_acornage_ineqs_button_click = {
+				
+				set_variable = {
+					es_country = 3
+				}
+			}
+			opt_marechester_ineqs_button_click = {
+				
+				set_variable = {
+					es_country = 4
+				}
+			}
+			opt_albion_ineqs_button_click = {
+				
+				set_variable = {
+					es_country = 5
+				}
+			}
+			opt_aztlan_ineqs_button_click = {
+				
+				set_variable = {
+					es_country = 6
+				}
+			}
+			opt_baltimare_ineqs_button_click = {
+			
+				set_variable = {
+					es_country = 7
+				}
+			}
+			opt_buffalo_ineqs_button_click = {
+				
+				set_variable = {
+					es_country = 8
+				}
+			}
+			opt_dodgecity_ineqs_button_click = {
+				
+				set_variable = {
+					es_country = 9
+				}
+			}
+			opt_fillydelphia_ineqs_button_click = {
+				
+				set_variable = {
+					es_country = 10
+				}
+			}
+			opt_hoofington_ineqs_button_click = {
+				
+				set_variable = {
+					es_country = 11
+				}
+			}
+			opt_lospegasus_ineqs_button_click = {
+				
+				set_variable = {
+					es_country = 12
+				}
+			}
+			opt_manehatten_ineqs_button_click = {
+				
+				set_variable = {
+					es_country = 13
+				}
+			}
+			opt_prance_ineqs_button_click = {
+				
+				set_variable = {
+					es_country = 14
+				}
+			}
+			opt_rock_ineqs_button_click = {
+				
+				set_variable = {
+					es_country = 15
+				}
+			}
+			opt_southequestrian_ineqs_button_click = {
+				
+				set_variable = {
+					es_country = 16
+				}
+			}
+			opt_stratusburg_ineqs_button_click = {
+				
+				set_variable = {
+					es_country = 17
+				}
+			}
+			opt_thestralia_ineqs_button_click = {
+				
+				set_variable = {
+					es_country = 18
+				}
+			}
+			opt_whinnyapolis_ineqs_button_click = {
+			
+				set_variable = {
+					es_country = 19
+				}
+			}
+			opt_stableside_ineqs_button_click = {
+			
+				set_variable = {
+					es_country = 20
+				}
+			}
+			opt_bales_ineqs_button_click = {
+				
+				set_variable = {
+					es_country = 21
+				}
 			}
 		}
 	}
-	
+	es_open_action_window = {
+		context_type = player_context
+
+		window_name = "es_action_window"
+
+		visible = {
+			is_ai = no
+			has_country_flag = es_window_on
+		}
+
+		properties = {
+			opt_send_finances_button = {
+				image = "[opt_send_finances_button]"
+			}
+			opt_push_our_agenda = {
+				image = "[opt_tall_tale_ineqs_button]"
+			}
+			opt_centralize_button = {
+				image = "[opt_centralize_button]"
+			}
+			opt_decentralize_button = {
+				image = "[opt_decentralize_button]"
+			}
+		}
+
+		triggers = {
+					
+
+		}
+
+		effects = {
+			
+		}
+	}
 }

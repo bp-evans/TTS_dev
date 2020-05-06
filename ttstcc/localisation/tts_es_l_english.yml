@@ -1,0 +1,63 @@
+﻿l_english:
+vanhoover_loyalty:0 "Loyalty: [?EVA.es_loyalty] \nSovereignity level: [EVA.es_sovereignity] \nLocal power's agenda: [EVA.es_agenda]"
+vanhoover_name:0 "[EVA.GetName]"
+
+tall_tale_loyalty:0 "Loyalty: [?ETA.es_loyalty] \nSovereignity level: [ETA.es_sovereignity] \nLocal power's agenda: [ETA.es_agenda]"
+tall_tale_name:0 "[ETA.GetName]"
+
+acornage_loyalty:0 "Loyalty: [?EAC.es_loyalty] \nSovereignity level: [EAC.es_sovereignity] \nLocal power's agenda: [EAC.es_agenda]"
+acornage_name:0 "[EAC.GetName]"
+
+marechester_loyalty:0 "Loyalty: [?EMA.es_loyalty] \nSovereignity level: [EMA.es_sovereignity] \nLocal power's agenda: [EMA.es_agenda]"
+marechester_name:0 "[EMA.GetName]"
+
+albion_loyalty:0 "Loyalty: [?EAL.es_loyalty] \nSovereignity level: [EAL.es_sovereignity] \nLocal power's agenda: [EAL.es_agenda]"
+albion_name:0 "[EAL.GetName]"
+
+baltimare_loyalty:0 "Loyalty: [?EBM.es_loyalty] \nSovereignity level: [EBM.es_sovereignity] \nLocal power's agenda: [EBM.es_agenda]"
+baltimare_name:0 "[EBM.GetName]"
+
+buffalo_loyalty:0 "Loyalty: [?EBU.es_loyalty] \nSovereignity level: [EBU.es_sovereignity] \nLocal power's agenda: [EBU.es_agenda]"
+buffalo_name:0 "[EBU.GetName]"
+
+dodgecity_loyalty:0 "Loyalty: [?EDO.es_loyalty] \nSovereignity level: [EDO.es_sovereignity] \nLocal power's agenda: [EDO.es_agenda]"
+dodgecity_name:0 "[EDO.GetName]"
+
+fillydelphia_loyalty:0 "Loyalty: [?EFI.es_loyalty] \nSovereignity level: [EFI.es_sovereignity] \nLocal power's agenda: [EFI.es_agenda]"
+fillydelphia_name:0 "[EFI.GetName]"
+
+hoofington_loyalty:0 "Loyalty: [?EHO.es_loyalty] \nSovereignity level: [EHO.es_sovereignity] \nLocal power's agenda: [EHO.es_agenda]"
+hoofington_name:0 "[EHO.GetName]"
+
+lospegasus_loyalty:0 "Loyalty: [?ELP.es_loyalty] \nSovereignity level: [ELP.es_sovereignity] \nLocal power's agenda: [ELP.es_agenda]"
+lospegasus_name:0 "[ELP.GetName]"
+
+prance_loyalty:0 "Loyalty: [?EPR.es_loyalty] \nSovereignity level: [EPR.es_sovereignity] \nLocal power's agenda: [EPR.es_agenda]"
+prance_name:0 "[EPR.GetName]"
+
+rock_loyalty:0 "Loyalty: [?ERC.es_loyalty] \nSovereignity level: [ERC.es_sovereignity] \nLocal power's agenda: [ERC.es_agenda]"
+rock_name:0 "[ERC.GetName]"
+
+southequestrian_loyalty:0 "Loyalty: [?ESE.es_loyalty] \nSovereignity level: [ESE.es_sovereignity] \nLocal power's agenda: [ESE.es_agenda]"
+southequestrian_name:0 "[ESE.GetName]"
+
+stratusburg_loyalty:0 "Loyalty: [?ESG.es_loyalty] \nSovereignity level: [ESG.es_sovereignity] \nLocal power's agenda: [ESG.es_agenda]"
+stratusburg_name:0 "[ESG.GetName]"
+
+thestralia_loyalty:0 "Loyalty: [?ETH.es_loyalty] \nSovereignity level: [ETH.es_sovereignity] \nLocal power's agenda: [ETH.es_agenda]"
+thestralia_name:0 "[ETH.GetName]"
+
+whinnyapolis_loyalty:0 "Loyalty: [?EWN.es_loyalty] \nSovereignity level: [EWN.es_sovereignity] \nLocal power's agenda: [EWN.es_agenda]"
+whinnyapolis_name:0 "[EWN.GetName]"
+
+stableside_loyalty:0 "Loyalty: [?ESB.es_loyalty] \nSovereignity level: [ESB.es_sovereignity] \nLocal power's agenda: [ESB.es_agenda]"
+stableside_name:0 "[ESB.GetName]"
+
+manehatten_loyalty:0 "Loyalty: [?EMA.es_loyalty] \nSovereignity level: [EMA.es_sovereignity] \nLocal power's agenda: [EMA.es_agenda]"
+manehatten_name:0 "[EMA.GetName]"
+
+aztlan_loyalty:0 "Loyalty: [?EAZ.es_loyalty] \nSovereignity level: [EAZ.es_sovereignity] \nLocal power's agenda: [EAZ.es_agenda]"
+aztlan_name:0 "[EAZ.GetName]"
+
+bales_loyalty:0 "Loyalty: [?EBA.es_loyalty] \nSovereignity level: [EBA.es_sovereignity] \nLocal power's agenda: [EBA.es_agenda]"
+bales_name:0 "[EBA.GetName]"

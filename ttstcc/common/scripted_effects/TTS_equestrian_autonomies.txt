@@ -1,0 +1,9 @@
+es_open_action_window = {
+	if = { 
+		limit = { NOT = { has_country_flag = es_open_action_window_visible } } 
+		set_country_flag = es_open_action_window_visible
+	}
+	else = {
+		clr_country_flag = es_open_action_window_visible
+	}
+}

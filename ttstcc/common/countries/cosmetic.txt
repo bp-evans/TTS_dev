@@ -6,7 +6,14 @@ EQS_state = {
 	color = rgb { 158 242 117 }
 	color_ui = rgb { 158 242 117 }
 }
-
+EQS_TWI_state = {
+	color = rgb { 197 12 179 }
+	color_ui = rgb { 197 12 179 }
+}
+EQS_TWI = {
+	color = rgb { 197 12 179 }
+	color_ui = rgb { 197 12 179 }
+}
 
 
 

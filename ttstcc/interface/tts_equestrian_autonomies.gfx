@@ -1,0 +1,11 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_es_open_button"
+		texturefile = "gfx/interface/ttstcc_gui/Equestrian_Subjects/es_open_button.dds"
+	}
+
+	spriteType = {
+		name = "GFX_es_bg"
+		texturefile = "gfx/interface/ttstcc_gui/Equestrian_Subjects/es_bg.dds"
+	}
+}

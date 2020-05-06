@@ -19,3 +19,8 @@ EAL = "countries/EAlbion.txt"
 EFI = "countries/EFillydelphia.txt"
 EMN = "countries/EManehatten.txt"
 ERC = "countries/ERockRep.txt"
+
+CEL = "countries/Celestia.txt"
+TWI = "countries/Twilight.txt"
+LUN = "countries/Luna.txt"
+CLO = "countries/Cloudsdale.txt"
