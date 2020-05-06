@@ -29,7 +29,6 @@ replace_path="history/states"
 replace_path="history/units"
 replace_path="map/strategicregions"
 replace_path="map/supplyareas"
-dependencies = {"Equestria at War"}
 tags={
 	"Alternative History"
 	"Events"
