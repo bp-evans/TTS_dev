@@ -15,14 +15,64 @@ set_popularities = {
 }
 set_cosmetic_tag = EQS_state	
 	
-
 create_country_leader = {
 	name = "Steedstiff"
 	expire = "1965.1.1"
-	picture = "RandomKanzler.tga"
-	desc = "POLITICS_LUNA_DESC"
+	picture = "Portrait_Thestralia_Steedstiff.dds"
+	desc = "POLITICS_Steedstiff_DESC"
 	ideology = centrism
 	traits = {
 		
 	}
+}
+
+create_field_marshal = {
+	name = "Flavius Antony Goldmane"
+	picture = "Portrait_Thestralia_Flavius_Antony_Goldmane.dds"
+	traits = { }
+	skill = 5
+	attack_skill = 3
+	defense_skill = 5
+	planning_skill = 4
+	logistics_skill = 5
+}
+
+create_corps_commander = {
+	name = "Tiberius Silvermane"
+	picture = "Portrait_Thestralia_Tiberius_Silvermane.dds"
+	traits = { }
+	skill = 5
+	attack_skill = 5
+	defense_skill = 4
+	planning_skill = 3
+	logistics_skill = 4
+}
+
+create_corps_commander = {
+	name = "Sikar Tenebris"
+	picture = "Portrait_Thestralia_Sikar_Tenebris.dds"
+	traits = { }
+	skill = 3
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 4
+	logistics_skill = 3
+}
+
+create_corps_commander = {
+	name = "Nightstrike"
+	picture = "Portrait_Thestralia_Nightstrike.dds"
+	traits = {  }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 3
+}
+
+create_navy_leader = {
+	name = "Lorenzo Patel"
+	picture = "Portrait_Thestralia_Lorenzo_Patel.dds"
+	traits = {  }
+	skill = 3
 }
